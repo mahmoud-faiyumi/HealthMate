@@ -70,7 +70,10 @@
             this.BrowseButton = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.FileTextBox = new System.Windows.Forms.Label();
+            this.circularPictureBox = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.PPlbl = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // ActivityLevel
@@ -278,7 +281,7 @@
             // 
             // UpdateUsrInfo
             // 
-            this.UpdateUsrInfo.Location = new System.Drawing.Point(267, 251);
+            this.UpdateUsrInfo.Location = new System.Drawing.Point(264, 251);
             this.UpdateUsrInfo.Name = "UpdateUsrInfo";
             this.UpdateUsrInfo.Size = new System.Drawing.Size(75, 30);
             this.UpdateUsrInfo.TabIndex = 71;
@@ -411,7 +414,7 @@
             // 
             // BrowseButton
             // 
-            this.BrowseButton.Location = new System.Drawing.Point(267, 345);
+            this.BrowseButton.Location = new System.Drawing.Point(264, 346);
             this.BrowseButton.Name = "BrowseButton";
             this.BrowseButton.Size = new System.Drawing.Size(75, 30);
             this.BrowseButton.TabIndex = 73;
@@ -427,10 +430,30 @@
             // 
             this.FileTextBox.AutoSize = true;
             this.FileTextBox.Font = new System.Drawing.Font("El Messiri SemiBold", 9F, System.Drawing.FontStyle.Bold);
-            this.FileTextBox.Location = new System.Drawing.Point(266, 382);
+            this.FileTextBox.Location = new System.Drawing.Point(263, 382);
             this.FileTextBox.Name = "FileTextBox";
             this.FileTextBox.Size = new System.Drawing.Size(0, 19);
             this.FileTextBox.TabIndex = 74;
+            // 
+            // circularPictureBox
+            // 
+            this.circularPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.circularPictureBox.FillColor = System.Drawing.Color.Transparent;
+            this.circularPictureBox.ImageRotate = 0F;
+            this.circularPictureBox.Location = new System.Drawing.Point(82, 309);
+            this.circularPictureBox.Name = "circularPictureBox";
+            this.circularPictureBox.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.circularPictureBox.Size = new System.Drawing.Size(100, 100);
+            this.circularPictureBox.TabIndex = 75;
+            this.circularPictureBox.TabStop = false;
+            // 
+            // PPlbl
+            // 
+            this.PPlbl.Location = new System.Drawing.Point(216, 318);
+            this.PPlbl.Name = "PPlbl";
+            this.PPlbl.Size = new System.Drawing.Size(170, 25);
+            this.PPlbl.TabIndex = 76;
+            this.PPlbl.Text = "Change profile picture";
             // 
             // UpdateInfo
             // 
@@ -438,6 +461,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(595, 425);
+            this.Controls.Add(this.PPlbl);
+            this.Controls.Add(this.circularPictureBox);
             this.Controls.Add(this.FileTextBox);
             this.Controls.Add(this.BrowseButton);
             this.Controls.Add(this.toolStrip1);
@@ -478,6 +503,7 @@
             this.Load += new System.EventHandler(this.UpdateInfo_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -526,5 +552,7 @@
         private System.Windows.Forms.Button BrowseButton;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Label FileTextBox;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox circularPictureBox;
+        private System.Windows.Forms.Label PPlbl;
     }
 }

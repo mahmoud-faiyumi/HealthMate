@@ -17,7 +17,6 @@ namespace HealthMate_UI
         private bool inches = true; // Initially set to inches
         private bool LB = true;  // Initially set to pounds
         private DatabaseManager databaseManager;
-        private PictureBox circularPictureBox;
         string username = CommonValues.CurrentUserInfo.UserName;
 
 
@@ -44,11 +43,7 @@ namespace HealthMate_UI
 
         private void InitializeCircularPictureBox()
         {
-            // Create PictureBox
-            circularPictureBox = new PictureBox();
-            circularPictureBox.Location = new Point(131, 316);
-            circularPictureBox.Size = new Size(88, 88);
-            circularPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            circularPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
 
             // Load Image
             if (CommonValues.CurrentUserInfo.IsPPNull)
@@ -66,23 +61,6 @@ namespace HealthMate_UI
                     circularPictureBox.Image = Properties.Resources.femalePP;
                 }
             }
-            // Make PictureBox Circular
-            MakePictureBoxCircular(circularPictureBox);
-
-            // Add PictureBox to Form
-            Controls.Add(circularPictureBox);
-        }
-
-        private void MakePictureBoxCircular(PictureBox pictureBox)
-        {
-            // Create a GraphicsPath object
-            GraphicsPath path = new GraphicsPath();
-
-            // Add an ellipse to the GraphicsPath
-            path.AddEllipse(0, 0, pictureBox.Width, pictureBox.Height);
-
-            // Set the Region property of the PictureBox to the newly created GraphicsPath
-            pictureBox.Region = new Region(path);
         }
 
         private void UpdateInfo_Load(object sender, EventArgs e)
@@ -723,7 +701,7 @@ namespace HealthMate_UI
             ActivityLevel.Location = new Point(28, 89);
             EmailLabel.Text = "الإيميل:";
             EmailLabel.Location = new Point(519, 138);
-            Email.Location = new Point(360, 186);
+            Email.Location = new Point(353, 166);
             WeightLable.Text = "الوزن:";
             WeightLable.Location = new Point(113, 138);
             Weight.Location = new Point(28, 166);
@@ -747,6 +725,7 @@ namespace HealthMate_UI
             PasswordMatchLabel.Location = new Point(115, 296);
             Back.Text = "رجوع";
             BrowseButton.Text = "تصفّح";
+            PPlbl.Text = " تغيير الصورة الشخصية ";
         }
 
         private void EnglishLanguage()
@@ -768,6 +747,7 @@ namespace HealthMate_UI
             UpdateUsrInfo.Text = "Update";
             Back.Text = "Back";
             BrowseButton.Text = "Browse";
+            PPlbl.Text = "Change profile picture";
         }
 
         private void BrowseButton_Click(object sender, EventArgs e)

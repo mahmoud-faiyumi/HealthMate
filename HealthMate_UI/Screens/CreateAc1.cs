@@ -3,6 +3,7 @@ using HealthMate_UI.Models;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
 
 namespace HealthMate_UI
 {
@@ -41,6 +42,7 @@ namespace HealthMate_UI
             {
                 EnglishLanguage();
             }
+            label1.Text = "0%";
         }
 
         private void Nextbtn_Click(object sender, EventArgs e)
@@ -69,6 +71,7 @@ namespace HealthMate_UI
             {
                 progressBar1.Value++;
                 fieldEditedFlags[0] = true;
+                label1.Text = progressBar1.ProgressTotalPercent.ToString("N0") + "%";
             }
 
             UpdateNextBtnState();
@@ -80,6 +83,7 @@ namespace HealthMate_UI
             {
                 progressBar1.Value++;
                 fieldEditedFlags[1] = true;
+                label1.Text = progressBar1.ProgressTotalPercent.ToString("N0") + "%";
             }
 
             UpdateNextBtnState();
@@ -91,6 +95,7 @@ namespace HealthMate_UI
             {
                 progressBar1.Value++;
                 fieldEditedFlags[2] = true;
+                label1.Text = progressBar1.ProgressTotalPercent.ToString("N0") + "%";
             }
 
             UpdateNextBtnState();
@@ -102,6 +107,7 @@ namespace HealthMate_UI
             {
                 progressBar1.Value++;
                 fieldEditedFlags[3] = true;
+                label1.Text = progressBar1.ProgressTotalPercent.ToString("N0") + "%";
             }
 
             UpdateNextBtnState();
@@ -113,6 +119,7 @@ namespace HealthMate_UI
             {
                 progressBar1.Value++;
                 fieldEditedFlags[4] = true;
+                label1.Text = progressBar1.ProgressTotalPercent.ToString("N0") + "%";
             }
 
             UpdateNextBtnState();
@@ -124,6 +131,7 @@ namespace HealthMate_UI
             {
                 progressBar1.Value++;
                 fieldEditedFlags[5] = true;
+                label1.Text = progressBar1.ProgressTotalPercent.ToString("N0") + "%";
             }
 
             UpdateNextBtnState();
@@ -135,6 +143,7 @@ namespace HealthMate_UI
             {
                 progressBar1.Value++;
                 fieldEditedFlags[6] = true;
+                label1.Text = progressBar1.ProgressTotalPercent.ToString("N0") + "%";
             }
 
             UpdateNextBtnState();
@@ -196,24 +205,25 @@ namespace HealthMate_UI
             // Apply the dark theme
             this.BackColor = Color.FromArgb(70, 70, 70);
             this.ForeColor = Color.White;
+            label1.ForeColor = Color.White;
             Username.ForeColor = Color.Black;
-            Username.BackColor = Color.FromArgb(224, 224, 224);
+            Username.FillColor = Color.FromArgb(224, 224, 224);
             Fname.ForeColor = Color.Black;
-            Fname.BackColor = Color.FromArgb(224, 224, 224);
+            Fname.FillColor = Color.FromArgb(224, 224, 224);
             Lname.ForeColor = Color.Black;
-            Lname.BackColor = Color.FromArgb(224, 224, 224);
+            Lname.FillColor = Color.FromArgb(224, 224, 224);
             Email.ForeColor = Color.Black;
-            Email.BackColor = Color.FromArgb(224, 224, 224);
+            Email.FillColor = Color.FromArgb(224, 224, 224);
             Gender.ForeColor = Color.Black;
-            Gender.BackColor = Color.FromArgb(224, 224, 224);
+            Gender.FillColor = Color.FromArgb(224, 224, 224);
             toolStrip1.ForeColor = Color.White;
             toolStrip1.BackColor = Color.FromArgb(55, 55, 55);
             Birthdate.ForeColor = Color.Black;
-            Birthdate.BackColor = Color.FromArgb(224, 224, 224);
+            Birthdate.FillColor = Color.FromArgb(224, 224, 224);
             ActivityLevel.ForeColor = Color.Black;
-            ActivityLevel.BackColor = Color.FromArgb(224, 224, 224);
+            ActivityLevel.FillColor = Color.FromArgb(224, 224, 224);
             Nextbtn.ForeColor = Color.Black;
-            Nextbtn.BackColor = Color.FromArgb(224, 224, 224);
+            Nextbtn.FillColor = Color.FromArgb(224, 224, 224);
             Themes.ForeColor = Color.White;
             Back.ForeColor = Color.White;
             SelectLanguage.ForeColor = Color.White;
@@ -234,25 +244,25 @@ namespace HealthMate_UI
             // Apply the light theme
             this.BackColor = Color.White;
             this.ForeColor = Color.Black;
-
+            label1.ForeColor = Color.Black;
             Username.ForeColor = Color.Black;
-            Username.BackColor = Color.White;
+            Username.FillColor = Color.White;
             Fname.ForeColor = Color.Black;
-            Fname.BackColor = Color.White;
+            Fname.FillColor = Color.White;
             Lname.ForeColor = Color.Black;
-            Lname.BackColor = Color.White;
+            Lname.FillColor = Color.White;
             Email.ForeColor = Color.Black;
-            Email.BackColor = Color.White;
+            Email.FillColor = Color.White;
             Gender.ForeColor = Color.Black;
-            Gender.BackColor = Color.White;
+            Gender.FillColor = Color.White;
             toolStrip1.ForeColor = Color.White;
             toolStrip1.BackColor = Color.Gainsboro;
             Birthdate.ForeColor = Color.Black;
-            Birthdate.BackColor = Color.White;
+            Birthdate.FillColor = Color.White;
             ActivityLevel.ForeColor = Color.Black;
-            ActivityLevel.BackColor = Color.White;
+            ActivityLevel.FillColor = Color.White;
             Nextbtn.ForeColor = Color.Black;
-            Nextbtn.BackColor = Color.White;
+            Nextbtn.FillColor = Color.White;
             Themes.ForeColor = Color.Black;
             Back.ForeColor = Color.Black;
             SelectLanguage.ForeColor = Color.Black;
@@ -288,7 +298,7 @@ namespace HealthMate_UI
             ActivityLevel.Location = new Point(438, 252);
             BirthdateLabel.Location = new Point(258, 221);
             BirthdateLabel.Text = "تاريخ الميلاد:";
-            Birthdate.Location = new Point(245, 249);
+            Birthdate.Location = new Point(230, 250);
             GenderLabel.Location = new Point(84, 221);
             GenderLabel.Text = "الجنس:";
             Gender.Location = new Point(61, 249);
@@ -330,12 +340,12 @@ namespace HealthMate_UI
             UsernameLabel.Location = new Point(350, 128);
             UsernameLabel.Text = "Username:";
             Username.Location = new Point(355, 156);
-            ActivityLabel.Location = new Point(433, 211);
+            ActivityLabel.Location = new Point(446, 211);
             ActivityLabel.Text = "Activity Level:";
-            ActivityLevel.Location = new Point(434, 239);
-            BirthdateLabel.Location = new Point(268, 211);
+            ActivityLevel.Location = new Point(447, 239);
+            BirthdateLabel.Location = new Point(274, 211);
             BirthdateLabel.Text = "Birthdate:";
-            Birthdate.Location = new Point(245, 239);
+            Birthdate.Location = new Point(241, 239);
             GenderLabel.Location = new Point(80, 211);
             GenderLabel.Text = "Gender:";
             Gender.Location = new Point(61, 239);

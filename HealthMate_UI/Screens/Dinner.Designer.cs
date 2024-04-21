@@ -1,6 +1,6 @@
 ﻿namespace HealthMate_UI.Screens
 {
-    partial class Breakfast
+    partial class Dinner
     {
         /// <summary>
         /// Required designer variable.
@@ -28,32 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Breakfast));
-            this.button1 = new System.Windows.Forms.Button();
-            this.BrkFstCal = new System.Windows.Forms.TextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dinner));
             this.label1 = new System.Windows.Forms.Label();
+            this.DinnerCal = new System.Windows.Forms.TextBox();
+            this.Enter = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
-            this.button1.Location = new System.Drawing.Point(108, 91);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(62, 33);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Enter";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Enter_Click);
-            // 
-            // BrkFstCal
-            // 
-            this.BrkFstCal.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
-            this.BrkFstCal.Location = new System.Drawing.Point(91, 46);
-            this.BrkFstCal.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.BrkFstCal.Name = "BrkFstCal";
-            this.BrkFstCal.Size = new System.Drawing.Size(96, 33);
-            this.BrkFstCal.TabIndex = 1;
             // 
             // label1
             // 
@@ -63,26 +42,47 @@
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(237, 25);
-            this.label1.TabIndex = 2;
+            this.label1.TabIndex = 8;
             this.label1.Text = "How much caloris in your meal?";
             // 
-            // Breakfast
+            // DinnerCal
+            // 
+            this.DinnerCal.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.DinnerCal.Location = new System.Drawing.Point(91, 46);
+            this.DinnerCal.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.DinnerCal.Name = "DinnerCal";
+            this.DinnerCal.Size = new System.Drawing.Size(96, 33);
+            this.DinnerCal.TabIndex = 7;
+            // 
+            // Enter
+            // 
+            this.Enter.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.Enter.Location = new System.Drawing.Point(108, 91);
+            this.Enter.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.Enter.Name = "Enter";
+            this.Enter.Size = new System.Drawing.Size(62, 33);
+            this.Enter.TabIndex = 6;
+            this.Enter.Text = "Enter";
+            this.Enter.UseVisualStyleBackColor = true;
+            this.Enter.Click += new System.EventHandler(this.Enter_Click);
+            // 
+            // Dinner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(278, 138);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.BrkFstCal);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.DinnerCal);
+            this.Controls.Add(this.Enter);
             this.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Breakfast";
+            this.Name = "Dinner";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Add Breakfast";
-            this.Load += new System.EventHandler(this.Breakfast_Load);
+            this.Text = "Add Dinner";
+            this.Load += new System.EventHandler(this.Dinner_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -90,8 +90,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox BrkFstCal;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox DinnerCal;
+        private System.Windows.Forms.Button Enter;
     }
 }

@@ -63,6 +63,7 @@
             this.LIVEDtxt4 = new System.Windows.Forms.TextBox();
             this.LIVEDtxt3 = new System.Windows.Forms.TextBox();
             this.LIVEDtxt2 = new System.Windows.Forms.TextBox();
+            this.alert = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -364,12 +365,22 @@
             this.LIVEDtxt2.Size = new System.Drawing.Size(150, 33);
             this.LIVEDtxt2.TabIndex = 79;
             // 
+            // alert
+            // 
+            this.alert.Font = new System.Drawing.Font("El Messiri SemiBold", 8F, System.Drawing.FontStyle.Bold);
+            this.alert.Location = new System.Drawing.Point(24, 367);
+            this.alert.Name = "alert";
+            this.alert.Size = new System.Drawing.Size(368, 13);
+            this.alert.TabIndex = 80;
+            this.alert.Text = "label1";
+            // 
             // AgeCalc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(595, 390);
+            this.Controls.Add(this.alert);
             this.Controls.Add(this.LIVEDtxt2);
             this.Controls.Add(this.LIVEDtxt3);
             this.Controls.Add(this.LIVEDtxt4);
@@ -445,5 +456,6 @@
         private System.Windows.Forms.TextBox LIVEDtxt4;
         private System.Windows.Forms.TextBox LIVEDtxt3;
         private System.Windows.Forms.TextBox LIVEDtxt2;
+        private System.Windows.Forms.Label alert;
     }
 }

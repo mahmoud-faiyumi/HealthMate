@@ -30,15 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.Subtitle = new System.Windows.Forms.Label();
-            this.LoginButton = new System.Windows.Forms.Button();
             this.UserNameLable = new System.Windows.Forms.Label();
             this.PasswordLable = new System.Windows.Forms.Label();
-            this.Username = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.CreateAccbtn = new System.Windows.Forms.Button();
-            this.Password = new System.Windows.Forms.TextBox();
-            this.PasswordVisibility = new System.Windows.Forms.Button();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.Username = new Guna.UI2.WinForms.Guna2TextBox();
+            this.Password = new Guna.UI2.WinForms.Guna2TextBox();
+            this.PasswordVisibility = new Guna.UI2.WinForms.Guna2Button();
+            this.LoginButton = new Guna.UI2.WinForms.Guna2Button();
+            this.CreateAccbtn = new Guna.UI2.WinForms.Guna2Button();
             this.Themes = new System.Windows.Forms.ToolStripDropDownButton();
             this.lightThemeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.darkThemeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,6 +54,7 @@
             this.pasteToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,20 +67,6 @@
             this.Subtitle.Size = new System.Drawing.Size(138, 37);
             this.Subtitle.TabIndex = 3;
             this.Subtitle.Text = "HealthMate";
-            // 
-            // LoginButton
-            // 
-            this.LoginButton.AutoSize = true;
-            this.LoginButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LoginButton.FlatAppearance.BorderSize = 0;
-            this.LoginButton.Location = new System.Drawing.Point(265, 215);
-            this.LoginButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.LoginButton.Name = "LoginButton";
-            this.LoginButton.Size = new System.Drawing.Size(84, 35);
-            this.LoginButton.TabIndex = 3;
-            this.LoginButton.Text = "Login";
-            this.LoginButton.UseVisualStyleBackColor = true;
-            this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
             // 
             // UserNameLable
             // 
@@ -100,13 +86,6 @@
             this.PasswordLable.TabIndex = 2;
             this.PasswordLable.Text = "Password:";
             // 
-            // Username
-            // 
-            this.Username.Location = new System.Drawing.Point(57, 127);
-            this.Username.Name = "Username";
-            this.Username.Size = new System.Drawing.Size(204, 33);
-            this.Username.TabIndex = 1;
-            // 
             // label1
             // 
             this.label1.Location = new System.Drawing.Point(197, 291);
@@ -115,63 +94,117 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "If you do not have an account";
             // 
-            // CreateAccbtn
+            // Username
             // 
-            this.CreateAccbtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CreateAccbtn.FlatAppearance.BorderSize = 0;
-            this.CreateAccbtn.Location = new System.Drawing.Point(229, 321);
-            this.CreateAccbtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.CreateAccbtn.Name = "CreateAccbtn";
-            this.CreateAccbtn.Size = new System.Drawing.Size(156, 37);
-            this.CreateAccbtn.TabIndex = 5;
-            this.CreateAccbtn.Text = "Create an account";
-            this.CreateAccbtn.UseVisualStyleBackColor = true;
-            this.CreateAccbtn.Click += new System.EventHandler(this.CreateAccbtn_Click);
+            this.Username.Animated = true;
+            this.Username.BorderRadius = 15;
+            this.Username.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Username.DefaultText = "";
+            this.Username.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Username.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Username.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Username.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Username.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Username.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.Username.ForeColor = System.Drawing.Color.Black;
+            this.Username.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Username.Location = new System.Drawing.Point(57, 127);
+            this.Username.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Username.Name = "Username";
+            this.Username.PasswordChar = '\0';
+            this.Username.PlaceholderText = "";
+            this.Username.SelectedText = "";
+            this.Username.Size = new System.Drawing.Size(204, 33);
+            this.Username.TabIndex = 1;
             // 
             // Password
             // 
+            this.Password.Animated = true;
+            this.Password.BorderRadius = 15;
+            this.Password.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Password.DefaultText = "";
+            this.Password.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Password.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Password.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Password.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Password.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Password.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.Password.ForeColor = System.Drawing.Color.Black;
+            this.Password.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Password.Location = new System.Drawing.Point(351, 127);
+            this.Password.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Password.Name = "Password";
+            this.Password.PasswordChar = '\0';
+            this.Password.PlaceholderText = "";
+            this.Password.SelectedText = "";
             this.Password.Size = new System.Drawing.Size(204, 33);
             this.Password.TabIndex = 2;
             // 
             // PasswordVisibility
             // 
+            this.PasswordVisibility.Animated = true;
+            this.PasswordVisibility.BackColor = System.Drawing.Color.Transparent;
+            this.PasswordVisibility.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.PasswordVisibility.BorderRadius = 3;
+            this.PasswordVisibility.BorderThickness = 1;
             this.PasswordVisibility.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PasswordVisibility.FlatAppearance.BorderSize = 0;
-            this.PasswordVisibility.Location = new System.Drawing.Point(523, 127);
+            this.PasswordVisibility.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.PasswordVisibility.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.PasswordVisibility.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.PasswordVisibility.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.PasswordVisibility.FillColor = System.Drawing.Color.White;
+            this.PasswordVisibility.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.PasswordVisibility.ForeColor = System.Drawing.Color.Black;
+            this.PasswordVisibility.Image = global::HealthMate_UI.Properties.Resources.hide_eye;
+            this.PasswordVisibility.ImageSize = new System.Drawing.Size(28, 28);
+            this.PasswordVisibility.Location = new System.Drawing.Point(522, 127);
             this.PasswordVisibility.Name = "PasswordVisibility";
             this.PasswordVisibility.Size = new System.Drawing.Size(33, 33);
-            this.PasswordVisibility.TabIndex = 4;
-            this.PasswordVisibility.UseVisualStyleBackColor = true;
+            this.PasswordVisibility.TabIndex = 18;
+            this.PasswordVisibility.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.PasswordVisibility.Click += new System.EventHandler(this.PasswordVisibility_Click);
             // 
-            // toolStrip1
+            // LoginButton
             // 
-            this.toolStrip1.BackColor = System.Drawing.Color.Gainsboro;
-            this.toolStrip1.GripMargin = new System.Windows.Forms.Padding(0);
-            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.Themes,
-            this.SelectLanguage,
-            this.newToolStripButton,
-            this.openToolStripButton,
-            this.saveToolStripButton,
-            this.printToolStripButton,
-            this.toolStripSeparator,
-            this.cutToolStripButton,
-            this.copyToolStripButton,
-            this.pasteToolStripButton,
-            this.toolStripSeparator1,
-            this.helpToolStripButton});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Padding = new System.Windows.Forms.Padding(0);
-            this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip1.Size = new System.Drawing.Size(595, 25);
-            this.toolStrip1.Stretch = true;
-            this.toolStrip1.TabIndex = 16;
-            this.toolStrip1.Text = "toolStrip1";
+            this.LoginButton.Animated = true;
+            this.LoginButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(205)))), ((int)(((byte)(210)))));
+            this.LoginButton.BorderRadius = 15;
+            this.LoginButton.BorderThickness = 1;
+            this.LoginButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LoginButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.LoginButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.LoginButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.LoginButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.LoginButton.FillColor = System.Drawing.Color.White;
+            this.LoginButton.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.LoginButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.LoginButton.Location = new System.Drawing.Point(263, 220);
+            this.LoginButton.Name = "LoginButton";
+            this.LoginButton.Size = new System.Drawing.Size(84, 35);
+            this.LoginButton.TabIndex = 3;
+            this.LoginButton.Text = "Login";
+            this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
+            // 
+            // CreateAccbtn
+            // 
+            this.CreateAccbtn.Animated = true;
+            this.CreateAccbtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(205)))), ((int)(((byte)(210)))));
+            this.CreateAccbtn.BorderRadius = 15;
+            this.CreateAccbtn.BorderThickness = 1;
+            this.CreateAccbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CreateAccbtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.CreateAccbtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.CreateAccbtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.CreateAccbtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.CreateAccbtn.FillColor = System.Drawing.Color.White;
+            this.CreateAccbtn.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.CreateAccbtn.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.CreateAccbtn.Location = new System.Drawing.Point(229, 322);
+            this.CreateAccbtn.Name = "CreateAccbtn";
+            this.CreateAccbtn.Size = new System.Drawing.Size(162, 37);
+            this.CreateAccbtn.TabIndex = 20;
+            this.CreateAccbtn.Text = "Create an account";
+            this.CreateAccbtn.Click += new System.EventHandler(this.CreateAccbtn_Click);
             // 
             // Themes
             // 
@@ -303,22 +336,49 @@
             this.helpToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.helpToolStripButton.Text = "He&lp";
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.BackColor = System.Drawing.Color.Gainsboro;
+            this.toolStrip1.GripMargin = new System.Windows.Forms.Padding(0);
+            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Themes,
+            this.SelectLanguage,
+            this.newToolStripButton,
+            this.openToolStripButton,
+            this.saveToolStripButton,
+            this.printToolStripButton,
+            this.toolStripSeparator,
+            this.cutToolStripButton,
+            this.copyToolStripButton,
+            this.pasteToolStripButton,
+            this.toolStripSeparator1,
+            this.helpToolStripButton});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Padding = new System.Windows.Forms.Padding(0);
+            this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.toolStrip1.Size = new System.Drawing.Size(595, 25);
+            this.toolStrip1.Stretch = true;
+            this.toolStrip1.TabIndex = 16;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(595, 380);
-            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.CreateAccbtn);
+            this.Controls.Add(this.LoginButton);
             this.Controls.Add(this.PasswordVisibility);
             this.Controls.Add(this.Password);
-            this.Controls.Add(this.CreateAccbtn);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.Username);
+            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.Subtitle);
             this.Controls.Add(this.PasswordLable);
             this.Controls.Add(this.UserNameLable);
-            this.Controls.Add(this.LoginButton);
             this.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -339,18 +399,20 @@
 
         #endregion
         private System.Windows.Forms.Label Subtitle;
-        private System.Windows.Forms.Button LoginButton;
         private System.Windows.Forms.Label UserNameLable;
         private System.Windows.Forms.Label PasswordLable;
-        private System.Windows.Forms.TextBox Username;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button CreateAccbtn;
-        private System.Windows.Forms.TextBox Password;
-        private System.Windows.Forms.Button PasswordVisibility;
-        private System.Windows.Forms.ToolStrip toolStrip1;
+        private Guna.UI2.WinForms.Guna2TextBox Username;
+        private Guna.UI2.WinForms.Guna2TextBox Password;
+        private Guna.UI2.WinForms.Guna2Button PasswordVisibility;
+        private Guna.UI2.WinForms.Guna2Button LoginButton;
+        private Guna.UI2.WinForms.Guna2Button CreateAccbtn;
         private System.Windows.Forms.ToolStripDropDownButton Themes;
         private System.Windows.Forms.ToolStripMenuItem lightThemeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem darkThemeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripDropDownButton SelectLanguage;
+        private System.Windows.Forms.ToolStripMenuItem arabicToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem englishToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton newToolStripButton;
         private System.Windows.Forms.ToolStripButton openToolStripButton;
         private System.Windows.Forms.ToolStripButton saveToolStripButton;
@@ -361,9 +423,7 @@
         private System.Windows.Forms.ToolStripButton pasteToolStripButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton helpToolStripButton;
-        private System.Windows.Forms.ToolStripDropDownButton SelectLanguage;
-        private System.Windows.Forms.ToolStripMenuItem arabicToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem englishToolStripMenuItem;
+        private System.Windows.Forms.ToolStrip toolStrip1;
     }
 }
 

@@ -34,5 +34,23 @@ namespace HealthMate_UI.Screens
             Breakfast breakfast = new Breakfast();
             breakfast.Show();
         }
+
+        private void Lunch_Click(object sender, EventArgs e)
+        {
+            Lunch lunch = new Lunch();
+            lunch.Show();
+        }
+
+        private void Dinner_Click(object sender, EventArgs e)
+        {
+            Dinner dinner = new Dinner();
+            dinner.Show();
+        }
+
+        private void ExtraMeal_Click(object sender, EventArgs e)
+        {
+            ExtraMeal extraMeal = new ExtraMeal();
+            extraMeal.Show();
+        }
     }
 }

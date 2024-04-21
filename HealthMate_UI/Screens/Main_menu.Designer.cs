@@ -29,12 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main_MenuEN));
-            this.AgeCalcBtn = new System.Windows.Forms.Button();
-            this.HealthMonitorBtn = new System.Windows.Forms.Button();
-            this.UpdateInfoBtn = new System.Windows.Forms.Button();
-            this.CaloriesTrackerBtn = new System.Windows.Forms.Button();
             this.WelcomeMsg = new System.Windows.Forms.Label();
-            this.HappyBirthday = new System.Windows.Forms.Label();
             this.line = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -56,71 +51,31 @@
             this.pasteToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.Subtitle = new System.Windows.Forms.Label();
+            this.circularPictureBox = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.HappyBirthday = new System.Windows.Forms.Label();
+            this.AgeCalcBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.CaloriesTrackerBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.HealthMonitorBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.UpdateInfoBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.Workout = new Guna.UI2.WinForms.Guna2Button();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox)).BeginInit();
             this.SuspendLayout();
-            // 
-            // AgeCalcBtn
-            // 
-            this.AgeCalcBtn.Location = new System.Drawing.Point(42, 110);
-            this.AgeCalcBtn.Name = "AgeCalcBtn";
-            this.AgeCalcBtn.Size = new System.Drawing.Size(192, 75);
-            this.AgeCalcBtn.TabIndex = 37;
-            this.AgeCalcBtn.Text = "Age Calculator";
-            this.AgeCalcBtn.UseVisualStyleBackColor = true;
-            this.AgeCalcBtn.Click += new System.EventHandler(this.AgeCalcBtn_Click);
-            // 
-            // HealthMonitorBtn
-            // 
-            this.HealthMonitorBtn.Location = new System.Drawing.Point(42, 240);
-            this.HealthMonitorBtn.Name = "HealthMonitorBtn";
-            this.HealthMonitorBtn.Size = new System.Drawing.Size(192, 75);
-            this.HealthMonitorBtn.TabIndex = 38;
-            this.HealthMonitorBtn.Text = "Health Monitor";
-            this.HealthMonitorBtn.UseVisualStyleBackColor = true;
-            this.HealthMonitorBtn.Click += new System.EventHandler(this.HealthMonitorBtn_Click);
-            // 
-            // UpdateInfoBtn
-            // 
-            this.UpdateInfoBtn.Location = new System.Drawing.Point(369, 240);
-            this.UpdateInfoBtn.Name = "UpdateInfoBtn";
-            this.UpdateInfoBtn.Size = new System.Drawing.Size(192, 75);
-            this.UpdateInfoBtn.TabIndex = 39;
-            this.UpdateInfoBtn.Text = "Update Your Data";
-            this.UpdateInfoBtn.UseVisualStyleBackColor = true;
-            this.UpdateInfoBtn.Click += new System.EventHandler(this.UpdateInfoBtn_Click);
-            // 
-            // CaloriesTrackerBtn
-            // 
-            this.CaloriesTrackerBtn.Location = new System.Drawing.Point(369, 110);
-            this.CaloriesTrackerBtn.Name = "CaloriesTrackerBtn";
-            this.CaloriesTrackerBtn.Size = new System.Drawing.Size(192, 75);
-            this.CaloriesTrackerBtn.TabIndex = 40;
-            this.CaloriesTrackerBtn.Text = "Calories Tracker";
-            this.CaloriesTrackerBtn.UseVisualStyleBackColor = true;
-            this.CaloriesTrackerBtn.Click += new System.EventHandler(this.CaloriesTrackerBtn_Click);
             // 
             // WelcomeMsg
             // 
-            this.WelcomeMsg.AutoSize = true;
             this.WelcomeMsg.Font = new System.Drawing.Font("El Messiri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WelcomeMsg.Location = new System.Drawing.Point(37, 65);
+            this.WelcomeMsg.Location = new System.Drawing.Point(37, 45);
             this.WelcomeMsg.Name = "WelcomeMsg";
-            this.WelcomeMsg.Size = new System.Drawing.Size(0, 29);
+            this.WelcomeMsg.Size = new System.Drawing.Size(285, 29);
             this.WelcomeMsg.TabIndex = 42;
-            // 
-            // HappyBirthday
-            // 
-            this.HappyBirthday.AutoSize = true;
-            this.HappyBirthday.Location = new System.Drawing.Point(364, 65);
-            this.HappyBirthday.Name = "HappyBirthday";
-            this.HappyBirthday.Size = new System.Drawing.Size(0, 25);
-            this.HappyBirthday.TabIndex = 43;
             // 
             // line
             // 
             this.line.BackColor = System.Drawing.Color.Gray;
-            this.line.Location = new System.Drawing.Point(292, 114);
+            this.line.Location = new System.Drawing.Point(193, 138);
             this.line.Name = "line";
             this.line.Size = new System.Drawing.Size(10, 201);
             this.line.TabIndex = 51;
@@ -130,7 +85,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Gray;
-            this.button1.Location = new System.Drawing.Point(42, 209);
+            this.button1.Location = new System.Drawing.Point(24, 233);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(519, 10);
             this.button1.TabIndex = 52;
@@ -310,15 +265,177 @@
             this.helpToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.helpToolStripButton.Text = "He&lp";
             // 
-            // Subtitle
+            // circularPictureBox
             // 
-            this.Subtitle.AutoSize = true;
-            this.Subtitle.Font = new System.Drawing.Font("El Messiri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Subtitle.Location = new System.Drawing.Point(232, 28);
-            this.Subtitle.Name = "Subtitle";
-            this.Subtitle.Size = new System.Drawing.Size(138, 37);
-            this.Subtitle.TabIndex = 60;
-            this.Subtitle.Text = "HealthMate";
+            this.circularPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.circularPictureBox.FillColor = System.Drawing.Color.Transparent;
+            this.circularPictureBox.ImageRotate = 0F;
+            this.circularPictureBox.Location = new System.Drawing.Point(489, 28);
+            this.circularPictureBox.Name = "circularPictureBox";
+            this.circularPictureBox.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.circularPictureBox.Size = new System.Drawing.Size(78, 78);
+            this.circularPictureBox.TabIndex = 60;
+            this.circularPictureBox.TabStop = false;
+            // 
+            // HappyBirthday
+            // 
+            this.HappyBirthday.Font = new System.Drawing.Font("El Messiri SemiBold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.HappyBirthday.Location = new System.Drawing.Point(37, 76);
+            this.HappyBirthday.Name = "HappyBirthday";
+            this.HappyBirthday.Size = new System.Drawing.Size(285, 29);
+            this.HappyBirthday.TabIndex = 43;
+            // 
+            // AgeCalcBtn
+            // 
+            this.AgeCalcBtn.Animated = true;
+            this.AgeCalcBtn.BackColor = System.Drawing.Color.Transparent;
+            this.AgeCalcBtn.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.AgeCalcBtn.BorderRadius = 15;
+            this.AgeCalcBtn.BorderThickness = 1;
+            this.AgeCalcBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AgeCalcBtn.CustomBorderColor = System.Drawing.Color.Transparent;
+            this.AgeCalcBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.AgeCalcBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.AgeCalcBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.AgeCalcBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.AgeCalcBtn.FillColor = System.Drawing.Color.White;
+            this.AgeCalcBtn.FocusedColor = System.Drawing.Color.Transparent;
+            this.AgeCalcBtn.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.AgeCalcBtn.ForeColor = System.Drawing.Color.Black;
+            this.AgeCalcBtn.Location = new System.Drawing.Point(24, 134);
+            this.AgeCalcBtn.Name = "AgeCalcBtn";
+            this.AgeCalcBtn.Size = new System.Drawing.Size(151, 75);
+            this.AgeCalcBtn.TabIndex = 61;
+            this.AgeCalcBtn.Text = "Age Calculator";
+            this.AgeCalcBtn.Click += new System.EventHandler(this.AgeCalcBtn_Click);
+            // 
+            // CaloriesTrackerBtn
+            // 
+            this.CaloriesTrackerBtn.Animated = true;
+            this.CaloriesTrackerBtn.BackColor = System.Drawing.Color.Transparent;
+            this.CaloriesTrackerBtn.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.CaloriesTrackerBtn.BorderRadius = 15;
+            this.CaloriesTrackerBtn.BorderThickness = 1;
+            this.CaloriesTrackerBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CaloriesTrackerBtn.CustomBorderColor = System.Drawing.Color.Transparent;
+            this.CaloriesTrackerBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.CaloriesTrackerBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.CaloriesTrackerBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.CaloriesTrackerBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.CaloriesTrackerBtn.FillColor = System.Drawing.Color.White;
+            this.CaloriesTrackerBtn.FocusedColor = System.Drawing.Color.Transparent;
+            this.CaloriesTrackerBtn.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.CaloriesTrackerBtn.ForeColor = System.Drawing.Color.Black;
+            this.CaloriesTrackerBtn.Location = new System.Drawing.Point(220, 134);
+            this.CaloriesTrackerBtn.Name = "CaloriesTrackerBtn";
+            this.CaloriesTrackerBtn.Size = new System.Drawing.Size(151, 75);
+            this.CaloriesTrackerBtn.TabIndex = 62;
+            this.CaloriesTrackerBtn.Text = "Calories Tracker";
+            this.CaloriesTrackerBtn.Click += new System.EventHandler(this.CaloriesTrackerBtn_Click);
+            // 
+            // HealthMonitorBtn
+            // 
+            this.HealthMonitorBtn.Animated = true;
+            this.HealthMonitorBtn.BackColor = System.Drawing.Color.Transparent;
+            this.HealthMonitorBtn.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.HealthMonitorBtn.BorderRadius = 15;
+            this.HealthMonitorBtn.BorderThickness = 1;
+            this.HealthMonitorBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.HealthMonitorBtn.CustomBorderColor = System.Drawing.Color.Transparent;
+            this.HealthMonitorBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.HealthMonitorBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.HealthMonitorBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.HealthMonitorBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.HealthMonitorBtn.FillColor = System.Drawing.Color.White;
+            this.HealthMonitorBtn.FocusedColor = System.Drawing.Color.Transparent;
+            this.HealthMonitorBtn.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.HealthMonitorBtn.ForeColor = System.Drawing.Color.Black;
+            this.HealthMonitorBtn.Location = new System.Drawing.Point(24, 264);
+            this.HealthMonitorBtn.Name = "HealthMonitorBtn";
+            this.HealthMonitorBtn.Size = new System.Drawing.Size(151, 75);
+            this.HealthMonitorBtn.TabIndex = 63;
+            this.HealthMonitorBtn.Text = "Health Monitor";
+            this.HealthMonitorBtn.Click += new System.EventHandler(this.HealthMonitorBtn_Click);
+            // 
+            // UpdateInfoBtn
+            // 
+            this.UpdateInfoBtn.Animated = true;
+            this.UpdateInfoBtn.BackColor = System.Drawing.Color.Transparent;
+            this.UpdateInfoBtn.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.UpdateInfoBtn.BorderRadius = 15;
+            this.UpdateInfoBtn.BorderThickness = 1;
+            this.UpdateInfoBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.UpdateInfoBtn.CustomBorderColor = System.Drawing.Color.Transparent;
+            this.UpdateInfoBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.UpdateInfoBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.UpdateInfoBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.UpdateInfoBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.UpdateInfoBtn.FillColor = System.Drawing.Color.White;
+            this.UpdateInfoBtn.FocusedColor = System.Drawing.Color.Transparent;
+            this.UpdateInfoBtn.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.UpdateInfoBtn.ForeColor = System.Drawing.Color.Black;
+            this.UpdateInfoBtn.Location = new System.Drawing.Point(220, 264);
+            this.UpdateInfoBtn.Name = "UpdateInfoBtn";
+            this.UpdateInfoBtn.Size = new System.Drawing.Size(151, 75);
+            this.UpdateInfoBtn.TabIndex = 64;
+            this.UpdateInfoBtn.Text = "Update Your Data";
+            this.UpdateInfoBtn.Click += new System.EventHandler(this.UpdateInfoBtn_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Gray;
+            this.button2.Location = new System.Drawing.Point(388, 138);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(10, 201);
+            this.button2.TabIndex = 65;
+            this.button2.Text = "button1";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.Animated = true;
+            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button1.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.guna2Button1.BorderRadius = 15;
+            this.guna2Button1.BorderThickness = 1;
+            this.guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2Button1.CustomBorderColor = System.Drawing.Color.Transparent;
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.White;
+            this.guna2Button1.FocusedColor = System.Drawing.Color.Transparent;
+            this.guna2Button1.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.guna2Button1.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button1.Location = new System.Drawing.Point(416, 264);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(151, 75);
+            this.guna2Button1.TabIndex = 67;
+            this.guna2Button1.Text = "ابصر شو";
+            // 
+            // Workout
+            // 
+            this.Workout.Animated = true;
+            this.Workout.BackColor = System.Drawing.Color.Transparent;
+            this.Workout.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.Workout.BorderRadius = 15;
+            this.Workout.BorderThickness = 1;
+            this.Workout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Workout.CustomBorderColor = System.Drawing.Color.Transparent;
+            this.Workout.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Workout.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Workout.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Workout.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Workout.FillColor = System.Drawing.Color.White;
+            this.Workout.FocusedColor = System.Drawing.Color.Transparent;
+            this.Workout.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.Workout.ForeColor = System.Drawing.Color.Black;
+            this.Workout.Location = new System.Drawing.Point(416, 134);
+            this.Workout.Name = "Workout";
+            this.Workout.Size = new System.Drawing.Size(151, 75);
+            this.Workout.TabIndex = 66;
+            this.Workout.Text = "Workouts";
             // 
             // Main_MenuEN
             // 
@@ -326,18 +443,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(595, 390);
-            this.Controls.Add(this.Subtitle);
+            this.Controls.Add(this.guna2Button1);
+            this.Controls.Add(this.Workout);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.UpdateInfoBtn);
+            this.Controls.Add(this.HealthMonitorBtn);
+            this.Controls.Add(this.CaloriesTrackerBtn);
+            this.Controls.Add(this.AgeCalcBtn);
+            this.Controls.Add(this.circularPictureBox);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.line);
             this.Controls.Add(this.HappyBirthday);
             this.Controls.Add(this.WelcomeMsg);
-            this.Controls.Add(this.CaloriesTrackerBtn);
-            this.Controls.Add(this.UpdateInfoBtn);
-            this.Controls.Add(this.HealthMonitorBtn);
-            this.Controls.Add(this.AgeCalcBtn);
             this.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Name = "Main_MenuEN";
@@ -347,18 +466,14 @@
             this.Load += new System.EventHandler(this.Main_menuEN_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Button AgeCalcBtn;
-        private System.Windows.Forms.Button HealthMonitorBtn;
-        private System.Windows.Forms.Button UpdateInfoBtn;
-        private System.Windows.Forms.Button CaloriesTrackerBtn;
         private System.Windows.Forms.Label WelcomeMsg;
-        private System.Windows.Forms.Label HappyBirthday;
         private System.Windows.Forms.Button line;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStrip toolStrip1;
@@ -380,6 +495,14 @@
         private System.Windows.Forms.ToolStripDropDownButton SelectLanguage;
         private System.Windows.Forms.ToolStripMenuItem arabicToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem englishToolStripMenuItem;
-        private System.Windows.Forms.Label Subtitle;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox circularPictureBox;
+        private System.Windows.Forms.Label HappyBirthday;
+        private Guna.UI2.WinForms.Guna2Button AgeCalcBtn;
+        private Guna.UI2.WinForms.Guna2Button CaloriesTrackerBtn;
+        private Guna.UI2.WinForms.Guna2Button HealthMonitorBtn;
+        private Guna.UI2.WinForms.Guna2Button UpdateInfoBtn;
+        private System.Windows.Forms.Button button2;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button Workout;
     }
 }

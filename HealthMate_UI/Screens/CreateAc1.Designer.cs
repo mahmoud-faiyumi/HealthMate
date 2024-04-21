@@ -29,22 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateAc1));
-            this.Lname = new System.Windows.Forms.TextBox();
-            this.Fname = new System.Windows.Forms.TextBox();
             this.LnameLable = new System.Windows.Forms.Label();
             this.FnameLable = new System.Windows.Forms.Label();
-            this.Username = new System.Windows.Forms.TextBox();
-            this.Email = new System.Windows.Forms.TextBox();
             this.UsernameLabel = new System.Windows.Forms.Label();
             this.EmailLabel = new System.Windows.Forms.Label();
             this.BirthdateLabel = new System.Windows.Forms.Label();
             this.GenderLabel = new System.Windows.Forms.Label();
-            this.Gender = new System.Windows.Forms.ComboBox();
-            this.Birthdate = new System.Windows.Forms.DateTimePicker();
-            this.Nextbtn = new System.Windows.Forms.Button();
-            this.ActivityLevel = new System.Windows.Forms.ComboBox();
             this.ActivityLabel = new System.Windows.Forms.Label();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.Back = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -64,24 +55,18 @@
             this.pasteToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.ActivityLevel = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.Gender = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.Nextbtn = new Guna.UI2.WinForms.Guna2Button();
+            this.progressBar1 = new Guna.UI2.WinForms.Guna2ProgressBar();
+            this.Birthdate = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Fname = new Guna.UI2.WinForms.Guna2TextBox();
+            this.Username = new Guna.UI2.WinForms.Guna2TextBox();
+            this.Email = new Guna.UI2.WinForms.Guna2TextBox();
+            this.Lname = new Guna.UI2.WinForms.Guna2TextBox();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // Lname
-            // 
-            this.Lname.Location = new System.Drawing.Point(355, 75);
-            this.Lname.Name = "Lname";
-            this.Lname.Size = new System.Drawing.Size(204, 33);
-            this.Lname.TabIndex = 22;
-            this.Lname.TextChanged += new System.EventHandler(this.Lname_TextChanged);
-            // 
-            // Fname
-            // 
-            this.Fname.Location = new System.Drawing.Point(61, 75);
-            this.Fname.Name = "Fname";
-            this.Fname.Size = new System.Drawing.Size(204, 33);
-            this.Fname.TabIndex = 21;
-            this.Fname.TextChanged += new System.EventHandler(this.Fname_TextChanged);
             // 
             // LnameLable
             // 
@@ -100,22 +85,6 @@
             this.FnameLable.Size = new System.Drawing.Size(93, 25);
             this.FnameLable.TabIndex = 19;
             this.FnameLable.Text = "First Name:";
-            // 
-            // Username
-            // 
-            this.Username.Location = new System.Drawing.Point(355, 156);
-            this.Username.Name = "Username";
-            this.Username.Size = new System.Drawing.Size(204, 33);
-            this.Username.TabIndex = 26;
-            this.Username.TextChanged += new System.EventHandler(this.Username_TextChanged);
-            // 
-            // Email
-            // 
-            this.Email.Location = new System.Drawing.Point(61, 156);
-            this.Email.Name = "Email";
-            this.Email.Size = new System.Drawing.Size(204, 33);
-            this.Email.TabIndex = 25;
-            this.Email.TextChanged += new System.EventHandler(this.Email_TextChanged);
             // 
             // UsernameLabel
             // 
@@ -138,7 +107,7 @@
             // BirthdateLabel
             // 
             this.BirthdateLabel.AutoSize = true;
-            this.BirthdateLabel.Location = new System.Drawing.Point(268, 211);
+            this.BirthdateLabel.Location = new System.Drawing.Point(274, 211);
             this.BirthdateLabel.Name = "BirthdateLabel";
             this.BirthdateLabel.Size = new System.Drawing.Size(83, 25);
             this.BirthdateLabel.TabIndex = 28;
@@ -153,61 +122,14 @@
             this.GenderLabel.TabIndex = 27;
             this.GenderLabel.Text = "Gender:";
             // 
-            // Gender
-            // 
-            this.Gender.FormattingEnabled = true;
-            this.Gender.Location = new System.Drawing.Point(61, 239);
-            this.Gender.Name = "Gender";
-            this.Gender.Size = new System.Drawing.Size(106, 33);
-            this.Gender.TabIndex = 29;
-            this.Gender.SelectedIndexChanged += new System.EventHandler(this.Gender_TextChanged);
-            // 
-            // Birthdate
-            // 
-            this.Birthdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.Birthdate.Location = new System.Drawing.Point(246, 239);
-            this.Birthdate.Name = "Birthdate";
-            this.Birthdate.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Birthdate.Size = new System.Drawing.Size(122, 33);
-            this.Birthdate.TabIndex = 30;
-            this.Birthdate.ValueChanged += new System.EventHandler(this.Birthdate_ValueChanged);
-            // 
-            // Nextbtn
-            // 
-            this.Nextbtn.Location = new System.Drawing.Point(273, 312);
-            this.Nextbtn.Name = "Nextbtn";
-            this.Nextbtn.Size = new System.Drawing.Size(67, 30);
-            this.Nextbtn.TabIndex = 31;
-            this.Nextbtn.Text = "Next";
-            this.Nextbtn.UseVisualStyleBackColor = true;
-            this.Nextbtn.Click += new System.EventHandler(this.Nextbtn_Click);
-            // 
-            // ActivityLevel
-            // 
-            this.ActivityLevel.FormattingEnabled = true;
-            this.ActivityLevel.Location = new System.Drawing.Point(434, 239);
-            this.ActivityLevel.Name = "ActivityLevel";
-            this.ActivityLevel.Size = new System.Drawing.Size(106, 33);
-            this.ActivityLevel.TabIndex = 39;
-            this.ActivityLevel.SelectedIndexChanged += new System.EventHandler(this.ActivityLevel_TextChanged);
-            // 
             // ActivityLabel
             // 
             this.ActivityLabel.AutoSize = true;
-            this.ActivityLabel.Location = new System.Drawing.Point(433, 211);
+            this.ActivityLabel.Location = new System.Drawing.Point(446, 211);
             this.ActivityLabel.Name = "ActivityLabel";
             this.ActivityLabel.Size = new System.Drawing.Size(111, 25);
             this.ActivityLabel.TabIndex = 38;
             this.ActivityLabel.Text = "Activity Level:";
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(236, 348);
-            this.progressBar1.Maximum = 11;
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(143, 23);
-            this.progressBar1.Step = 1;
-            this.progressBar1.TabIndex = 40;
             // 
             // toolStrip1
             // 
@@ -382,27 +304,221 @@
             this.helpToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.helpToolStripButton.Text = "He&lp";
             // 
+            // ActivityLevel
+            // 
+            this.ActivityLevel.BackColor = System.Drawing.Color.Transparent;
+            this.ActivityLevel.BorderRadius = 15;
+            this.ActivityLevel.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ActivityLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ActivityLevel.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ActivityLevel.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ActivityLevel.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.ActivityLevel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.ActivityLevel.ItemHeight = 30;
+            this.ActivityLevel.Location = new System.Drawing.Point(447, 239);
+            this.ActivityLevel.Name = "ActivityLevel";
+            this.ActivityLevel.Size = new System.Drawing.Size(106, 36);
+            this.ActivityLevel.TabIndex = 7;
+            this.ActivityLevel.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.ActivityLevel.SelectedIndexChanged += new System.EventHandler(this.ActivityLevel_TextChanged);
+            // 
+            // Gender
+            // 
+            this.Gender.BackColor = System.Drawing.Color.Transparent;
+            this.Gender.BorderRadius = 15;
+            this.Gender.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.Gender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Gender.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Gender.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Gender.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.Gender.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.Gender.ItemHeight = 30;
+            this.Gender.Location = new System.Drawing.Point(61, 239);
+            this.Gender.Name = "Gender";
+            this.Gender.Size = new System.Drawing.Size(106, 36);
+            this.Gender.TabIndex = 5;
+            this.Gender.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.Gender.SelectedIndexChanged += new System.EventHandler(this.Gender_TextChanged);
+            // 
+            // Nextbtn
+            // 
+            this.Nextbtn.Animated = true;
+            this.Nextbtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(205)))), ((int)(((byte)(210)))));
+            this.Nextbtn.BorderRadius = 15;
+            this.Nextbtn.BorderThickness = 1;
+            this.Nextbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Nextbtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Nextbtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Nextbtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Nextbtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Nextbtn.FillColor = System.Drawing.Color.White;
+            this.Nextbtn.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.Nextbtn.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Nextbtn.Location = new System.Drawing.Point(277, 321);
+            this.Nextbtn.Name = "Nextbtn";
+            this.Nextbtn.Size = new System.Drawing.Size(76, 32);
+            this.Nextbtn.TabIndex = 8;
+            this.Nextbtn.Text = "Next";
+            this.Nextbtn.Click += new System.EventHandler(this.Nextbtn_Click);
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.BorderRadius = 10;
+            this.progressBar1.Location = new System.Drawing.Point(191, 371);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.ProgressColor = System.Drawing.Color.Red;
+            this.progressBar1.ProgressColor2 = System.Drawing.Color.Lime;
+            this.progressBar1.Size = new System.Drawing.Size(247, 25);
+            this.progressBar1.TabIndex = 63;
+            this.progressBar1.Text = "guna2ProgressBar1";
+            this.progressBar1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            // 
+            // Birthdate
+            // 
+            this.Birthdate.Animated = true;
+            this.Birthdate.BorderRadius = 15;
+            this.Birthdate.Checked = true;
+            this.Birthdate.CustomFormat = "dd/MM/yyyy";
+            this.Birthdate.FillColor = System.Drawing.Color.White;
+            this.Birthdate.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.Birthdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.Birthdate.Location = new System.Drawing.Point(241, 239);
+            this.Birthdate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.Birthdate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.Birthdate.Name = "Birthdate";
+            this.Birthdate.Size = new System.Drawing.Size(148, 36);
+            this.Birthdate.TabIndex = 6;
+            this.Birthdate.TabStop = false;
+            this.Birthdate.Value = new System.DateTime(2024, 3, 6, 21, 22, 8, 37);
+            this.Birthdate.ValueChanged += new System.EventHandler(this.Birthdate_ValueChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(403, 343);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(34, 25);
+            this.label1.TabIndex = 64;
+            this.label1.Text = "0%";
+            // 
+            // Fname
+            // 
+            this.Fname.Animated = true;
+            this.Fname.BorderRadius = 15;
+            this.Fname.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Fname.DefaultText = "";
+            this.Fname.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Fname.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Fname.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Fname.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Fname.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Fname.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.Fname.ForeColor = System.Drawing.Color.Black;
+            this.Fname.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Fname.Location = new System.Drawing.Point(61, 75);
+            this.Fname.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Fname.Name = "Fname";
+            this.Fname.PasswordChar = '\0';
+            this.Fname.PlaceholderText = "";
+            this.Fname.SelectedText = "";
+            this.Fname.Size = new System.Drawing.Size(204, 33);
+            this.Fname.TabIndex = 1;
+            this.Fname.TextChanged += new System.EventHandler(this.Fname_TextChanged);
+            // 
+            // Username
+            // 
+            this.Username.Animated = true;
+            this.Username.BorderRadius = 15;
+            this.Username.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Username.DefaultText = "";
+            this.Username.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Username.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Username.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Username.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Username.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Username.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.Username.ForeColor = System.Drawing.Color.Black;
+            this.Username.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Username.Location = new System.Drawing.Point(355, 156);
+            this.Username.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Username.Name = "Username";
+            this.Username.PasswordChar = '\0';
+            this.Username.PlaceholderText = "";
+            this.Username.SelectedText = "";
+            this.Username.Size = new System.Drawing.Size(204, 33);
+            this.Username.TabIndex = 4;
+            this.Username.TextChanged += new System.EventHandler(this.Username_TextChanged);
+            // 
+            // Email
+            // 
+            this.Email.Animated = true;
+            this.Email.BorderRadius = 15;
+            this.Email.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Email.DefaultText = "";
+            this.Email.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Email.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Email.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Email.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Email.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Email.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.Email.ForeColor = System.Drawing.Color.Black;
+            this.Email.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Email.Location = new System.Drawing.Point(61, 156);
+            this.Email.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Email.Name = "Email";
+            this.Email.PasswordChar = '\0';
+            this.Email.PlaceholderText = "";
+            this.Email.SelectedText = "";
+            this.Email.Size = new System.Drawing.Size(204, 33);
+            this.Email.TabIndex = 3;
+            this.Email.TextChanged += new System.EventHandler(this.Email_TextChanged);
+            // 
+            // Lname
+            // 
+            this.Lname.Animated = true;
+            this.Lname.BorderRadius = 15;
+            this.Lname.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Lname.DefaultText = "";
+            this.Lname.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Lname.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Lname.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Lname.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Lname.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Lname.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.Lname.ForeColor = System.Drawing.Color.Black;
+            this.Lname.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Lname.Location = new System.Drawing.Point(355, 75);
+            this.Lname.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Lname.Name = "Lname";
+            this.Lname.PasswordChar = '\0';
+            this.Lname.PlaceholderText = "";
+            this.Lname.SelectedText = "";
+            this.Lname.Size = new System.Drawing.Size(204, 33);
+            this.Lname.TabIndex = 2;
+            this.Lname.TextChanged += new System.EventHandler(this.Lname_TextChanged);
+            // 
             // CreateAc1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(595, 390);
-            this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.progressBar1);
-            this.Controls.Add(this.ActivityLevel);
-            this.Controls.Add(this.ActivityLabel);
-            this.Controls.Add(this.Nextbtn);
+            this.ClientSize = new System.Drawing.Size(595, 408);
+            this.Controls.Add(this.Lname);
+            this.Controls.Add(this.Email);
+            this.Controls.Add(this.Username);
+            this.Controls.Add(this.Fname);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.Birthdate);
+            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.Nextbtn);
             this.Controls.Add(this.Gender);
+            this.Controls.Add(this.ActivityLevel);
+            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.ActivityLabel);
             this.Controls.Add(this.BirthdateLabel);
             this.Controls.Add(this.GenderLabel);
-            this.Controls.Add(this.Username);
-            this.Controls.Add(this.Email);
             this.Controls.Add(this.UsernameLabel);
             this.Controls.Add(this.EmailLabel);
-            this.Controls.Add(this.Lname);
-            this.Controls.Add(this.Fname);
             this.Controls.Add(this.LnameLable);
             this.Controls.Add(this.FnameLable);
             this.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
@@ -423,22 +539,13 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox Lname;
-        private System.Windows.Forms.TextBox Fname;
         private System.Windows.Forms.Label LnameLable;
         private System.Windows.Forms.Label FnameLable;
-        private System.Windows.Forms.TextBox Username;
-        private System.Windows.Forms.TextBox Email;
         private System.Windows.Forms.Label UsernameLabel;
         private System.Windows.Forms.Label EmailLabel;
         private System.Windows.Forms.Label BirthdateLabel;
         private System.Windows.Forms.Label GenderLabel;
-        private System.Windows.Forms.ComboBox Gender;
-        private System.Windows.Forms.DateTimePicker Birthdate;
-        private System.Windows.Forms.Button Nextbtn;
-        private System.Windows.Forms.ComboBox ActivityLevel;
         private System.Windows.Forms.Label ActivityLabel;
-        private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton Back;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
@@ -458,5 +565,15 @@
         private System.Windows.Forms.ToolStripDropDownButton SelectLanguage;
         private System.Windows.Forms.ToolStripMenuItem arabicToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem englishToolStripMenuItem;
+        private Guna.UI2.WinForms.Guna2ComboBox ActivityLevel;
+        private Guna.UI2.WinForms.Guna2ComboBox Gender;
+        private Guna.UI2.WinForms.Guna2Button Nextbtn;
+        private Guna.UI2.WinForms.Guna2ProgressBar progressBar1;
+        private Guna.UI2.WinForms.Guna2DateTimePicker Birthdate;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2TextBox Fname;
+        private Guna.UI2.WinForms.Guna2TextBox Username;
+        private Guna.UI2.WinForms.Guna2TextBox Email;
+        private Guna.UI2.WinForms.Guna2TextBox Lname;
     }
 }

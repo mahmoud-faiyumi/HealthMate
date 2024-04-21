@@ -30,31 +30,31 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Calories_Tracker));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.Back = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.Breakfast = new System.Windows.Forms.Button();
+            this.Lunch = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.ExtraMeal = new System.Windows.Forms.Button();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Back = new System.Windows.Forms.ToolStripButton();
             this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.printToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.cutToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.copyToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.pasteToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.Breakfast = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -84,6 +84,101 @@
             this.toolStrip1.TabIndex = 73;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator
+            // 
+            this.toolStripSeparator.Name = "toolStripSeparator";
+            this.toolStripSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // Breakfast
+            // 
+            this.Breakfast.Location = new System.Drawing.Point(36, 116);
+            this.Breakfast.Name = "Breakfast";
+            this.Breakfast.Size = new System.Drawing.Size(101, 28);
+            this.Breakfast.TabIndex = 75;
+            this.Breakfast.Text = "+ Breakfast";
+            this.Breakfast.UseVisualStyleBackColor = true;
+            this.Breakfast.Click += new System.EventHandler(this.Breakfast_Click);
+            // 
+            // Lunch
+            // 
+            this.Lunch.Location = new System.Drawing.Point(188, 116);
+            this.Lunch.Name = "Lunch";
+            this.Lunch.Size = new System.Drawing.Size(79, 28);
+            this.Lunch.TabIndex = 76;
+            this.Lunch.Text = "+ Lunch";
+            this.Lunch.UseVisualStyleBackColor = true;
+            this.Lunch.Click += new System.EventHandler(this.Lunch_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(326, 116);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(83, 28);
+            this.button3.TabIndex = 77;
+            this.button3.Text = "+ Dinner";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Dinner_Click);
+            // 
+            // ExtraMeal
+            // 
+            this.ExtraMeal.Location = new System.Drawing.Point(455, 116);
+            this.ExtraMeal.Name = "ExtraMeal";
+            this.ExtraMeal.Size = new System.Drawing.Size(110, 28);
+            this.ExtraMeal.TabIndex = 78;
+            this.ExtraMeal.Text = "+ Extra meal";
+            this.ExtraMeal.UseVisualStyleBackColor = true;
+            this.ExtraMeal.Click += new System.EventHandler(this.ExtraMeal_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::HealthMate_UI.Properties.Resources.lunch;
+            this.pictureBox4.Location = new System.Drawing.Point(176, 60);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 82;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::HealthMate_UI.Properties.Resources.dinner1;
+            this.pictureBox3.Location = new System.Drawing.Point(317, 60);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 81;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::HealthMate_UI.Properties.Resources.extra_meal;
+            this.pictureBox2.Location = new System.Drawing.Point(459, 49);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(100, 61);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 80;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::HealthMate_UI.Properties.Resources.breakfast;
+            this.pictureBox1.Location = new System.Drawing.Point(37, 40);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 70);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 79;
+            this.pictureBox1.TabStop = false;
+            // 
             // Back
             // 
             this.Back.Image = ((System.Drawing.Image)(resources.GetObject("Back.Image")));
@@ -92,11 +187,6 @@
             this.Back.Size = new System.Drawing.Size(52, 22);
             this.Back.Text = "Back";
             this.Back.Click += new System.EventHandler(this.Back_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // newToolStripButton
             // 
@@ -134,11 +224,6 @@
             this.printToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.printToolStripButton.Text = "&Print";
             // 
-            // toolStripSeparator
-            // 
-            this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(6, 25);
-            // 
             // cutToolStripButton
             // 
             this.cutToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -166,11 +251,6 @@
             this.pasteToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.pasteToolStripButton.Text = "&Paste";
             // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
             // helpToolStripButton
             // 
             this.helpToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -179,83 +259,6 @@
             this.helpToolStripButton.Name = "helpToolStripButton";
             this.helpToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.helpToolStripButton.Text = "He&lp";
-            // 
-            // Breakfast
-            // 
-            this.Breakfast.Location = new System.Drawing.Point(36, 116);
-            this.Breakfast.Name = "Breakfast";
-            this.Breakfast.Size = new System.Drawing.Size(101, 28);
-            this.Breakfast.TabIndex = 75;
-            this.Breakfast.Text = "+ Breakfast";
-            this.Breakfast.UseVisualStyleBackColor = true;
-            this.Breakfast.Click += new System.EventHandler(this.Breakfast_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(188, 116);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(79, 28);
-            this.button2.TabIndex = 76;
-            this.button2.Text = "+ Lunch";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(326, 116);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(83, 28);
-            this.button3.TabIndex = 77;
-            this.button3.Text = "+ Dinner";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(455, 116);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(110, 28);
-            this.button4.TabIndex = 78;
-            this.button4.Text = "+ Extra meal";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::HealthMate_UI.Properties.Resources.breakfast;
-            this.pictureBox1.Location = new System.Drawing.Point(37, 40);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 70);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 79;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::HealthMate_UI.Properties.Resources.extra_meal;
-            this.pictureBox2.Location = new System.Drawing.Point(459, 49);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(100, 61);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 80;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::HealthMate_UI.Properties.Resources.dinner1;
-            this.pictureBox3.Location = new System.Drawing.Point(317, 60);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 81;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::HealthMate_UI.Properties.Resources.lunch;
-            this.pictureBox4.Location = new System.Drawing.Point(176, 60);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 82;
-            this.pictureBox4.TabStop = false;
             // 
             // Calories_Tracker
             // 
@@ -267,9 +270,9 @@
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.ExtraMeal);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.Lunch);
             this.Controls.Add(this.Breakfast);
             this.Controls.Add(this.toolStrip1);
             this.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
@@ -283,10 +286,10 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Calories_Tracker_FormClosing);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -308,9 +311,9 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton helpToolStripButton;
         private System.Windows.Forms.Button Breakfast;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button Lunch;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button ExtraMeal;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;

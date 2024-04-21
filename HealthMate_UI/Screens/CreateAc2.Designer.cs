@@ -29,57 +29,45 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateAc2));
-            this.RePassword = new System.Windows.Forms.TextBox();
-            this.Password = new System.Windows.Forms.TextBox();
             this.RePassLabel = new System.Windows.Forms.Label();
             this.PassLabel = new System.Windows.Forms.Label();
-            this.Weight = new System.Windows.Forms.TextBox();
-            this.Height_cm = new System.Windows.Forms.TextBox();
             this.WeightLable = new System.Windows.Forms.Label();
             this.HeightLable = new System.Windows.Forms.Label();
-            this.CreateAccbtn = new System.Windows.Forms.Button();
             this.PasswordMatchLabel = new System.Windows.Forms.Label();
             this.PasswordStrengthLabel = new System.Windows.Forms.Label();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.PasswordVisibilityRE = new System.Windows.Forms.Button();
-            this.PasswordVisibility = new System.Windows.Forms.Button();
-            this.InchesToCm = new System.Windows.Forms.Button();
-            this.KGToLB = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.Back = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.FileTextBox = new System.Windows.Forms.Label();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.ChangePPlabel = new System.Windows.Forms.Label();
+            this.progressBar1 = new Guna.UI2.WinForms.Guna2CircleProgressBar();
+            this.label1 = new System.Windows.Forms.Label();
+            this.BrowseButton = new Guna.UI2.WinForms.Guna2Button();
+            this.Height_cm = new Guna.UI2.WinForms.Guna2TextBox();
+            this.RePassword = new Guna.UI2.WinForms.Guna2TextBox();
+            this.Password = new Guna.UI2.WinForms.Guna2TextBox();
+            this.Weight = new Guna.UI2.WinForms.Guna2TextBox();
+            this.CreateAccbtn = new Guna.UI2.WinForms.Guna2Button();
+            this.InchesToCm = new Guna.UI2.WinForms.Guna2Button();
+            this.PasswordVisibilityRE = new Guna.UI2.WinForms.Guna2Button();
+            this.PasswordVisibility = new Guna.UI2.WinForms.Guna2Button();
+            this.KGToLB = new Guna.UI2.WinForms.Guna2Button();
+            this.circularPictureBox = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.Back = new System.Windows.Forms.ToolStripButton();
             this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.printToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.cutToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.copyToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.pasteToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.BrowseButton = new System.Windows.Forms.Button();
-            this.FileTextBox = new System.Windows.Forms.Label();
-            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.ChangePPlabel = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
+            this.progressBar1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox)).BeginInit();
             this.SuspendLayout();
-            // 
-            // RePassword
-            // 
-            this.RePassword.Location = new System.Drawing.Point(355, 164);
-            this.RePassword.Name = "RePassword";
-            this.RePassword.Size = new System.Drawing.Size(204, 33);
-            this.RePassword.TabIndex = 34;
-            this.RePassword.TextChanged += new System.EventHandler(this.RePassword_TextChanged);
-            // 
-            // Password
-            // 
-            this.Password.Location = new System.Drawing.Point(51, 164);
-            this.Password.Name = "Password";
-            this.Password.Size = new System.Drawing.Size(204, 33);
-            this.Password.TabIndex = 33;
-            this.Password.TextChanged += new System.EventHandler(this.Password_TextChanged);
             // 
             // RePassLabel
             // 
@@ -99,22 +87,6 @@
             this.PassLabel.TabIndex = 31;
             this.PassLabel.Text = "Password:";
             // 
-            // Weight
-            // 
-            this.Weight.Location = new System.Drawing.Point(355, 76);
-            this.Weight.Name = "Weight";
-            this.Weight.Size = new System.Drawing.Size(204, 33);
-            this.Weight.TabIndex = 30;
-            this.Weight.TextChanged += new System.EventHandler(this.Weight_TextChanged);
-            // 
-            // Height_cm
-            // 
-            this.Height_cm.Location = new System.Drawing.Point(51, 76);
-            this.Height_cm.Name = "Height_cm";
-            this.Height_cm.Size = new System.Drawing.Size(204, 33);
-            this.Height_cm.TabIndex = 29;
-            this.Height_cm.TextChanged += new System.EventHandler(this.Height_cm_TextChanged);
-            // 
             // WeightLable
             // 
             this.WeightLable.AutoSize = true;
@@ -133,83 +105,23 @@
             this.HeightLable.TabIndex = 27;
             this.HeightLable.Text = "Height:";
             // 
-            // CreateAccbtn
-            // 
-            this.CreateAccbtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CreateAccbtn.Location = new System.Drawing.Point(229, 314);
-            this.CreateAccbtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.CreateAccbtn.Name = "CreateAccbtn";
-            this.CreateAccbtn.Size = new System.Drawing.Size(156, 31);
-            this.CreateAccbtn.TabIndex = 36;
-            this.CreateAccbtn.Text = "Create an account";
-            this.CreateAccbtn.UseVisualStyleBackColor = true;
-            this.CreateAccbtn.Click += new System.EventHandler(this.CreateAccbtn_Click);
-            // 
             // PasswordMatchLabel
             // 
-            this.PasswordMatchLabel.AutoSize = true;
             this.PasswordMatchLabel.Font = new System.Drawing.Font("El Messiri", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PasswordMatchLabel.ForeColor = System.Drawing.Color.Red;
-            this.PasswordMatchLabel.Location = new System.Drawing.Point(352, 200);
+            this.PasswordMatchLabel.Location = new System.Drawing.Point(355, 200);
             this.PasswordMatchLabel.Name = "PasswordMatchLabel";
-            this.PasswordMatchLabel.Size = new System.Drawing.Size(0, 17);
+            this.PasswordMatchLabel.Size = new System.Drawing.Size(204, 17);
             this.PasswordMatchLabel.TabIndex = 37;
             // 
             // PasswordStrengthLabel
             // 
-            this.PasswordStrengthLabel.AutoSize = true;
             this.PasswordStrengthLabel.Font = new System.Drawing.Font("El Messiri", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PasswordStrengthLabel.ForeColor = System.Drawing.Color.Black;
-            this.PasswordStrengthLabel.Location = new System.Drawing.Point(48, 200);
+            this.PasswordStrengthLabel.Location = new System.Drawing.Point(51, 200);
             this.PasswordStrengthLabel.Name = "PasswordStrengthLabel";
-            this.PasswordStrengthLabel.Size = new System.Drawing.Size(0, 17);
+            this.PasswordStrengthLabel.Size = new System.Drawing.Size(204, 17);
             this.PasswordStrengthLabel.TabIndex = 38;
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(236, 352);
-            this.progressBar1.Maximum = 11;
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(143, 23);
-            this.progressBar1.Step = 1;
-            this.progressBar1.TabIndex = 43;
-            // 
-            // PasswordVisibilityRE
-            // 
-            this.PasswordVisibilityRE.BackColor = System.Drawing.Color.White;
-            this.PasswordVisibilityRE.Location = new System.Drawing.Point(526, 164);
-            this.PasswordVisibilityRE.Name = "PasswordVisibilityRE";
-            this.PasswordVisibilityRE.Size = new System.Drawing.Size(33, 33);
-            this.PasswordVisibilityRE.TabIndex = 44;
-            this.PasswordVisibilityRE.UseVisualStyleBackColor = false;
-            this.PasswordVisibilityRE.Click += new System.EventHandler(this.PasswordVisibilityRE_Click);
-            // 
-            // PasswordVisibility
-            // 
-            this.PasswordVisibility.Location = new System.Drawing.Point(222, 164);
-            this.PasswordVisibility.Name = "PasswordVisibility";
-            this.PasswordVisibility.Size = new System.Drawing.Size(33, 33);
-            this.PasswordVisibility.TabIndex = 45;
-            this.PasswordVisibility.UseVisualStyleBackColor = true;
-            this.PasswordVisibility.Click += new System.EventHandler(this.PasswordVisibility_Click);
-            // 
-            // InchesToCm
-            // 
-            this.InchesToCm.Location = new System.Drawing.Point(222, 76);
-            this.InchesToCm.Name = "InchesToCm";
-            this.InchesToCm.Size = new System.Drawing.Size(33, 33);
-            this.InchesToCm.TabIndex = 46;
-            this.InchesToCm.UseVisualStyleBackColor = true;
-            this.InchesToCm.Click += new System.EventHandler(this.InchesToCm_Click);
-            // 
-            // KGToLB
-            // 
-            this.KGToLB.Location = new System.Drawing.Point(526, 76);
-            this.KGToLB.Name = "KGToLB";
-            this.KGToLB.Size = new System.Drawing.Size(33, 33);
-            this.KGToLB.TabIndex = 47;
-            this.KGToLB.UseVisualStyleBackColor = true;
-            this.KGToLB.Click += new System.EventHandler(this.KGToLB_Click);
             // 
             // toolStrip1
             // 
@@ -238,6 +150,308 @@
             this.toolStrip1.TabIndex = 59;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator
+            // 
+            this.toolStripSeparator.Name = "toolStripSeparator";
+            this.toolStripSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // FileTextBox
+            // 
+            this.FileTextBox.AutoSize = true;
+            this.FileTextBox.Font = new System.Drawing.Font("El Messiri SemiBold", 9F, System.Drawing.FontStyle.Bold);
+            this.FileTextBox.Location = new System.Drawing.Point(268, 287);
+            this.FileTextBox.Name = "FileTextBox";
+            this.FileTextBox.Size = new System.Drawing.Size(0, 19);
+            this.FileTextBox.TabIndex = 75;
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.FileName = "openFileDialog1";
+            // 
+            // ChangePPlabel
+            // 
+            this.ChangePPlabel.AutoSize = true;
+            this.ChangePPlabel.Location = new System.Drawing.Point(31, 231);
+            this.ChangePPlabel.Name = "ChangePPlabel";
+            this.ChangePPlabel.Size = new System.Drawing.Size(170, 25);
+            this.ChangePPlabel.TabIndex = 76;
+            this.ChangePPlabel.Text = "Choose profile picture";
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Controls.Add(this.label1);
+            this.progressBar1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.progressBar1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.progressBar1.ForeColor = System.Drawing.Color.White;
+            this.progressBar1.Location = new System.Drawing.Point(415, 240);
+            this.progressBar1.Minimum = 0;
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.ProgressBrushMode = Guna.UI2.WinForms.Enums.BrushMode.SolidTransition;
+            this.progressBar1.ProgressColor = System.Drawing.Color.Red;
+            this.progressBar1.ProgressColor2 = System.Drawing.Color.Lime;
+            this.progressBar1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.progressBar1.Size = new System.Drawing.Size(133, 133);
+            this.progressBar1.TabIndex = 77;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(41, 52);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 25);
+            this.label1.TabIndex = 65;
+            this.label1.Text = "100%";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // BrowseButton
+            // 
+            this.BrowseButton.Animated = true;
+            this.BrowseButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(205)))), ((int)(((byte)(210)))));
+            this.BrowseButton.BorderRadius = 15;
+            this.BrowseButton.BorderThickness = 1;
+            this.BrowseButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BrowseButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BrowseButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BrowseButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BrowseButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BrowseButton.FillColor = System.Drawing.Color.White;
+            this.BrowseButton.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.BrowseButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.BrowseButton.Location = new System.Drawing.Point(258, 253);
+            this.BrowseButton.Name = "BrowseButton";
+            this.BrowseButton.Size = new System.Drawing.Size(94, 30);
+            this.BrowseButton.TabIndex = 5;
+            this.BrowseButton.Text = "Browse";
+            this.BrowseButton.Click += new System.EventHandler(this.BrowseButton_Click);
+            // 
+            // Height_cm
+            // 
+            this.Height_cm.BorderRadius = 15;
+            this.Height_cm.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Height_cm.DefaultText = "";
+            this.Height_cm.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Height_cm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Height_cm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Height_cm.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Height_cm.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Height_cm.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.Height_cm.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Height_cm.Location = new System.Drawing.Point(51, 76);
+            this.Height_cm.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Height_cm.Name = "Height_cm";
+            this.Height_cm.PasswordChar = '\0';
+            this.Height_cm.PlaceholderText = "";
+            this.Height_cm.SelectedText = "";
+            this.Height_cm.Size = new System.Drawing.Size(204, 33);
+            this.Height_cm.TabIndex = 1;
+            this.Height_cm.TextChanged += new System.EventHandler(this.Height_cm_TextChanged);
+            // 
+            // RePassword
+            // 
+            this.RePassword.BorderRadius = 15;
+            this.RePassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.RePassword.DefaultText = "";
+            this.RePassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.RePassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.RePassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.RePassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.RePassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.RePassword.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.RePassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.RePassword.Location = new System.Drawing.Point(355, 164);
+            this.RePassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.RePassword.Name = "RePassword";
+            this.RePassword.PasswordChar = '\0';
+            this.RePassword.PlaceholderText = "";
+            this.RePassword.SelectedText = "";
+            this.RePassword.Size = new System.Drawing.Size(204, 33);
+            this.RePassword.TabIndex = 4;
+            this.RePassword.TextChanged += new System.EventHandler(this.RePassword_TextChanged);
+            // 
+            // Password
+            // 
+            this.Password.BorderRadius = 15;
+            this.Password.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Password.DefaultText = "";
+            this.Password.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Password.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Password.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Password.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Password.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Password.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.Password.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Password.Location = new System.Drawing.Point(51, 164);
+            this.Password.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Password.Name = "Password";
+            this.Password.PasswordChar = '\0';
+            this.Password.PlaceholderText = "";
+            this.Password.SelectedText = "";
+            this.Password.Size = new System.Drawing.Size(204, 33);
+            this.Password.TabIndex = 3;
+            this.Password.TextChanged += new System.EventHandler(this.Password_TextChanged);
+            // 
+            // Weight
+            // 
+            this.Weight.BorderRadius = 15;
+            this.Weight.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Weight.DefaultText = "";
+            this.Weight.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Weight.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Weight.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Weight.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Weight.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Weight.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.Weight.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Weight.Location = new System.Drawing.Point(355, 76);
+            this.Weight.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Weight.Name = "Weight";
+            this.Weight.PasswordChar = '\0';
+            this.Weight.PlaceholderText = "";
+            this.Weight.SelectedText = "";
+            this.Weight.Size = new System.Drawing.Size(204, 33);
+            this.Weight.TabIndex = 2;
+            this.Weight.TextChanged += new System.EventHandler(this.Weight_TextChanged);
+            // 
+            // CreateAccbtn
+            // 
+            this.CreateAccbtn.Animated = true;
+            this.CreateAccbtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(205)))), ((int)(((byte)(210)))));
+            this.CreateAccbtn.BorderRadius = 15;
+            this.CreateAccbtn.BorderThickness = 1;
+            this.CreateAccbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CreateAccbtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.CreateAccbtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.CreateAccbtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.CreateAccbtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.CreateAccbtn.FillColor = System.Drawing.Color.White;
+            this.CreateAccbtn.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.CreateAccbtn.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.CreateAccbtn.Location = new System.Drawing.Point(224, 330);
+            this.CreateAccbtn.Name = "CreateAccbtn";
+            this.CreateAccbtn.Size = new System.Drawing.Size(165, 31);
+            this.CreateAccbtn.TabIndex = 6;
+            this.CreateAccbtn.Text = "Create an account";
+            this.CreateAccbtn.Click += new System.EventHandler(this.CreateAccbtn_Click);
+            // 
+            // InchesToCm
+            // 
+            this.InchesToCm.Animated = true;
+            this.InchesToCm.BackColor = System.Drawing.Color.Transparent;
+            this.InchesToCm.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.InchesToCm.BorderRadius = 3;
+            this.InchesToCm.BorderThickness = 1;
+            this.InchesToCm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.InchesToCm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.InchesToCm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.InchesToCm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.InchesToCm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.InchesToCm.FillColor = System.Drawing.Color.White;
+            this.InchesToCm.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.InchesToCm.ForeColor = System.Drawing.Color.Black;
+            this.InchesToCm.Image = global::HealthMate_UI.Properties.Resources.inches_01;
+            this.InchesToCm.ImageSize = new System.Drawing.Size(28, 28);
+            this.InchesToCm.Location = new System.Drawing.Point(222, 76);
+            this.InchesToCm.Name = "InchesToCm";
+            this.InchesToCm.Size = new System.Drawing.Size(33, 33);
+            this.InchesToCm.TabIndex = 87;
+            this.InchesToCm.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.InchesToCm.Click += new System.EventHandler(this.InchesToCm_Click);
+            // 
+            // PasswordVisibilityRE
+            // 
+            this.PasswordVisibilityRE.Animated = true;
+            this.PasswordVisibilityRE.BackColor = System.Drawing.Color.Transparent;
+            this.PasswordVisibilityRE.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.PasswordVisibilityRE.BorderRadius = 3;
+            this.PasswordVisibilityRE.BorderThickness = 1;
+            this.PasswordVisibilityRE.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PasswordVisibilityRE.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.PasswordVisibilityRE.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.PasswordVisibilityRE.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.PasswordVisibilityRE.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.PasswordVisibilityRE.FillColor = System.Drawing.Color.White;
+            this.PasswordVisibilityRE.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.PasswordVisibilityRE.ForeColor = System.Drawing.Color.Black;
+            this.PasswordVisibilityRE.Image = global::HealthMate_UI.Properties.Resources.hide_eye;
+            this.PasswordVisibilityRE.ImageSize = new System.Drawing.Size(28, 28);
+            this.PasswordVisibilityRE.Location = new System.Drawing.Point(526, 164);
+            this.PasswordVisibilityRE.Name = "PasswordVisibilityRE";
+            this.PasswordVisibilityRE.Size = new System.Drawing.Size(33, 33);
+            this.PasswordVisibilityRE.TabIndex = 86;
+            this.PasswordVisibilityRE.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.PasswordVisibilityRE.Click += new System.EventHandler(this.PasswordVisibilityRE_Click);
+            // 
+            // PasswordVisibility
+            // 
+            this.PasswordVisibility.Animated = true;
+            this.PasswordVisibility.BackColor = System.Drawing.Color.Transparent;
+            this.PasswordVisibility.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.PasswordVisibility.BorderRadius = 3;
+            this.PasswordVisibility.BorderThickness = 1;
+            this.PasswordVisibility.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PasswordVisibility.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.PasswordVisibility.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.PasswordVisibility.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.PasswordVisibility.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.PasswordVisibility.FillColor = System.Drawing.Color.White;
+            this.PasswordVisibility.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.PasswordVisibility.ForeColor = System.Drawing.Color.Black;
+            this.PasswordVisibility.Image = global::HealthMate_UI.Properties.Resources.hide_eye;
+            this.PasswordVisibility.ImageSize = new System.Drawing.Size(28, 28);
+            this.PasswordVisibility.Location = new System.Drawing.Point(222, 164);
+            this.PasswordVisibility.Name = "PasswordVisibility";
+            this.PasswordVisibility.Size = new System.Drawing.Size(33, 33);
+            this.PasswordVisibility.TabIndex = 85;
+            this.PasswordVisibility.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.PasswordVisibility.Click += new System.EventHandler(this.PasswordVisibility_Click);
+            // 
+            // KGToLB
+            // 
+            this.KGToLB.Animated = true;
+            this.KGToLB.BackColor = System.Drawing.Color.Transparent;
+            this.KGToLB.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.KGToLB.BorderRadius = 3;
+            this.KGToLB.BorderThickness = 1;
+            this.KGToLB.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.KGToLB.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.KGToLB.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.KGToLB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.KGToLB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.KGToLB.FillColor = System.Drawing.Color.White;
+            this.KGToLB.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.KGToLB.ForeColor = System.Drawing.Color.Black;
+            this.KGToLB.Image = global::HealthMate_UI.Properties.Resources.KG_01;
+            this.KGToLB.ImageSize = new System.Drawing.Size(28, 28);
+            this.KGToLB.Location = new System.Drawing.Point(526, 76);
+            this.KGToLB.Name = "KGToLB";
+            this.KGToLB.Size = new System.Drawing.Size(33, 33);
+            this.KGToLB.TabIndex = 84;
+            this.KGToLB.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.KGToLB.Click += new System.EventHandler(this.KGToLB_Click);
+            // 
+            // circularPictureBox
+            // 
+            this.circularPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.circularPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.circularPictureBox.FillColor = System.Drawing.Color.Transparent;
+            this.circularPictureBox.ImageRotate = 0F;
+            this.circularPictureBox.Location = new System.Drawing.Point(55, 260);
+            this.circularPictureBox.Name = "circularPictureBox";
+            this.circularPictureBox.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.circularPictureBox.Size = new System.Drawing.Size(120, 120);
+            this.circularPictureBox.TabIndex = 78;
+            this.circularPictureBox.TabStop = false;
+            // 
             // Back
             // 
             this.Back.Image = global::HealthMate_UI.Properties.Resources.Back;
@@ -246,11 +460,6 @@
             this.Back.Size = new System.Drawing.Size(52, 22);
             this.Back.Text = "Back";
             this.Back.Click += new System.EventHandler(this.Back_Click);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
             // 
             // newToolStripButton
             // 
@@ -288,11 +497,6 @@
             this.printToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.printToolStripButton.Text = "&Print";
             // 
-            // toolStripSeparator
-            // 
-            this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(6, 25);
-            // 
             // cutToolStripButton
             // 
             this.cutToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -320,11 +524,6 @@
             this.pasteToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.pasteToolStripButton.Text = "&Paste";
             // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
             // helpToolStripButton
             // 
             this.helpToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -334,61 +533,31 @@
             this.helpToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.helpToolStripButton.Text = "He&lp";
             // 
-            // BrowseButton
-            // 
-            this.BrowseButton.Location = new System.Drawing.Point(266, 254);
-            this.BrowseButton.Name = "BrowseButton";
-            this.BrowseButton.Size = new System.Drawing.Size(73, 30);
-            this.BrowseButton.TabIndex = 74;
-            this.BrowseButton.Text = "Browse";
-            this.BrowseButton.UseVisualStyleBackColor = true;
-            this.BrowseButton.Click += new System.EventHandler(this.BrowseButton_Click);
-            // 
-            // FileTextBox
-            // 
-            this.FileTextBox.AutoSize = true;
-            this.FileTextBox.Font = new System.Drawing.Font("El Messiri SemiBold", 9F, System.Drawing.FontStyle.Bold);
-            this.FileTextBox.Location = new System.Drawing.Point(267, 287);
-            this.FileTextBox.Name = "FileTextBox";
-            this.FileTextBox.Size = new System.Drawing.Size(0, 19);
-            this.FileTextBox.TabIndex = 75;
-            // 
-            // openFileDialog
-            // 
-            this.openFileDialog.FileName = "openFileDialog1";
-            // 
-            // ChangePPlabel
-            // 
-            this.ChangePPlabel.AutoSize = true;
-            this.ChangePPlabel.Location = new System.Drawing.Point(50, 223);
-            this.ChangePPlabel.Name = "ChangePPlabel";
-            this.ChangePPlabel.Size = new System.Drawing.Size(0, 25);
-            this.ChangePPlabel.TabIndex = 76;
-            // 
             // CreateAc2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(595, 390);
+            this.Controls.Add(this.CreateAccbtn);
+            this.Controls.Add(this.InchesToCm);
+            this.Controls.Add(this.PasswordVisibilityRE);
+            this.Controls.Add(this.PasswordVisibility);
+            this.Controls.Add(this.KGToLB);
+            this.Controls.Add(this.Weight);
+            this.Controls.Add(this.Password);
+            this.Controls.Add(this.RePassword);
+            this.Controls.Add(this.Height_cm);
+            this.Controls.Add(this.BrowseButton);
+            this.Controls.Add(this.circularPictureBox);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.ChangePPlabel);
             this.Controls.Add(this.FileTextBox);
-            this.Controls.Add(this.BrowseButton);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.KGToLB);
-            this.Controls.Add(this.InchesToCm);
-            this.Controls.Add(this.PasswordVisibility);
-            this.Controls.Add(this.PasswordVisibilityRE);
-            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.PasswordStrengthLabel);
             this.Controls.Add(this.PasswordMatchLabel);
-            this.Controls.Add(this.CreateAccbtn);
-            this.Controls.Add(this.RePassword);
-            this.Controls.Add(this.Password);
             this.Controls.Add(this.RePassLabel);
             this.Controls.Add(this.PassLabel);
-            this.Controls.Add(this.Weight);
-            this.Controls.Add(this.Height_cm);
             this.Controls.Add(this.WeightLable);
             this.Controls.Add(this.HeightLable);
             this.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
@@ -403,29 +572,20 @@
             this.Load += new System.EventHandler(this.CreateAc2EN_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.progressBar1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox RePassword;
-        private System.Windows.Forms.TextBox Password;
         private System.Windows.Forms.Label RePassLabel;
         private System.Windows.Forms.Label PassLabel;
-        private System.Windows.Forms.TextBox Weight;
-        private System.Windows.Forms.TextBox Height_cm;
         private System.Windows.Forms.Label WeightLable;
         private System.Windows.Forms.Label HeightLable;
-        private System.Windows.Forms.Button CreateAccbtn;
         private System.Windows.Forms.Label PasswordMatchLabel;
         private System.Windows.Forms.Label PasswordStrengthLabel;
-        private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.Button PasswordVisibilityRE;
-        private System.Windows.Forms.Button PasswordVisibility;
-        private System.Windows.Forms.Button InchesToCm;
-        private System.Windows.Forms.Button KGToLB;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton Back;
         private System.Windows.Forms.ToolStripButton newToolStripButton;
@@ -439,9 +599,21 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton helpToolStripButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.Button BrowseButton;
         private System.Windows.Forms.Label FileTextBox;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.Label ChangePPlabel;
+        private Guna.UI2.WinForms.Guna2CircleProgressBar progressBar1;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox circularPictureBox;
+        private Guna.UI2.WinForms.Guna2Button BrowseButton;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2TextBox Height_cm;
+        private Guna.UI2.WinForms.Guna2TextBox RePassword;
+        private Guna.UI2.WinForms.Guna2TextBox Password;
+        private Guna.UI2.WinForms.Guna2TextBox Weight;
+        private Guna.UI2.WinForms.Guna2Button KGToLB;
+        private Guna.UI2.WinForms.Guna2Button PasswordVisibility;
+        private Guna.UI2.WinForms.Guna2Button PasswordVisibilityRE;
+        private Guna.UI2.WinForms.Guna2Button InchesToCm;
+        private Guna.UI2.WinForms.Guna2Button CreateAccbtn;
     }
 }

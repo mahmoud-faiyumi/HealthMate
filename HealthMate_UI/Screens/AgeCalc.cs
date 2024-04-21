@@ -16,8 +16,6 @@ namespace HealthMate_UI
 
         private void AgeCalcEN_Load(object sender, EventArgs e)
         {
-            
-
             if (CommonValues.CurrentUserInfo.IsDark == true)
             {
                 ApplyDarkTheme();
@@ -75,6 +73,7 @@ namespace HealthMate_UI
             toolStrip1.ForeColor = Color.White;
             toolStrip1.BackColor = Color.FromArgb(55, 55, 55);
             Back.Image = Properties.Resources.WBack;
+            Back.ForeColor = Color.White;
         }
 
         private void ApplyLightTheme()
@@ -87,6 +86,7 @@ namespace HealthMate_UI
             toolStrip1.ForeColor = Color.White;
             toolStrip1.BackColor = Color.Gainsboro;
             Back.Image = Properties.Resources.Back;
+            Back.ForeColor = Color.Black;
         }
 
         private void ArabicLanguage()
@@ -102,6 +102,7 @@ namespace HealthMate_UI
             BDAYtxt.Location = new Point(231, 223);
             AnotherDateBtn.Text = "تاريخ مخصص";
             Back.Text = "رجوع";
+            alert.Text = "*هذه البيانات تقريبية وقد لا تكون دقيقة.";
         }
 
         private void EnglishLanguage()
@@ -109,6 +110,7 @@ namespace HealthMate_UI
             base.RightToLeft = RightToLeft.No;
             AnotherDateBtn.Text = "Custom date";
             Back.Text = "Back";
+            alert.Text = "*These data are approximate and may not be accurate.";
         }
 
         private void ArabicCalculation()

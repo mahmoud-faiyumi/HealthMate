@@ -3,15 +3,14 @@ using HealthMate_UI.Screens;
 using System;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Windows.Forms;
+using static System.Windows.Forms.Design.AxImporter;
 
 namespace HealthMate_UI
 {
     public partial class Main_MenuEN : Form
     {
         private DatabaseManager databaseManager;
-        private PictureBox circularPictureBox;
 
         public Main_MenuEN()
         {
@@ -24,11 +23,7 @@ namespace HealthMate_UI
 
         private void InitializeCircularPictureBox()
         {
-            // Create PictureBox
-            circularPictureBox = new PictureBox();
-            circularPictureBox.Location = new Point(490, 40);
-            circularPictureBox.Size = new Size(60, 60);
-            circularPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            circularPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
 
             // Load Image
             if (CommonValues.CurrentUserInfo.IsPPNull)
@@ -46,40 +41,10 @@ namespace HealthMate_UI
                     circularPictureBox.Image = Properties.Resources.femalePP;
                 }
             }
-            // Make PictureBox Circular
-            MakePictureBoxCircular(circularPictureBox);
-
-            // Add PictureBox to Form
-            Controls.Add(circularPictureBox);
-            //circularPictureBox.Image = CommonValues.CurrentUserInfo.ProfilePicture;
-        }
-
-        private void MakePictureBoxCircular(PictureBox pictureBox)
-        {
-            // Create a GraphicsPath object
-            GraphicsPath path = new GraphicsPath();
-
-            // Add an ellipse to the GraphicsPath
-            path.AddEllipse(0, 0, pictureBox.Width, pictureBox.Height);
-
-            // Set the Region property of the PictureBox to the newly created GraphicsPath
-            pictureBox.Region = new Region(path);
         }
 
         private void Main_menuEN_Load(object sender, EventArgs e)
         {
-            if (CommonValues.CurrentUserInfo.BirthDate == DateTime.Today)
-            {
-                if (CommonValues.CurrentUserInfo.IsArabic == true)
-                {
-                    HappyBirthday.Text = $"يوم ميلاد سعيد {CommonValues.CurrentUserInfo.FName} <3";
-                }
-                else
-                {
-                    HappyBirthday.Text = $"Happy Birthday {CommonValues.CurrentUserInfo.FName} <3";
-                }
-            }
-
             if (CommonValues.CurrentUserInfo.IsDark == true)
             {
                 ApplyDarkTheme();
@@ -91,14 +56,27 @@ namespace HealthMate_UI
             if (CommonValues.CurrentUserInfo.IsArabic == true)
             {
                 ArabicLanguage();
-                string welcomeMessage = WelcomeMessageGeneratorAR.GenerateWelcomeMessage(CommonValues.CurrentUserInfo.FName);
-                WelcomeMsg.Text = welcomeMessage;
             }
             else
             {
                 EnglishLanguage();
-                string welcomeMessage = WelcomeMessageGeneratorEN.GenerateWelcomeMessage(CommonValues.CurrentUserInfo.FName);
-                WelcomeMsg.Text = welcomeMessage;
+            }
+
+            DateTime lastLogin = CommonValues.CurrentUserInfo.LastLogin;
+            DateTime today = DateTime.Today;
+            TimeSpan difference = today - lastLogin;
+            int daysSinceLastLogin = difference.Days;
+            if (daysSinceLastLogin >= 3)
+            {
+                if (CommonValues.CurrentUserInfo.IsArabic)
+                {
+                    MessageBoxOptions options = MessageBoxOptions.RtlReading | MessageBoxOptions.RightAlign;
+                    MessageBox.Show("يبدو أنك غبت لبضعة أيام. هل تتذكر التزامك؟ دعنا نستأنف من حيث توقفنا.", "مرحبًا بعودتك!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1, options);
+                }
+                else
+                {
+                    MessageBox.Show("It looks like you've been away for a few days. Remember your commitment? Let's pick up where we left off.", "Welcome back!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                }
             }
         }
 
@@ -126,6 +104,22 @@ namespace HealthMate_UI
             this.Hide();
             UpdateInfo updateInfoEN = new UpdateInfo();
             updateInfoEN.Show();
+        }
+
+        private void CaloriesTrackerBtn_Click(object sender, EventArgs e)
+        {
+            if (CommonValues.CurrentUserInfo.IsArabic)
+            {
+                MessageBox.Show(".الميزة ما زالت تحت التطوير\nكن صبوراً", "رسالة", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign);
+            }
+            else
+            {
+                MessageBox.Show("The feature is still under development.\nPlease be patient.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            }
+
+            this.Hide();
+            Calories_Tracker calories_Tracker = new Calories_Tracker();
+            calories_Tracker.Show();
         }
 
         private void Logout_Click(object sender, EventArgs e)
@@ -253,7 +247,7 @@ namespace HealthMate_UI
                 finally
                 {
                     databaseManager.CloseConnection();
-                } 
+                }
             }
         }
 
@@ -263,13 +257,15 @@ namespace HealthMate_UI
             this.BackColor = Color.FromArgb(70, 70, 70);
             this.ForeColor = Color.White;
             AgeCalcBtn.ForeColor = Color.Black;
-            AgeCalcBtn.BackColor = Color.FromArgb(224, 224, 224);
+            AgeCalcBtn.FillColor = Color.FromArgb(224, 224, 224);
             HealthMonitorBtn.ForeColor = Color.Black;
-            HealthMonitorBtn.BackColor = Color.FromArgb(224, 224, 224);
+            HealthMonitorBtn.FillColor = Color.FromArgb(224, 224, 224);
             UpdateInfoBtn.ForeColor = Color.Black;
-            UpdateInfoBtn.BackColor = Color.FromArgb(224, 224, 224);
+            UpdateInfoBtn.FillColor = Color.FromArgb(224, 224, 224);
+            Workout.ForeColor = Color.Black;
+            Workout.FillColor = Color.FromArgb(224, 224, 224);
             CaloriesTrackerBtn.ForeColor = Color.Black;
-            CaloriesTrackerBtn.BackColor = Color.FromArgb(224, 224, 224);
+            CaloriesTrackerBtn.FillColor = Color.FromArgb(224, 224, 224);
             toolStrip1.ForeColor = Color.White;
             toolStrip1.BackColor = Color.FromArgb(55, 55, 55);
             Themes.ForeColor = Color.White;
@@ -293,13 +289,15 @@ namespace HealthMate_UI
             this.BackColor = Color.White;
             this.ForeColor = Color.Black;
             AgeCalcBtn.ForeColor = Color.Black;
-            AgeCalcBtn.BackColor = Color.White;
+            AgeCalcBtn.FillColor = Color.White;
             HealthMonitorBtn.ForeColor = Color.Black;
-            HealthMonitorBtn.BackColor = Color.White;
+            HealthMonitorBtn.FillColor = Color.White;
             UpdateInfoBtn.ForeColor = Color.Black;
-            UpdateInfoBtn.BackColor = Color.White;
+            UpdateInfoBtn.FillColor = Color.White;
+            Workout.ForeColor = Color.Black;
+            Workout.FillColor = Color.White;
             CaloriesTrackerBtn.ForeColor = Color.Black;
-            CaloriesTrackerBtn.BackColor = Color.White;
+            CaloriesTrackerBtn.FillColor = Color.White;
             toolStrip1.ForeColor = Color.White;
             toolStrip1.BackColor = Color.Gainsboro;
             Themes.ForeColor = Color.Black;
@@ -323,7 +321,9 @@ namespace HealthMate_UI
             HealthMonitorBtn.Text = "مراقب الصحة";
             UpdateInfoBtn.Text = "تحديث بياناتك";
             CaloriesTrackerBtn.Text = "تتبع السعرات الحرارية";
-
+            WelcomeMsg.Location = new Point(280, 45);
+            HappyBirthday.Location = new Point(280, 76);
+            circularPictureBox.Location = new Point(42, 29);
             Themes.Text = "النمط";
             lightThemeToolStripMenuItem.Text = "النمط الفاتح";
             darkThemeToolStripMenuItem.Text = "النمط الغامق";
@@ -336,6 +336,13 @@ namespace HealthMate_UI
             else
             {
                 SelectLanguage.Image = Properties.Resources.wAR;
+            }
+            string welcomeMessage = WelcomeMessageGeneratorAR.GenerateWelcomeMessage(CommonValues.CurrentUserInfo.FName);
+            WelcomeMsg.Text = welcomeMessage;
+            if (CommonValues.CurrentUserInfo.BirthDate.Month == DateTime.Today.Month &&
+            CommonValues.CurrentUserInfo.BirthDate.Day == DateTime.Today.Day)
+            {
+                HappyBirthday.Text = $"يوم ميلاد سعيد🎂❤️";
             }
         }
 
@@ -351,6 +358,9 @@ namespace HealthMate_UI
             darkThemeToolStripMenuItem.Text = "Dark Theme";
             SelectLanguage.Text = "Language";
             Logout.Text = "Logout";
+            WelcomeMsg.Location = new Point(37, 45);
+            HappyBirthday.Location = new Point(37, 76);
+            circularPictureBox.Location = new Point(489, 29);
             if (!CommonValues.CurrentUserInfo.IsDark)
             {
                 SelectLanguage.Image = Properties.Resources.EN;
@@ -359,22 +369,13 @@ namespace HealthMate_UI
             {
                 SelectLanguage.Image = Properties.Resources.wEN;
             }
-        }
-
-        private void CaloriesTrackerBtn_Click(object sender, EventArgs e)
-        {
-            if (CommonValues.CurrentUserInfo.IsArabic)
+            string welcomeMessage = WelcomeMessageGeneratorEN.GenerateWelcomeMessage(CommonValues.CurrentUserInfo.FName);
+            WelcomeMsg.Text = welcomeMessage;
+            if (CommonValues.CurrentUserInfo.BirthDate.Month == DateTime.Today.Month &&
+            CommonValues.CurrentUserInfo.BirthDate.Day == DateTime.Today.Day)
             {
-                MessageBox.Show(".الميزة ما زالت تحت التطوير\nكن صبوراً", "رسالة", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign);
+                HappyBirthday.Text = $"Happy Birthday🎂❤️";
             }
-            else
-            {
-                MessageBox.Show("The feature is still under development.\nPlease be patient.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-            }
-
-            this.Hide();
-            Calories_Tracker calories_Tracker = new Calories_Tracker();
-            calories_Tracker.Show();
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Drawing.Drawing2D;
 using System.IO;
 using System.Windows.Forms;
 
+
 namespace HealthMate_UI
 {
     public partial class CreateAc2 : Form
@@ -15,7 +16,6 @@ namespace HealthMate_UI
         private bool passwordVisibleRE = false;
         private bool inches = true; // Initially set to inches
         private bool LB = true;  // Initially set to pounds
-        private PictureBox circularPictureBox;
 
         private string fname;
         private string lname;
@@ -70,11 +70,7 @@ namespace HealthMate_UI
 
         private void InitializeCircularPictureBox()
         {
-            // Create PictureBox
-            circularPictureBox = new PictureBox();
-            circularPictureBox.Location = new Point(75, 250);
-            circularPictureBox.Size = new Size(120, 120);
-            circularPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            circularPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
 
             // Load Image
             if (gender == "Male" || gender == "ذكر")
@@ -85,24 +81,6 @@ namespace HealthMate_UI
             {
                 circularPictureBox.Image = Properties.Resources.femalePP;
             }
-
-            // Make PictureBox Circular
-            MakePictureBoxCircular(circularPictureBox);
-
-            // Add PictureBox to Form
-            Controls.Add(circularPictureBox);
-        }
-
-        private void MakePictureBoxCircular(PictureBox pictureBox)
-        {
-            // Create a GraphicsPath object
-            GraphicsPath path = new GraphicsPath();
-
-            // Add an ellipse to the GraphicsPath
-            path.AddEllipse(0, 0, pictureBox.Width, pictureBox.Height);
-
-            // Set the Region property of the PictureBox to the newly created GraphicsPath
-            pictureBox.Region = new Region(path);
         }
 
         private void CreateAc2EN_Load(object sender, EventArgs e)
@@ -124,6 +102,7 @@ namespace HealthMate_UI
             {
                 EnglishLanguage();
             }
+            label1.Text = progressBar1.ProgressTotalPercent.ToString("N0") + "%";
         }
 
         private void InchesToCm_Click(object sender, EventArgs e)
@@ -132,11 +111,11 @@ namespace HealthMate_UI
 
             if (inches)
             {
-                InchesToCm.BackgroundImage = Properties.Resources.inches_01; // Use the Inches image
+                InchesToCm.Image = Properties.Resources.inches_01; // Use the Inches image
             }
             else
             {
-                InchesToCm.BackgroundImage = Properties.Resources.CM_01; // Use the CM image
+                InchesToCm.Image = Properties.Resources.CM_01; // Use the CM image
             }
             // Set the image layout to stretch within the button
             InchesToCm.BackgroundImageLayout = ImageLayout.Stretch;
@@ -148,11 +127,11 @@ namespace HealthMate_UI
 
             if (LB)
             {
-                KGToLB.BackgroundImage = Properties.Resources.LB_01; // Use the LB image
+                KGToLB.Image = Properties.Resources.LB_01; // Use the LB image
             }
             else
             {
-                KGToLB.BackgroundImage = Properties.Resources.KG_01; // Use the KG image
+                KGToLB.Image = Properties.Resources.KG_01; // Use the KG image
             }
             // Set the image layout to stretch within the button
             KGToLB.BackgroundImageLayout = ImageLayout.Stretch;
@@ -218,13 +197,12 @@ namespace HealthMate_UI
             {
                 string filePath = FileTextBox.Text;
                 string fileName = Path.GetFileName(filePath);
-
-                byte[] fileData = File.ReadAllBytes(filePath);
+                byte[] fileData = null; // Initialize to null
                 databaseManager.OpenConnection();
 
                 // Insert user data into the database
-                string insertQuery = "INSERT INTO UserInfo (FName, LName, Email, UserName, Password, BirthDate, Gender, Height, Weight, Age, ActivityLevel, BMI, ProfilePicture) " +
-                                     "VALUES (@Fname, @Lname, @Email, @UserName, @Password, @BirthDate, @gender, @Height, @Weight, @Age, @activityLevel, @BMI, @ProfilePicture)";
+                string insertQuery = "INSERT INTO UserInfo (FName, LName, Email, UserName, Password, BirthDate, Gender, Height, Weight, Age, ActivityLevel, BMI, ProfilePicture, LastLogin) " +
+                                     "VALUES (@Fname, @Lname, @Email, @UserName, @Password, @BirthDate, @gender, @Height, @Weight, @Age, @activityLevel, @BMI, @ProfilePicture, @LastLogin)";
                 using (SqlCommand insertCommand = new SqlCommand(insertQuery, databaseManager.GetConnection()))
                 {
                     insertCommand.Parameters.AddWithValue("@Fname", fname);
@@ -239,7 +217,33 @@ namespace HealthMate_UI
                     insertCommand.Parameters.AddWithValue("@Age", Age);
                     insertCommand.Parameters.AddWithValue("@activityLevel", activityLevel);
                     insertCommand.Parameters.AddWithValue("@BMI", BMI);
+
+                    if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
+                    {
+                        fileData = File.ReadAllBytes(filePath);
+                    }
+                    else
+                    {
+                        if (gender == "Male" || gender == "ذكر")
+                        {
+                            using (MemoryStream ms = new MemoryStream())
+                            {
+                                Properties.Resources.malePP.Save(ms, Properties.Resources.malePP.RawFormat);
+                                fileData = ms.ToArray();
+                            }
+                        }
+                        else
+                        {
+                            using (MemoryStream ms = new MemoryStream())
+                            {
+                                Properties.Resources.femalePP.Save(ms, Properties.Resources.femalePP.RawFormat);
+                                fileData = ms.ToArray();
+                            }
+                        }
+                    }
                     insertCommand.Parameters.AddWithValue("@ProfilePicture", fileData);
+
+                    insertCommand.Parameters.AddWithValue("@LastLogin", DateTime.Today);
 
                     insertCommand.ExecuteNonQuery();
                 }
@@ -293,11 +297,13 @@ namespace HealthMate_UI
             {
                 progressBar1.Value++;
                 fieldEditedFlags[0] = true;
+                label1.Text = progressBar1.ProgressTotalPercent.ToString("N0") + "%";
             }
 
             UpdateCreateAccbtnState();
 
             string password = Password.Text;
+            string confirmPassword = RePassword.Text;
 
             // Check if the password is empty or null
             if (string.IsNullOrWhiteSpace(password))
@@ -314,6 +320,24 @@ namespace HealthMate_UI
                     PasswordStrengthLabel.ForeColor = Color.Black;
                     return;
                 }
+            }
+            if (password != confirmPassword)
+            {
+                if (!string.IsNullOrWhiteSpace(RePassword.Text))
+                {
+                    if (CommonValues.CurrentUserInfo.IsArabic)
+                    {
+                        PasswordMatchLabel.Text = "كلمة المرور غير متطابقة!";
+                    }
+                    else
+                    {
+                        PasswordMatchLabel.Text = "Passwords do not match!";
+                    }
+                }
+            }
+            else
+            {
+                PasswordMatchLabel.Text = "";
             }
 
             var result = Zxcvbn.Core.EvaluatePassword(password);
@@ -433,6 +457,7 @@ namespace HealthMate_UI
             {
                 progressBar1.Value++;
                 fieldEditedFlags[1] = true;
+                label1.Text = progressBar1.ProgressTotalPercent.ToString("N0") + "%";
             }
 
             UpdateCreateAccbtnState();
@@ -442,8 +467,14 @@ namespace HealthMate_UI
 
             if (password != confirmPassword)
             {
-                // Passwords do not match
-                PasswordMatchLabel.Text = "Passwords do not match!";
+                if (CommonValues.CurrentUserInfo.IsArabic)
+                {
+                    PasswordMatchLabel.Text = "كلمة المرور غير متطابقة!";
+                }
+                else
+                {
+                    PasswordMatchLabel.Text = "Passwords do not match!";
+                }
             }
             else
             {
@@ -457,6 +488,7 @@ namespace HealthMate_UI
             {
                 progressBar1.Value++;
                 fieldEditedFlags[2] = true;
+                label1.Text = progressBar1.ProgressTotalPercent.ToString("N0") + "%";
             }
 
             UpdateCreateAccbtnState();
@@ -468,6 +500,7 @@ namespace HealthMate_UI
             {
                 progressBar1.Value++;
                 fieldEditedFlags[3] = true;
+                label1.Text = progressBar1.ProgressTotalPercent.ToString("N0") + "%";
             }
 
             UpdateCreateAccbtnState();
@@ -492,11 +525,11 @@ namespace HealthMate_UI
             // Change the eye icon
             if (passwordVisibleRE)
             {
-                PasswordVisibilityRE.BackgroundImage = Properties.Resources.show_eye; // Use the open eye image
+                PasswordVisibilityRE.Image = Properties.Resources.show_eye; // Use the open eye image
             }
             else
             {
-                PasswordVisibilityRE.BackgroundImage = Properties.Resources.hide_eye; // Use the closed eye image
+                PasswordVisibilityRE.Image = Properties.Resources.hide_eye; // Use the closed eye image
             }
             // Set the image layout to stretch within the button
             PasswordVisibilityRE.BackgroundImageLayout = ImageLayout.Stretch;
@@ -511,11 +544,11 @@ namespace HealthMate_UI
             // Change the eye icon
             if (passwordVisible)
             {
-                PasswordVisibility.BackgroundImage = Properties.Resources.show_eye; // Use the open eye image
+                PasswordVisibility.Image = Properties.Resources.show_eye; // Use the open eye image
             }
             else
             {
-                PasswordVisibility.BackgroundImage = Properties.Resources.hide_eye; // Use the closed eye image
+                PasswordVisibility.Image = Properties.Resources.hide_eye; // Use the closed eye image
             }
             // Set the image layout to stretch within the button
             PasswordVisibility.BackgroundImageLayout = ImageLayout.Stretch;
@@ -533,27 +566,28 @@ namespace HealthMate_UI
             // Apply the dark theme
             this.BackColor = Color.FromArgb(70, 70, 70);
             this.ForeColor = Color.White;
+            label1.ForeColor = Color.White;
             Height_cm.ForeColor = Color.Black;
-            Height_cm.BackColor = Color.FromArgb(224, 224, 224);
-            InchesToCm.BackColor = Color.FromArgb(224, 224, 224);
+            Height_cm.FillColor = Color.FromArgb(224, 224, 224);
+            InchesToCm.FillColor = Color.FromArgb(224, 224, 224);
             Weight.ForeColor = Color.Black;
-            Weight.BackColor = Color.FromArgb(224, 224, 224);
-            KGToLB.BackColor = Color.FromArgb(224, 224, 224);
-            Password.BackColor = Color.FromArgb(224, 224, 224);
+            Weight.FillColor = Color.FromArgb(224, 224, 224);
+            KGToLB.FillColor = Color.FromArgb(224, 224, 224);
+            Password.FillColor = Color.FromArgb(224, 224, 224);
             Password.ForeColor = Color.Black;
-            PasswordVisibility.BackColor = Color.FromArgb(224, 224, 224);
-            RePassword.BackColor = Color.FromArgb(224, 224, 224);
+            PasswordVisibility.FillColor = Color.FromArgb(224, 224, 224);
+            RePassword.FillColor = Color.FromArgb(224, 224, 224);
             RePassword.ForeColor = Color.Black;
-            PasswordVisibilityRE.BackColor = Color.FromArgb(224, 224, 224);
+            PasswordVisibilityRE.FillColor = Color.FromArgb(224, 224, 224);
             PasswordMatchLabel.ForeColor = Color.FromArgb(255, 128, 128);
-            CreateAccbtn.BackColor = Color.FromArgb(224, 224, 224);
+            CreateAccbtn.FillColor = Color.FromArgb(224, 224, 224);
             CreateAccbtn.ForeColor = Color.Black;
             toolStrip1.ForeColor = Color.White;
             toolStrip1.BackColor = Color.FromArgb(55, 55, 55);
             Back.ForeColor = Color.White;
             Back.Image = Properties.Resources.WBack;
             BrowseButton.ForeColor = Color.Black;
-            BrowseButton.BackColor = Color.FromArgb(224, 224, 224);
+            BrowseButton.FillColor = Color.FromArgb(224, 224, 224);
             FileTextBox.ForeColor = Color.White;
         }
 
@@ -562,27 +596,28 @@ namespace HealthMate_UI
             // Apply the light theme
             this.BackColor = Color.White;
             this.ForeColor = Color.Black;
+            label1.ForeColor = Color.Black;
             Height_cm.ForeColor = Color.Black;
-            Height_cm.BackColor = Color.White;
-            InchesToCm.BackColor = Color.White;
+            Height_cm.FillColor = Color.White;
+            InchesToCm.FillColor = Color.White;
             Weight.ForeColor = Color.Black;
-            Weight.BackColor = Color.White;
-            KGToLB.BackColor = Color.White;
-            Password.BackColor = Color.White;
+            Weight.FillColor = Color.White;
+            KGToLB.FillColor = Color.White;
+            Password.FillColor = Color.White;
             Password.ForeColor = Color.Black;
-            PasswordVisibility.BackColor = Color.White;
-            RePassword.BackColor = Color.White;
+            PasswordVisibility.FillColor = Color.White;
+            RePassword.FillColor = Color.White;
             RePassword.ForeColor = Color.Black;
-            PasswordVisibilityRE.BackColor = Color.White;
+            PasswordVisibilityRE.FillColor = Color.White;
             PasswordMatchLabel.ForeColor = Color.Red;
-            CreateAccbtn.BackColor = Color.White;
+            CreateAccbtn.FillColor = Color.White;
             CreateAccbtn.ForeColor = Color.Black;
             toolStrip1.ForeColor = Color.White;
             toolStrip1.BackColor = Color.Gainsboro;
             Back.ForeColor = Color.Black;
             Back.Image = Properties.Resources.Back;
             BrowseButton.ForeColor = Color.Black;
-            BrowseButton.BackColor = Color.White;
+            BrowseButton.FillColor = Color.White;
             FileTextBox.ForeColor = Color.Black;
         }
         private void ArabicLanguage()
@@ -604,14 +639,10 @@ namespace HealthMate_UI
             RePassLabel.Location = new Point(404, 136);
             RePassword.Location = new Point(355, 164);
             PasswordVisibilityRE.Location = new Point(355, 164);
-            PasswordMatchLabel.Location = new Point(352, 200);
-            PasswordStrengthLabel.Location = new Point(58, 200);
             CreateAccbtn.Text = "انشاء الحساب";
             CreateAccbtn.Location = new Point(229, 314);
-            PasswordMatchLabel.Location = new Point(559, 200);
             BrowseButton.Text = "تصفّح";
-            ChangePPlabel.Location = new Point(57, 223);
-            ChangePPlabel.Text = "إختر صورتك الشخصية";
+            ChangePPlabel.Text = "  إختر صورتك الشخصية  ";
         }
 
         private void EnglishLanguage()
@@ -633,13 +664,9 @@ namespace HealthMate_UI
             RePassLabel.Location = new Point(350, 136);
             RePassword.Location = new Point(355, 164);
             PasswordVisibilityRE.Location = new Point(526, 164);
-            PasswordMatchLabel.Location = new Point(352, 200);
-            PasswordStrengthLabel.Location = new Point(58, 200);
             CreateAccbtn.Text = "Create an account";
             CreateAccbtn.Location = new Point(229, 314);
-            PasswordMatchLabel.Location = new Point(352, 200);
             BrowseButton.Text = "Browse";
-            ChangePPlabel.Location = new Point(48, 223);
             ChangePPlabel.Text = "Choose profile picture";
         }
 

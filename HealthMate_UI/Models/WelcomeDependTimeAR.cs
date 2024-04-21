@@ -20,15 +20,15 @@ public class WelcomeMessageGeneratorAR
     {
         if (hour >= 6 && hour < 12)
         {
-            return $"صباح الخير, {firstName}";
+            return $"صباح الخير، {firstName}";
         }
         else if (hour >= 12 && hour < 20)
         {
-            return $"مساء الخير, {firstName}";
+            return $"مساء الخير، {firstName}";
         }
         else
         {
-            return $"ليلة سعيدة, {firstName}";
+            return $"ليلة سعيدة، {firstName}";
         }
     }
 }

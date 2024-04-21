@@ -11,21 +11,16 @@ using System.Windows.Forms;
 
 namespace HealthMate_UI.Screens
 {
-    public partial class Breakfast : Form
+    public partial class Dinner : Form
     {
-        public Breakfast()
+        public Dinner()
         {
             InitializeComponent();
         }
 
-        private void Breakfast_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void Enter_Click(object sender, EventArgs e)
         {
-            if (!double.TryParse(BrkFstCal.Text, out double breakCal))
+            if (!double.TryParse(DinnerCal.Text, out double dinnerCal))
             {
                 if (CommonValues.CurrentUserInfo.IsArabic)
                 {
@@ -35,13 +30,18 @@ namespace HealthMate_UI.Screens
                 {
                     MessageBox.Show("Please enter a valid number.", "Validation Error", MessageBoxButtons.OK);
                 }
-                BrkFstCal.Clear();
+                DinnerCal.Clear();
             }
             else
             {
                 this.Close();
-                MessageBox.Show(breakCal.ToString());
+                MessageBox.Show(dinnerCal.ToString());
             }
+        }
+
+        private void Dinner_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

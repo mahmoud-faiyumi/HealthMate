@@ -8,6 +8,7 @@ namespace HealthMate_UI.Models
         public string FName { get; set; }
         public string LName { get; set; }
         public string UserName { get; set; }
+        public string PasswordFromDB { get; set; }
         public DateTime BirthDate { get; set; }
         public string Gender { get; set; }
         public double Height { get; set; }
@@ -20,5 +21,9 @@ namespace HealthMate_UI.Models
         public bool IsPPNull { get; set; }
         public Image PP { get; set; }
         public DateTime LastLogin { get; set; }
+        public bool IsCoach { get; set; }
+        public int ID { get; set; }
+        public int CoachID { get; set; }
+
     }
 }

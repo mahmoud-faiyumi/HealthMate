@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dinner));
             this.label1 = new System.Windows.Forms.Label();
-            this.DinnerCal = new System.Windows.Forms.TextBox();
-            this.Enter = new System.Windows.Forms.Button();
+            this.DinnerCal = new Guna.UI2.WinForms.Guna2TextBox();
+            this.Enter = new Guna.UI2.WinForms.Guna2Button();
             this.SuspendLayout();
             // 
             // label1
@@ -47,23 +47,39 @@
             // 
             // DinnerCal
             // 
+            this.DinnerCal.BorderRadius = 15;
+            this.DinnerCal.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.DinnerCal.DefaultText = "";
+            this.DinnerCal.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.DinnerCal.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.DinnerCal.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.DinnerCal.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.DinnerCal.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.DinnerCal.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
-            this.DinnerCal.Location = new System.Drawing.Point(91, 46);
-            this.DinnerCal.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.DinnerCal.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.DinnerCal.Location = new System.Drawing.Point(91, 44);
             this.DinnerCal.Name = "DinnerCal";
-            this.DinnerCal.Size = new System.Drawing.Size(96, 33);
-            this.DinnerCal.TabIndex = 7;
+            this.DinnerCal.PasswordChar = '\0';
+            this.DinnerCal.PlaceholderText = "";
+            this.DinnerCal.SelectedText = "";
+            this.DinnerCal.Size = new System.Drawing.Size(96, 36);
+            this.DinnerCal.TabIndex = 15;
             // 
             // Enter
             // 
+            this.Enter.BorderRadius = 15;
+            this.Enter.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Enter.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Enter.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Enter.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Enter.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(73)))), ((int)(((byte)(255)))));
             this.Enter.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
-            this.Enter.Location = new System.Drawing.Point(108, 91);
-            this.Enter.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.Enter.ForeColor = System.Drawing.Color.White;
+            this.Enter.Location = new System.Drawing.Point(100, 89);
             this.Enter.Name = "Enter";
-            this.Enter.Size = new System.Drawing.Size(62, 33);
-            this.Enter.TabIndex = 6;
+            this.Enter.Size = new System.Drawing.Size(79, 33);
+            this.Enter.TabIndex = 14;
             this.Enter.Text = "Enter";
-            this.Enter.UseVisualStyleBackColor = true;
             this.Enter.Click += new System.EventHandler(this.Enter_Click);
             // 
             // Dinner
@@ -71,9 +87,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(278, 138);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.DinnerCal);
             this.Controls.Add(this.Enter);
+            this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
@@ -91,7 +107,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox DinnerCal;
-        private System.Windows.Forms.Button Enter;
+        private Guna.UI2.WinForms.Guna2TextBox DinnerCal;
+        private Guna.UI2.WinForms.Guna2Button Enter;
     }
 }

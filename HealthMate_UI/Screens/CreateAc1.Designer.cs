@@ -343,17 +343,15 @@
             // Nextbtn
             // 
             this.Nextbtn.Animated = true;
-            this.Nextbtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(205)))), ((int)(((byte)(210)))));
             this.Nextbtn.BorderRadius = 15;
-            this.Nextbtn.BorderThickness = 1;
             this.Nextbtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Nextbtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.Nextbtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.Nextbtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.Nextbtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.Nextbtn.FillColor = System.Drawing.Color.White;
+            this.Nextbtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(73)))), ((int)(((byte)(255)))));
             this.Nextbtn.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
-            this.Nextbtn.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Nextbtn.ForeColor = System.Drawing.Color.White;
             this.Nextbtn.Location = new System.Drawing.Point(277, 321);
             this.Nextbtn.Name = "Nextbtn";
             this.Nextbtn.Size = new System.Drawing.Size(76, 32);
@@ -530,7 +528,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HealthMate";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CreateAc1EN_FormClosing);
-            this.Load += new System.EventHandler(this.Form2_Load);
+            this.Load += new System.EventHandler(this.CreateAc1_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);

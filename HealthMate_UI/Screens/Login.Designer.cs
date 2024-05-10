@@ -144,15 +144,13 @@
             // 
             this.PasswordVisibility.Animated = true;
             this.PasswordVisibility.BackColor = System.Drawing.Color.Transparent;
-            this.PasswordVisibility.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            this.PasswordVisibility.BorderRadius = 3;
-            this.PasswordVisibility.BorderThickness = 1;
+            this.PasswordVisibility.BorderRadius = 5;
             this.PasswordVisibility.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PasswordVisibility.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.PasswordVisibility.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.PasswordVisibility.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.PasswordVisibility.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.PasswordVisibility.FillColor = System.Drawing.Color.White;
+            this.PasswordVisibility.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(73)))), ((int)(((byte)(255)))));
             this.PasswordVisibility.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
             this.PasswordVisibility.ForeColor = System.Drawing.Color.Black;
             this.PasswordVisibility.Image = global::HealthMate_UI.Properties.Resources.hide_eye;
@@ -167,17 +165,15 @@
             // LoginButton
             // 
             this.LoginButton.Animated = true;
-            this.LoginButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(205)))), ((int)(((byte)(210)))));
             this.LoginButton.BorderRadius = 15;
-            this.LoginButton.BorderThickness = 1;
             this.LoginButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LoginButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.LoginButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.LoginButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.LoginButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.LoginButton.FillColor = System.Drawing.Color.White;
+            this.LoginButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(73)))), ((int)(((byte)(255)))));
             this.LoginButton.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
-            this.LoginButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.LoginButton.ForeColor = System.Drawing.Color.White;
             this.LoginButton.Location = new System.Drawing.Point(263, 220);
             this.LoginButton.Name = "LoginButton";
             this.LoginButton.Size = new System.Drawing.Size(84, 35);
@@ -389,7 +385,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HealthMate";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoginEN_FormClosing);
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.Login_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);

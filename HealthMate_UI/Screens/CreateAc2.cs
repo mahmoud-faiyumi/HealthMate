@@ -1,8 +1,8 @@
 ﻿using HealthMate_UI.Constants;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.IO;
 using System.Windows.Forms;
 
@@ -29,7 +29,7 @@ namespace HealthMate_UI
 
         bool dark = CommonValues.CurrentUserInfo.IsDark;
         bool arabic = CommonValues.CurrentUserInfo.IsArabic;
-
+        string filePath;
         public CreateAc2(string Fname, string Lname, string Email, string Username, string Gender, DateTime Birthdate, string ActivityLevel)
         {
             InitializeComponent();
@@ -66,6 +66,9 @@ namespace HealthMate_UI
             InchesToCm.BackgroundImageLayout = ImageLayout.Stretch; // Set the layout to stretch
             KGToLB.BackgroundImage = Properties.Resources.LB_01; // Use the LB image
             KGToLB.BackgroundImageLayout = ImageLayout.Stretch; // Set the layout to stretch
+
+            PINcode.Visible = false;
+            PINcode.MaxLength = 6;
         }
 
         private void InitializeCircularPictureBox()
@@ -193,16 +196,36 @@ namespace HealthMate_UI
             // Calculate BMI
             double BMI = Math.Round(weight / Math.Pow(height / 100.0, 2), 1);
 
+            bool coach = false;
+            if (TrainerCheck.Checked)
+            {
+                if (PINcode.Text != "112255")
+                {
+                    if (CommonValues.CurrentUserInfo.IsArabic)
+                    {
+                        MessageBox.Show("رمز PIN غير صحيح.", "خطأ في التحقق", MessageBoxButtons.OK);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid PIN code.", "Validation Error", MessageBoxButtons.OK);
+                    }
+                    PINcode.Clear();
+                    return; // Don't proceed if height or weight is not valid
+                }
+                else
+                {
+                    coach = true;
+                }
+            }
             try
             {
-                string filePath = FileTextBox.Text;
                 string fileName = Path.GetFileName(filePath);
                 byte[] fileData = null; // Initialize to null
                 databaseManager.OpenConnection();
 
                 // Insert user data into the database
-                string insertQuery = "INSERT INTO UserInfo (FName, LName, Email, UserName, Password, BirthDate, Gender, Height, Weight, Age, ActivityLevel, BMI, ProfilePicture, LastLogin) " +
-                                     "VALUES (@Fname, @Lname, @Email, @UserName, @Password, @BirthDate, @gender, @Height, @Weight, @Age, @activityLevel, @BMI, @ProfilePicture, @LastLogin)";
+                string insertQuery = "INSERT INTO UserInfo (FName, LName, Email, UserName, Password, BirthDate, Gender, Height, Weight, Age, ActivityLevel, BMI, ProfilePicture, LastLogin, IsCoach) " +
+                                     "VALUES (@Fname, @Lname, @Email, @UserName, @Password, @BirthDate, @gender, @Height, @Weight, @Age, @activityLevel, @BMI, @ProfilePicture, @LastLogin, @IsCoach)";
                 using (SqlCommand insertCommand = new SqlCommand(insertQuery, databaseManager.GetConnection()))
                 {
                     insertCommand.Parameters.AddWithValue("@Fname", fname);
@@ -244,6 +267,8 @@ namespace HealthMate_UI
                     insertCommand.Parameters.AddWithValue("@ProfilePicture", fileData);
 
                     insertCommand.Parameters.AddWithValue("@LastLogin", DateTime.Today);
+                    insertCommand.Parameters.AddWithValue("@IsCoach", coach ? 1 : 0);
+
 
                     insertCommand.ExecuteNonQuery();
                 }
@@ -351,7 +376,7 @@ namespace HealthMate_UI
             string strengthMessage;
             Color strengthColor;
 
-           if (!CommonValues.CurrentUserInfo.IsArabic)
+            if (!CommonValues.CurrentUserInfo.IsArabic)
             {
                 switch (strength)
                 {
@@ -569,26 +594,19 @@ namespace HealthMate_UI
             label1.ForeColor = Color.White;
             Height_cm.ForeColor = Color.Black;
             Height_cm.FillColor = Color.FromArgb(224, 224, 224);
-            InchesToCm.FillColor = Color.FromArgb(224, 224, 224);
             Weight.ForeColor = Color.Black;
             Weight.FillColor = Color.FromArgb(224, 224, 224);
-            KGToLB.FillColor = Color.FromArgb(224, 224, 224);
             Password.FillColor = Color.FromArgb(224, 224, 224);
             Password.ForeColor = Color.Black;
-            PasswordVisibility.FillColor = Color.FromArgb(224, 224, 224);
             RePassword.FillColor = Color.FromArgb(224, 224, 224);
             RePassword.ForeColor = Color.Black;
-            PasswordVisibilityRE.FillColor = Color.FromArgb(224, 224, 224);
             PasswordMatchLabel.ForeColor = Color.FromArgb(255, 128, 128);
-            CreateAccbtn.FillColor = Color.FromArgb(224, 224, 224);
-            CreateAccbtn.ForeColor = Color.Black;
             toolStrip1.ForeColor = Color.White;
             toolStrip1.BackColor = Color.FromArgb(55, 55, 55);
             Back.ForeColor = Color.White;
             Back.Image = Properties.Resources.WBack;
             BrowseButton.ForeColor = Color.Black;
             BrowseButton.FillColor = Color.FromArgb(224, 224, 224);
-            FileTextBox.ForeColor = Color.White;
         }
 
         private void ApplyLightTheme()
@@ -599,27 +617,21 @@ namespace HealthMate_UI
             label1.ForeColor = Color.Black;
             Height_cm.ForeColor = Color.Black;
             Height_cm.FillColor = Color.White;
-            InchesToCm.FillColor = Color.White;
             Weight.ForeColor = Color.Black;
             Weight.FillColor = Color.White;
-            KGToLB.FillColor = Color.White;
             Password.FillColor = Color.White;
             Password.ForeColor = Color.Black;
-            PasswordVisibility.FillColor = Color.White;
             RePassword.FillColor = Color.White;
             RePassword.ForeColor = Color.Black;
-            PasswordVisibilityRE.FillColor = Color.White;
             PasswordMatchLabel.ForeColor = Color.Red;
-            CreateAccbtn.FillColor = Color.White;
-            CreateAccbtn.ForeColor = Color.Black;
             toolStrip1.ForeColor = Color.White;
             toolStrip1.BackColor = Color.Gainsboro;
             Back.ForeColor = Color.Black;
             Back.Image = Properties.Resources.Back;
             BrowseButton.ForeColor = Color.Black;
             BrowseButton.FillColor = Color.White;
-            FileTextBox.ForeColor = Color.Black;
         }
+
         private void ArabicLanguage()
         {
             base.RightToLeft = RightToLeft.Yes;
@@ -640,9 +652,10 @@ namespace HealthMate_UI
             RePassword.Location = new Point(355, 164);
             PasswordVisibilityRE.Location = new Point(355, 164);
             CreateAccbtn.Text = "انشاء الحساب";
-            CreateAccbtn.Location = new Point(229, 314);
             BrowseButton.Text = "تصفّح";
             ChangePPlabel.Text = "  إختر صورتك الشخصية  ";
+            TrainerCheck.Text = "هل أنت مدرّب معتمد؟";
+            TrainerCheck.RightToLeft = RightToLeft.No;
         }
 
         private void EnglishLanguage()
@@ -665,9 +678,9 @@ namespace HealthMate_UI
             RePassword.Location = new Point(355, 164);
             PasswordVisibilityRE.Location = new Point(526, 164);
             CreateAccbtn.Text = "Create an account";
-            CreateAccbtn.Location = new Point(229, 314);
             BrowseButton.Text = "Browse";
             ChangePPlabel.Text = "Choose profile picture";
+            TrainerCheck.Text = "Are you a trainer?";
         }
 
         private void BrowseButton_Click(object sender, EventArgs e)
@@ -680,9 +693,7 @@ namespace HealthMate_UI
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     string selectedFilePath = openFileDialog.FileName;
-                    FileTextBox.Text = selectedFilePath;
-
-                    string filePath = FileTextBox.Text;
+                    filePath = selectedFilePath;
 
                     // Convert the image file to a byte array
                     byte[] fileData = File.ReadAllBytes(filePath);
@@ -694,6 +705,58 @@ namespace HealthMate_UI
                         circularPictureBox.Image = image;
                     }
                 }
+            }
+        }
+
+        private void PINcode_Click(object sender, EventArgs e)
+        {
+            if (!(PINcode.Text.Length <= 6))
+            {
+                PINcode.Text = string.Empty;
+            }
+        }
+
+        private void PINcode_Leave(object sender, EventArgs e)
+        {
+            if (!(PINcode.Text.Length <= 6 && PINcode.Text.Length != 0))
+            {
+                if (arabic)
+                {
+                    PINcode.Text = "أدخل رمز PIN";
+                }
+                else
+                {
+                    PINcode.Text = "Enter PIN Code";
+                }
+            }
+        }
+
+        private void TrainerCheck_CheckedChanged(object sender, EventArgs e)
+        {
+            if (TrainerCheck.Checked)
+            {
+                PINcode.Visible = true;
+                if (arabic)
+                {
+                    PINcode.Text = "أدخل رمز PIN";
+                }
+                else
+                {
+                    PINcode.Text = "Enter PIN Code";
+                }
+            }
+            else
+            {
+                PINcode.Visible = false;
+            }
+        }
+
+        private void PINcode_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                // If not a digit or control key, suppress the key press
+                e.Handled = true;
             }
         }
     }

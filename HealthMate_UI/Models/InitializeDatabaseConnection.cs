@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace HealthMate_UI
 {
-    public class DatabaseManager
+    public class DatabaseManager : IDisposable
     {
         private SqlConnection sqlConnection;
 
@@ -33,6 +33,25 @@ namespace HealthMate_UI
         public SqlConnection GetConnection()
         {
             return sqlConnection;
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                // Dispose managed resources
+                if (sqlConnection != null)
+                {
+                    sqlConnection.Dispose();
+                    sqlConnection = null;
+                }
+            }
         }
     }
 }

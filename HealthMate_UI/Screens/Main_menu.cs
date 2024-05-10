@@ -1,5 +1,6 @@
 ﻿using HealthMate_UI.Constants;
 using HealthMate_UI.Screens;
+using ImageRetrievalApp;
 using System;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -77,6 +78,31 @@ namespace HealthMate_UI
                 {
                     MessageBox.Show("It looks like you've been away for a few days. Remember your commitment? Let's pick up where we left off.", "Welcome back!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
                 }
+            }
+            try
+            {
+                databaseManager.OpenConnection();
+                string readQuery = "SELECT * FROM UserInfo WHERE UserName = @Username";
+                using (SqlCommand command = new SqlCommand(readQuery, databaseManager.GetConnection()))
+                {
+                    command.Parameters.AddWithValue("@Username", CommonValues.CurrentUserInfo.UserName);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            CommonValues.CurrentUserInfo.LastLogin = (DateTime)reader["LastLogin"];
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}");
+            }
+            finally
+            {
+                databaseManager.CloseConnection();
             }
         }
 

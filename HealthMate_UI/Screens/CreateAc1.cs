@@ -24,7 +24,7 @@ namespace HealthMate_UI
             UpdateNextBtnState();
         }
 
-        private void Form2_Load(object sender, EventArgs e)
+        private void CreateAc1_Load(object sender, EventArgs e)
         {
             if (CommonValues.CurrentUserInfo.IsDark == true)
             {
@@ -202,7 +202,6 @@ namespace HealthMate_UI
 
         private void ApplyDarkTheme()
         {
-            // Apply the dark theme
             this.BackColor = Color.FromArgb(70, 70, 70);
             this.ForeColor = Color.White;
             label1.ForeColor = Color.White;
@@ -222,8 +221,6 @@ namespace HealthMate_UI
             Birthdate.FillColor = Color.FromArgb(224, 224, 224);
             ActivityLevel.ForeColor = Color.Black;
             ActivityLevel.FillColor = Color.FromArgb(224, 224, 224);
-            Nextbtn.ForeColor = Color.Black;
-            Nextbtn.FillColor = Color.FromArgb(224, 224, 224);
             Themes.ForeColor = Color.White;
             Back.ForeColor = Color.White;
             SelectLanguage.ForeColor = Color.White;
@@ -261,8 +258,6 @@ namespace HealthMate_UI
             Birthdate.FillColor = Color.White;
             ActivityLevel.ForeColor = Color.Black;
             ActivityLevel.FillColor = Color.White;
-            Nextbtn.ForeColor = Color.Black;
-            Nextbtn.FillColor = Color.White;
             Themes.ForeColor = Color.Black;
             Back.ForeColor = Color.Black;
             SelectLanguage.ForeColor = Color.Black;

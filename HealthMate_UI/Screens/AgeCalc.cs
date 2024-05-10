@@ -68,8 +68,6 @@ namespace HealthMate_UI
             // Apply the dark theme
             this.BackColor = Color.FromArgb(70, 70, 70);
             this.ForeColor = Color.White;
-            AnotherDateBtn.ForeColor = Color.Black;
-            AnotherDateBtn.BackColor = Color.FromArgb(224, 224, 224);
             toolStrip1.ForeColor = Color.White;
             toolStrip1.BackColor = Color.FromArgb(55, 55, 55);
             Back.Image = Properties.Resources.WBack;
@@ -81,8 +79,6 @@ namespace HealthMate_UI
             // Apply the light theme
             this.BackColor = Color.White;
             this.ForeColor = Color.Black;
-            AnotherDateBtn.ForeColor = Color.Black;
-            AnotherDateBtn.BackColor = Color.White;
             toolStrip1.ForeColor = Color.White;
             toolStrip1.BackColor = Color.Gainsboro;
             Back.Image = Properties.Resources.Back;

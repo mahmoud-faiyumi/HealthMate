@@ -36,10 +36,18 @@
             this.PasswordMatchLabel = new System.Windows.Forms.Label();
             this.PasswordStrengthLabel = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.Back = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.printToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.cutToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.copyToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.pasteToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.FileTextBox = new System.Windows.Forms.Label();
+            this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.ChangePPlabel = new System.Windows.Forms.Label();
             this.progressBar1 = new Guna.UI2.WinForms.Guna2CircleProgressBar();
@@ -55,15 +63,8 @@
             this.PasswordVisibility = new Guna.UI2.WinForms.Guna2Button();
             this.KGToLB = new Guna.UI2.WinForms.Guna2Button();
             this.circularPictureBox = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.Back = new System.Windows.Forms.ToolStripButton();
-            this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.printToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.cutToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.copyToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.pasteToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.TrainerCheck = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.PINcode = new Guna.UI2.WinForms.Guna2TextBox();
             this.toolStrip1.SuspendLayout();
             this.progressBar1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox)).BeginInit();
@@ -150,29 +151,101 @@
             this.toolStrip1.TabIndex = 59;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // Back
+            // 
+            this.Back.Image = global::HealthMate_UI.Properties.Resources.Back;
+            this.Back.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Back.Name = "Back";
+            this.Back.Size = new System.Drawing.Size(52, 22);
+            this.Back.Text = "Back";
+            this.Back.Click += new System.EventHandler(this.Back_Click);
+            // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // newToolStripButton
+            // 
+            this.newToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.newToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("newToolStripButton.Image")));
+            this.newToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.newToolStripButton.Name = "newToolStripButton";
+            this.newToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.newToolStripButton.Text = "&New";
+            // 
+            // openToolStripButton
+            // 
+            this.openToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.openToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripButton.Image")));
+            this.openToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.openToolStripButton.Name = "openToolStripButton";
+            this.openToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.openToolStripButton.Text = "&Open";
+            // 
+            // saveToolStripButton
+            // 
+            this.saveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.saveToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripButton.Image")));
+            this.saveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.saveToolStripButton.Name = "saveToolStripButton";
+            this.saveToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.saveToolStripButton.Text = "&Save";
+            // 
+            // printToolStripButton
+            // 
+            this.printToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.printToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripButton.Image")));
+            this.printToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.printToolStripButton.Name = "printToolStripButton";
+            this.printToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.printToolStripButton.Text = "&Print";
             // 
             // toolStripSeparator
             // 
             this.toolStripSeparator.Name = "toolStripSeparator";
             this.toolStripSeparator.Size = new System.Drawing.Size(6, 25);
             // 
+            // cutToolStripButton
+            // 
+            this.cutToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.cutToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("cutToolStripButton.Image")));
+            this.cutToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.cutToolStripButton.Name = "cutToolStripButton";
+            this.cutToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.cutToolStripButton.Text = "C&ut";
+            // 
+            // copyToolStripButton
+            // 
+            this.copyToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.copyToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("copyToolStripButton.Image")));
+            this.copyToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.copyToolStripButton.Name = "copyToolStripButton";
+            this.copyToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.copyToolStripButton.Text = "&Copy";
+            // 
+            // pasteToolStripButton
+            // 
+            this.pasteToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.pasteToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("pasteToolStripButton.Image")));
+            this.pasteToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.pasteToolStripButton.Name = "pasteToolStripButton";
+            this.pasteToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.pasteToolStripButton.Text = "&Paste";
+            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
-            // FileTextBox
+            // helpToolStripButton
             // 
-            this.FileTextBox.AutoSize = true;
-            this.FileTextBox.Font = new System.Drawing.Font("El Messiri SemiBold", 9F, System.Drawing.FontStyle.Bold);
-            this.FileTextBox.Location = new System.Drawing.Point(268, 287);
-            this.FileTextBox.Name = "FileTextBox";
-            this.FileTextBox.Size = new System.Drawing.Size(0, 19);
-            this.FileTextBox.TabIndex = 75;
+            this.helpToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.helpToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("helpToolStripButton.Image")));
+            this.helpToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.helpToolStripButton.Name = "helpToolStripButton";
+            this.helpToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.helpToolStripButton.Text = "He&lp";
             // 
             // openFileDialog
             // 
@@ -227,7 +300,7 @@
             this.BrowseButton.FillColor = System.Drawing.Color.White;
             this.BrowseButton.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
             this.BrowseButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.BrowseButton.Location = new System.Drawing.Point(258, 253);
+            this.BrowseButton.Location = new System.Drawing.Point(257, 253);
             this.BrowseButton.Name = "BrowseButton";
             this.BrowseButton.Size = new System.Drawing.Size(94, 30);
             this.BrowseButton.TabIndex = 5;
@@ -325,18 +398,16 @@
             // CreateAccbtn
             // 
             this.CreateAccbtn.Animated = true;
-            this.CreateAccbtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(205)))), ((int)(((byte)(210)))));
             this.CreateAccbtn.BorderRadius = 15;
-            this.CreateAccbtn.BorderThickness = 1;
             this.CreateAccbtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CreateAccbtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.CreateAccbtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.CreateAccbtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.CreateAccbtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.CreateAccbtn.FillColor = System.Drawing.Color.White;
+            this.CreateAccbtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(73)))), ((int)(((byte)(255)))));
             this.CreateAccbtn.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
-            this.CreateAccbtn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.CreateAccbtn.Location = new System.Drawing.Point(224, 330);
+            this.CreateAccbtn.ForeColor = System.Drawing.Color.White;
+            this.CreateAccbtn.Location = new System.Drawing.Point(222, 289);
             this.CreateAccbtn.Name = "CreateAccbtn";
             this.CreateAccbtn.Size = new System.Drawing.Size(165, 31);
             this.CreateAccbtn.TabIndex = 6;
@@ -347,19 +418,17 @@
             // 
             this.InchesToCm.Animated = true;
             this.InchesToCm.BackColor = System.Drawing.Color.Transparent;
-            this.InchesToCm.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            this.InchesToCm.BorderRadius = 3;
-            this.InchesToCm.BorderThickness = 1;
+            this.InchesToCm.BorderRadius = 5;
             this.InchesToCm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.InchesToCm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.InchesToCm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.InchesToCm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.InchesToCm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.InchesToCm.FillColor = System.Drawing.Color.White;
+            this.InchesToCm.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(73)))), ((int)(((byte)(255)))));
             this.InchesToCm.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
-            this.InchesToCm.ForeColor = System.Drawing.Color.Black;
+            this.InchesToCm.ForeColor = System.Drawing.Color.Transparent;
             this.InchesToCm.Image = global::HealthMate_UI.Properties.Resources.inches_01;
-            this.InchesToCm.ImageSize = new System.Drawing.Size(28, 28);
+            this.InchesToCm.ImageSize = new System.Drawing.Size(27, 27);
             this.InchesToCm.Location = new System.Drawing.Point(222, 76);
             this.InchesToCm.Name = "InchesToCm";
             this.InchesToCm.Size = new System.Drawing.Size(33, 33);
@@ -371,17 +440,15 @@
             // 
             this.PasswordVisibilityRE.Animated = true;
             this.PasswordVisibilityRE.BackColor = System.Drawing.Color.Transparent;
-            this.PasswordVisibilityRE.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            this.PasswordVisibilityRE.BorderRadius = 3;
-            this.PasswordVisibilityRE.BorderThickness = 1;
+            this.PasswordVisibilityRE.BorderRadius = 5;
             this.PasswordVisibilityRE.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PasswordVisibilityRE.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.PasswordVisibilityRE.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.PasswordVisibilityRE.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.PasswordVisibilityRE.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.PasswordVisibilityRE.FillColor = System.Drawing.Color.White;
+            this.PasswordVisibilityRE.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(73)))), ((int)(((byte)(255)))));
             this.PasswordVisibilityRE.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
-            this.PasswordVisibilityRE.ForeColor = System.Drawing.Color.Black;
+            this.PasswordVisibilityRE.ForeColor = System.Drawing.Color.Transparent;
             this.PasswordVisibilityRE.Image = global::HealthMate_UI.Properties.Resources.hide_eye;
             this.PasswordVisibilityRE.ImageSize = new System.Drawing.Size(28, 28);
             this.PasswordVisibilityRE.Location = new System.Drawing.Point(526, 164);
@@ -395,17 +462,15 @@
             // 
             this.PasswordVisibility.Animated = true;
             this.PasswordVisibility.BackColor = System.Drawing.Color.Transparent;
-            this.PasswordVisibility.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            this.PasswordVisibility.BorderRadius = 3;
-            this.PasswordVisibility.BorderThickness = 1;
+            this.PasswordVisibility.BorderRadius = 5;
             this.PasswordVisibility.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PasswordVisibility.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.PasswordVisibility.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.PasswordVisibility.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.PasswordVisibility.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.PasswordVisibility.FillColor = System.Drawing.Color.White;
+            this.PasswordVisibility.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(73)))), ((int)(((byte)(255)))));
             this.PasswordVisibility.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
-            this.PasswordVisibility.ForeColor = System.Drawing.Color.Black;
+            this.PasswordVisibility.ForeColor = System.Drawing.Color.Transparent;
             this.PasswordVisibility.Image = global::HealthMate_UI.Properties.Resources.hide_eye;
             this.PasswordVisibility.ImageSize = new System.Drawing.Size(28, 28);
             this.PasswordVisibility.Location = new System.Drawing.Point(222, 164);
@@ -419,19 +484,17 @@
             // 
             this.KGToLB.Animated = true;
             this.KGToLB.BackColor = System.Drawing.Color.Transparent;
-            this.KGToLB.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            this.KGToLB.BorderRadius = 3;
-            this.KGToLB.BorderThickness = 1;
+            this.KGToLB.BorderRadius = 5;
             this.KGToLB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.KGToLB.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.KGToLB.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.KGToLB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.KGToLB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.KGToLB.FillColor = System.Drawing.Color.White;
+            this.KGToLB.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(73)))), ((int)(((byte)(255)))));
             this.KGToLB.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
-            this.KGToLB.ForeColor = System.Drawing.Color.Black;
+            this.KGToLB.ForeColor = System.Drawing.Color.Transparent;
             this.KGToLB.Image = global::HealthMate_UI.Properties.Resources.KG_01;
-            this.KGToLB.ImageSize = new System.Drawing.Size(28, 28);
+            this.KGToLB.ImageSize = new System.Drawing.Size(27, 27);
             this.KGToLB.Location = new System.Drawing.Point(526, 76);
             this.KGToLB.Name = "KGToLB";
             this.KGToLB.Size = new System.Drawing.Size(33, 33);
@@ -452,86 +515,52 @@
             this.circularPictureBox.TabIndex = 78;
             this.circularPictureBox.TabStop = false;
             // 
-            // Back
+            // TrainerCheck
             // 
-            this.Back.Image = global::HealthMate_UI.Properties.Resources.Back;
-            this.Back.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Back.Name = "Back";
-            this.Back.Size = new System.Drawing.Size(52, 22);
-            this.Back.Text = "Back";
-            this.Back.Click += new System.EventHandler(this.Back_Click);
+            this.TrainerCheck.Animated = true;
+            this.TrainerCheck.AutoSize = true;
+            this.TrainerCheck.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TrainerCheck.CheckedState.BorderRadius = 0;
+            this.TrainerCheck.CheckedState.BorderThickness = 0;
+            this.TrainerCheck.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TrainerCheck.Location = new System.Drawing.Point(229, 326);
+            this.TrainerCheck.Name = "TrainerCheck";
+            this.TrainerCheck.Size = new System.Drawing.Size(159, 29);
+            this.TrainerCheck.TabIndex = 89;
+            this.TrainerCheck.Tag = "";
+            this.TrainerCheck.Text = "Are you a trainer?";
+            this.TrainerCheck.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.TrainerCheck.UncheckedState.BorderRadius = 0;
+            this.TrainerCheck.UncheckedState.BorderThickness = 0;
+            this.TrainerCheck.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.TrainerCheck.CheckedChanged += new System.EventHandler(this.TrainerCheck_CheckedChanged);
             // 
-            // newToolStripButton
+            // PINcode
             // 
-            this.newToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.newToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("newToolStripButton.Image")));
-            this.newToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.newToolStripButton.Name = "newToolStripButton";
-            this.newToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.newToolStripButton.Text = "&New";
-            // 
-            // openToolStripButton
-            // 
-            this.openToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.openToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripButton.Image")));
-            this.openToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.openToolStripButton.Name = "openToolStripButton";
-            this.openToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.openToolStripButton.Text = "&Open";
-            // 
-            // saveToolStripButton
-            // 
-            this.saveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.saveToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripButton.Image")));
-            this.saveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.saveToolStripButton.Name = "saveToolStripButton";
-            this.saveToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.saveToolStripButton.Text = "&Save";
-            // 
-            // printToolStripButton
-            // 
-            this.printToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.printToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripButton.Image")));
-            this.printToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.printToolStripButton.Name = "printToolStripButton";
-            this.printToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.printToolStripButton.Text = "&Print";
-            // 
-            // cutToolStripButton
-            // 
-            this.cutToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.cutToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("cutToolStripButton.Image")));
-            this.cutToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.cutToolStripButton.Name = "cutToolStripButton";
-            this.cutToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.cutToolStripButton.Text = "C&ut";
-            // 
-            // copyToolStripButton
-            // 
-            this.copyToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.copyToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("copyToolStripButton.Image")));
-            this.copyToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.copyToolStripButton.Name = "copyToolStripButton";
-            this.copyToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.copyToolStripButton.Text = "&Copy";
-            // 
-            // pasteToolStripButton
-            // 
-            this.pasteToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.pasteToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("pasteToolStripButton.Image")));
-            this.pasteToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.pasteToolStripButton.Name = "pasteToolStripButton";
-            this.pasteToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.pasteToolStripButton.Text = "&Paste";
-            // 
-            // helpToolStripButton
-            // 
-            this.helpToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.helpToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("helpToolStripButton.Image")));
-            this.helpToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.helpToolStripButton.Name = "helpToolStripButton";
-            this.helpToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.helpToolStripButton.Text = "He&lp";
+            this.PINcode.Animated = true;
+            this.PINcode.BorderRadius = 10;
+            this.PINcode.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.PINcode.DefaultText = "Enter PIN Code";
+            this.PINcode.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.PINcode.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.PINcode.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.PINcode.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.PINcode.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.PINcode.Font = new System.Drawing.Font("El Messiri SemiBold", 9F, System.Drawing.FontStyle.Bold);
+            this.PINcode.ForeColor = System.Drawing.Color.Black;
+            this.PINcode.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.PINcode.Location = new System.Drawing.Point(234, 356);
+            this.PINcode.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.PINcode.Name = "PINcode";
+            this.PINcode.PasswordChar = '\0';
+            this.PINcode.PlaceholderText = "";
+            this.PINcode.SelectedText = "";
+            this.PINcode.Size = new System.Drawing.Size(142, 25);
+            this.PINcode.TabIndex = 90;
+            this.PINcode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.PINcode.Click += new System.EventHandler(this.PINcode_Click);
+            this.PINcode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PINcode_KeyPress);
+            this.PINcode.Leave += new System.EventHandler(this.PINcode_Leave);
             // 
             // CreateAc2
             // 
@@ -539,6 +568,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(595, 390);
+            this.Controls.Add(this.PINcode);
+            this.Controls.Add(this.TrainerCheck);
             this.Controls.Add(this.CreateAccbtn);
             this.Controls.Add(this.InchesToCm);
             this.Controls.Add(this.PasswordVisibilityRE);
@@ -552,7 +583,6 @@
             this.Controls.Add(this.circularPictureBox);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.ChangePPlabel);
-            this.Controls.Add(this.FileTextBox);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.PasswordStrengthLabel);
             this.Controls.Add(this.PasswordMatchLabel);
@@ -599,7 +629,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton helpToolStripButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.Label FileTextBox;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.Label ChangePPlabel;
         private Guna.UI2.WinForms.Guna2CircleProgressBar progressBar1;
@@ -615,5 +644,7 @@
         private Guna.UI2.WinForms.Guna2Button PasswordVisibilityRE;
         private Guna.UI2.WinForms.Guna2Button InchesToCm;
         private Guna.UI2.WinForms.Guna2Button CreateAccbtn;
+        private Guna.UI2.WinForms.Guna2CheckBox TrainerCheck;
+        private Guna.UI2.WinForms.Guna2TextBox PINcode;
     }
 }

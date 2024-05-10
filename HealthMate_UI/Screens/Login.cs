@@ -25,7 +25,7 @@ namespace HealthMate_UI
             PasswordVisibility.BackgroundImageLayout = ImageLayout.Stretch; // Set the layout to stretch
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Login_Load(object sender, EventArgs e)
         {
             if (CommonValues.CurrentUserInfo.IsDark == true)
             {
@@ -86,10 +86,35 @@ namespace HealthMate_UI
             try
             {
                 databaseManager.OpenConnection();
-
+                string readQuery0 = "SELECT * FROM BlackList";
                 string readQuery = "SELECT * FROM UserInfo WHERE UserName = @Username";
                 string readQuery1 = "SELECT * FROM UserPreferences WHERE UserName_FK = @Username";
                 // Insert user data into the database
+
+                using (SqlCommand command1 = new SqlCommand(readQuery0, databaseManager.GetConnection()))
+                {
+                    using (SqlDataReader reader = command1.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string blacklistedUserName = reader["UserName"].ToString();
+                            if (blacklistedUserName == usernameText)
+                            {
+                                if (CommonValues.CurrentUserInfo.IsArabic)
+                                {
+                                    MessageBox.Show(".فشل تسجيل الدخول. لقد قمت بحذف حسابك");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Login failed. You have deleted your account.");
+                                }
+                                Password.Clear();
+                                Username.Clear();
+                                return;
+                            }
+                        }
+                    }
+                }
 
                 using (SqlCommand command = new SqlCommand(readQuery, databaseManager.GetConnection()))
                 {
@@ -110,6 +135,9 @@ namespace HealthMate_UI
                             CommonValues.CurrentUserInfo.Gender = reader["Gender"].ToString();
                             CommonValues.CurrentUserInfo.Height = (double)reader["Height"];
                             CommonValues.CurrentUserInfo.Weight = (double)reader["Weight"];
+                            CommonValues.CurrentUserInfo.ID = (int)reader["ID"];
+                            CommonValues.CurrentUserInfo.IsCoach = (bool)reader["IsCoach"];
+                            CommonValues.CurrentUserInfo.CoachID = (int)reader["CoachID"];
                             object profilePictureValue = reader["ProfilePicture"];
 
                             if (profilePictureValue != DBNull.Value)
@@ -134,9 +162,9 @@ namespace HealthMate_UI
                             }
 
 
-                            string passwordFromDB = reader["Password"].ToString();
+                            CommonValues.CurrentUserInfo.PasswordFromDB = reader["Password"].ToString();
                             var encryptionService = new EncryptionService("hTbHfq5rC5dAby6DJt8P3w==", "6mRwZNlJb/WLbCyk4n+bBg==");
-                            string decryptedPass = encryptionService.Decrypt(passwordFromDB);
+                            string decryptedPass = encryptionService.Decrypt(CommonValues.CurrentUserInfo.PasswordFromDB);
 
                             if (passwordText == decryptedPass)
                             {
@@ -360,13 +388,10 @@ namespace HealthMate_UI
             Username.FillColor = Color.FromArgb(224, 224, 224);
             Password.ForeColor = Color.Black;
             Password.FillColor = Color.FromArgb(224, 224, 224);
-            LoginButton.ForeColor = Color.Black;
-            LoginButton.FillColor = Color.FromArgb(224, 224, 224);
             CreateAccbtn.ForeColor = Color.Black;
             CreateAccbtn.FillColor = Color.FromArgb(224, 224, 224);
             toolStrip1.ForeColor = Color.White;
             toolStrip1.BackColor = Color.FromArgb(55, 55, 55);
-            PasswordVisibility.FillColor = Color.FromArgb(224, 224, 224);
             Themes.Image = Properties.Resources.Dark;
             if (!CommonValues.CurrentUserInfo.IsArabic)
             {
@@ -386,13 +411,10 @@ namespace HealthMate_UI
             Username.FillColor = Color.White;
             Password.ForeColor = Color.Black;
             Password.FillColor = Color.White;
-            LoginButton.ForeColor = Color.Black;
-            LoginButton.FillColor = Color.White;
             CreateAccbtn.ForeColor = Color.Black;
             CreateAccbtn.FillColor = Color.White;
             toolStrip1.ForeColor = Color.Black;
             toolStrip1.BackColor = Color.Gainsboro;
-            PasswordVisibility.FillColor = Color.White;
             Themes.Image = Properties.Resources.Light;
             if (!CommonValues.CurrentUserInfo.IsArabic)
             {
@@ -415,6 +437,8 @@ namespace HealthMate_UI
             Password.Location = new Point(56, 128);
             PasswordVisibility.Location = new Point(55, 128);
             LoginButton.Text = "تسجيل الدخول";
+            LoginButton.Size = new Size(134, 35);
+            LoginButton.Location = new Point(237, 222);
             label1.Text = "اذا كنت لا تمتلك حساب...";
             label1.Location = new Point(175, 292);
             CreateAccbtn.Text = "قم بإنشاء حساب";
@@ -444,7 +468,8 @@ namespace HealthMate_UI
             Password.Location = new Point(351, 127);
             PasswordVisibility.Location = new Point(523, 127);
             LoginButton.Text = "Login";
-            LoginButton.Location = new Point(265, 215);
+            LoginButton.Location = new Point(263, 220);
+            LoginButton.Size = new Size(84, 35);
             label1.Text = "If you do not have an account";
             label1.Location = new Point(197, 291);
             CreateAccbtn.Text = "Create an account";

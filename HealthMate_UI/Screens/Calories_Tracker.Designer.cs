@@ -33,14 +33,14 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.Breakfast = new System.Windows.Forms.Button();
-            this.Lunch = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.ExtraMeal = new System.Windows.Forms.Button();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Breakfast = new Guna.UI2.WinForms.Guna2Button();
+            this.ExtraMeal = new Guna.UI2.WinForms.Guna2Button();
+            this.Dinner = new Guna.UI2.WinForms.Guna2Button();
+            this.Lunch = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.Back = new System.Windows.Forms.ToolStripButton();
             this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -51,10 +51,10 @@
             this.pasteToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -101,83 +101,123 @@
             // 
             // Breakfast
             // 
-            this.Breakfast.Location = new System.Drawing.Point(36, 116);
+            this.Breakfast.Animated = true;
+            this.Breakfast.BorderRadius = 15;
+            this.Breakfast.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Breakfast.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Breakfast.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Breakfast.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Breakfast.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Breakfast.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(73)))), ((int)(((byte)(255)))));
+            this.Breakfast.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.Breakfast.ForeColor = System.Drawing.Color.White;
+            this.Breakfast.Location = new System.Drawing.Point(37, 116);
             this.Breakfast.Name = "Breakfast";
-            this.Breakfast.Size = new System.Drawing.Size(101, 28);
-            this.Breakfast.TabIndex = 75;
+            this.Breakfast.Size = new System.Drawing.Size(113, 34);
+            this.Breakfast.TabIndex = 97;
             this.Breakfast.Text = "+ Breakfast";
-            this.Breakfast.UseVisualStyleBackColor = true;
             this.Breakfast.Click += new System.EventHandler(this.Breakfast_Click);
-            // 
-            // Lunch
-            // 
-            this.Lunch.Location = new System.Drawing.Point(188, 116);
-            this.Lunch.Name = "Lunch";
-            this.Lunch.Size = new System.Drawing.Size(79, 28);
-            this.Lunch.TabIndex = 76;
-            this.Lunch.Text = "+ Lunch";
-            this.Lunch.UseVisualStyleBackColor = true;
-            this.Lunch.Click += new System.EventHandler(this.Lunch_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(326, 116);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(83, 28);
-            this.button3.TabIndex = 77;
-            this.button3.Text = "+ Dinner";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.Dinner_Click);
             // 
             // ExtraMeal
             // 
-            this.ExtraMeal.Location = new System.Drawing.Point(455, 116);
+            this.ExtraMeal.Animated = true;
+            this.ExtraMeal.BorderRadius = 15;
+            this.ExtraMeal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ExtraMeal.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ExtraMeal.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ExtraMeal.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ExtraMeal.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ExtraMeal.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(73)))), ((int)(((byte)(255)))));
+            this.ExtraMeal.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.ExtraMeal.ForeColor = System.Drawing.Color.White;
+            this.ExtraMeal.Location = new System.Drawing.Point(443, 116);
             this.ExtraMeal.Name = "ExtraMeal";
-            this.ExtraMeal.Size = new System.Drawing.Size(110, 28);
-            this.ExtraMeal.TabIndex = 78;
+            this.ExtraMeal.Size = new System.Drawing.Size(131, 34);
+            this.ExtraMeal.TabIndex = 94;
             this.ExtraMeal.Text = "+ Extra meal";
-            this.ExtraMeal.UseVisualStyleBackColor = true;
             this.ExtraMeal.Click += new System.EventHandler(this.ExtraMeal_Click);
             // 
-            // pictureBox4
+            // Dinner
             // 
-            this.pictureBox4.Image = global::HealthMate_UI.Properties.Resources.lunch;
-            this.pictureBox4.Location = new System.Drawing.Point(176, 60);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 82;
-            this.pictureBox4.TabStop = false;
+            this.Dinner.Animated = true;
+            this.Dinner.BorderRadius = 15;
+            this.Dinner.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Dinner.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Dinner.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Dinner.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Dinner.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Dinner.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(73)))), ((int)(((byte)(255)))));
+            this.Dinner.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.Dinner.ForeColor = System.Drawing.Color.White;
+            this.Dinner.Location = new System.Drawing.Point(313, 116);
+            this.Dinner.Name = "Dinner";
+            this.Dinner.Size = new System.Drawing.Size(100, 34);
+            this.Dinner.TabIndex = 95;
+            this.Dinner.Text = "+ Dinner";
+            this.Dinner.Click += new System.EventHandler(this.Dinner_Click);
             // 
-            // pictureBox3
+            // Lunch
             // 
-            this.pictureBox3.Image = global::HealthMate_UI.Properties.Resources.dinner1;
-            this.pictureBox3.Location = new System.Drawing.Point(317, 60);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 81;
-            this.pictureBox3.TabStop = false;
+            this.Lunch.Animated = true;
+            this.Lunch.BorderRadius = 15;
+            this.Lunch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Lunch.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Lunch.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Lunch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Lunch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Lunch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(73)))), ((int)(((byte)(255)))));
+            this.Lunch.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.Lunch.ForeColor = System.Drawing.Color.White;
+            this.Lunch.Location = new System.Drawing.Point(182, 116);
+            this.Lunch.Name = "Lunch";
+            this.Lunch.Size = new System.Drawing.Size(100, 34);
+            this.Lunch.TabIndex = 96;
+            this.Lunch.Text = "+ Lunch";
+            this.Lunch.Click += new System.EventHandler(this.Lunch_Click);
             // 
-            // pictureBox2
+            // guna2PictureBox4
             // 
-            this.pictureBox2.Image = global::HealthMate_UI.Properties.Resources.extra_meal;
-            this.pictureBox2.Location = new System.Drawing.Point(459, 49);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(100, 61);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 80;
-            this.pictureBox2.TabStop = false;
+            this.guna2PictureBox4.Image = global::HealthMate_UI.Properties.Resources.lunch;
+            this.guna2PictureBox4.ImageRotate = 0F;
+            this.guna2PictureBox4.Location = new System.Drawing.Point(182, 63);
+            this.guna2PictureBox4.Name = "guna2PictureBox4";
+            this.guna2PictureBox4.Size = new System.Drawing.Size(100, 52);
+            this.guna2PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox4.TabIndex = 101;
+            this.guna2PictureBox4.TabStop = false;
             // 
-            // pictureBox1
+            // guna2PictureBox3
             // 
-            this.pictureBox1.Image = global::HealthMate_UI.Properties.Resources.breakfast;
-            this.pictureBox1.Location = new System.Drawing.Point(37, 40);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 70);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 79;
-            this.pictureBox1.TabStop = false;
+            this.guna2PictureBox3.Image = global::HealthMate_UI.Properties.Resources.dinner1;
+            this.guna2PictureBox3.ImageRotate = 0F;
+            this.guna2PictureBox3.Location = new System.Drawing.Point(313, 63);
+            this.guna2PictureBox3.Name = "guna2PictureBox3";
+            this.guna2PictureBox3.Size = new System.Drawing.Size(100, 47);
+            this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox3.TabIndex = 100;
+            this.guna2PictureBox3.TabStop = false;
+            // 
+            // guna2PictureBox2
+            // 
+            this.guna2PictureBox2.Image = global::HealthMate_UI.Properties.Resources.extra_meal;
+            this.guna2PictureBox2.ImageRotate = 0F;
+            this.guna2PictureBox2.Location = new System.Drawing.Point(449, 31);
+            this.guna2PictureBox2.Name = "guna2PictureBox2";
+            this.guna2PictureBox2.Size = new System.Drawing.Size(115, 82);
+            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox2.TabIndex = 99;
+            this.guna2PictureBox2.TabStop = false;
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.Image = global::HealthMate_UI.Properties.Resources.breakfast;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(37, 28);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(113, 87);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 98;
+            this.guna2PictureBox1.TabStop = false;
             // 
             // Back
             // 
@@ -266,14 +306,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(595, 390);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.ExtraMeal);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.Lunch);
+            this.Controls.Add(this.guna2PictureBox4);
+            this.Controls.Add(this.guna2PictureBox3);
+            this.Controls.Add(this.guna2PictureBox2);
+            this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.Breakfast);
+            this.Controls.Add(this.Lunch);
+            this.Controls.Add(this.Dinner);
+            this.Controls.Add(this.ExtraMeal);
             this.Controls.Add(this.toolStrip1);
             this.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -286,10 +326,10 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Calories_Tracker_FormClosing);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -310,13 +350,13 @@
         private System.Windows.Forms.ToolStripButton pasteToolStripButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton helpToolStripButton;
-        private System.Windows.Forms.Button Breakfast;
-        private System.Windows.Forms.Button Lunch;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button ExtraMeal;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private Guna.UI2.WinForms.Guna2Button Breakfast;
+        private Guna.UI2.WinForms.Guna2Button ExtraMeal;
+        private Guna.UI2.WinForms.Guna2Button Dinner;
+        private Guna.UI2.WinForms.Guna2Button Lunch;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox3;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox4;
     }
 }

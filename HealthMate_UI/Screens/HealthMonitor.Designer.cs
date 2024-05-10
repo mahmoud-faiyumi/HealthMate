@@ -36,29 +36,29 @@
             this.AdviceLabel = new System.Windows.Forms.Label();
             this.line = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.Back = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.Subtitle = new System.Windows.Forms.Label();
+            this.BMItxt = new Guna.UI2.WinForms.Guna2TextBox();
+            this.WEIGHTtxt = new Guna.UI2.WinForms.Guna2TextBox();
+            this.CALORIEtxt = new Guna.UI2.WinForms.Guna2TextBox();
+            this.CATEGORYtxt = new Guna.UI2.WinForms.Guna2TextBox();
+            this.advice1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.advice2 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.advice3 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.advice4 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.advice6 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.advice5 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.Back = new System.Windows.Forms.ToolStripButton();
             this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.printToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.cutToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.copyToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.pasteToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.Subtitle = new System.Windows.Forms.Label();
-            this.advice1 = new System.Windows.Forms.TextBox();
-            this.advice2 = new System.Windows.Forms.TextBox();
-            this.advice3 = new System.Windows.Forms.TextBox();
-            this.advice4 = new System.Windows.Forms.TextBox();
-            this.advice5 = new System.Windows.Forms.TextBox();
-            this.advice6 = new System.Windows.Forms.TextBox();
-            this.BMItxt = new System.Windows.Forms.TextBox();
-            this.CATEGORYtxt = new System.Windows.Forms.TextBox();
-            this.CALORIEtxt = new System.Windows.Forms.TextBox();
-            this.WEIGHTtxt = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -140,6 +140,265 @@
             this.toolStrip1.TabIndex = 59;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator
+            // 
+            this.toolStripSeparator.Name = "toolStripSeparator";
+            this.toolStripSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // Subtitle
+            // 
+            this.Subtitle.AutoSize = true;
+            this.Subtitle.Font = new System.Drawing.Font("El Messiri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Subtitle.Location = new System.Drawing.Point(324, 25);
+            this.Subtitle.Name = "Subtitle";
+            this.Subtitle.Size = new System.Drawing.Size(138, 37);
+            this.Subtitle.TabIndex = 60;
+            this.Subtitle.Text = "HealthMate";
+            // 
+            // BMItxt
+            // 
+            this.BMItxt.BorderRadius = 15;
+            this.BMItxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.BMItxt.DefaultText = "";
+            this.BMItxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.BMItxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.BMItxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.BMItxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.BMItxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.BMItxt.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.BMItxt.ForeColor = System.Drawing.Color.Black;
+            this.BMItxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.BMItxt.Location = new System.Drawing.Point(24, 107);
+            this.BMItxt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BMItxt.Name = "BMItxt";
+            this.BMItxt.PasswordChar = '\0';
+            this.BMItxt.PlaceholderText = "";
+            this.BMItxt.ReadOnly = true;
+            this.BMItxt.SelectedText = "";
+            this.BMItxt.Size = new System.Drawing.Size(161, 33);
+            this.BMItxt.TabIndex = 71;
+            this.BMItxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // WEIGHTtxt
+            // 
+            this.WEIGHTtxt.BorderRadius = 15;
+            this.WEIGHTtxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.WEIGHTtxt.DefaultText = "";
+            this.WEIGHTtxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.WEIGHTtxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.WEIGHTtxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.WEIGHTtxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.WEIGHTtxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.WEIGHTtxt.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.WEIGHTtxt.ForeColor = System.Drawing.Color.Black;
+            this.WEIGHTtxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.WEIGHTtxt.Location = new System.Drawing.Point(24, 313);
+            this.WEIGHTtxt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.WEIGHTtxt.Name = "WEIGHTtxt";
+            this.WEIGHTtxt.PasswordChar = '\0';
+            this.WEIGHTtxt.PlaceholderText = "";
+            this.WEIGHTtxt.ReadOnly = true;
+            this.WEIGHTtxt.SelectedText = "";
+            this.WEIGHTtxt.Size = new System.Drawing.Size(161, 33);
+            this.WEIGHTtxt.TabIndex = 72;
+            this.WEIGHTtxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // CALORIEtxt
+            // 
+            this.CALORIEtxt.BorderRadius = 15;
+            this.CALORIEtxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.CALORIEtxt.DefaultText = "";
+            this.CALORIEtxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.CALORIEtxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.CALORIEtxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.CALORIEtxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.CALORIEtxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CALORIEtxt.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.CALORIEtxt.ForeColor = System.Drawing.Color.Black;
+            this.CALORIEtxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CALORIEtxt.Location = new System.Drawing.Point(24, 245);
+            this.CALORIEtxt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.CALORIEtxt.Name = "CALORIEtxt";
+            this.CALORIEtxt.PasswordChar = '\0';
+            this.CALORIEtxt.PlaceholderText = "";
+            this.CALORIEtxt.ReadOnly = true;
+            this.CALORIEtxt.SelectedText = "";
+            this.CALORIEtxt.Size = new System.Drawing.Size(161, 33);
+            this.CALORIEtxt.TabIndex = 73;
+            this.CALORIEtxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // CATEGORYtxt
+            // 
+            this.CATEGORYtxt.BorderRadius = 15;
+            this.CATEGORYtxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.CATEGORYtxt.DefaultText = "";
+            this.CATEGORYtxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.CATEGORYtxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.CATEGORYtxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.CATEGORYtxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.CATEGORYtxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CATEGORYtxt.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.CATEGORYtxt.ForeColor = System.Drawing.Color.Black;
+            this.CATEGORYtxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CATEGORYtxt.Location = new System.Drawing.Point(24, 176);
+            this.CATEGORYtxt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.CATEGORYtxt.Name = "CATEGORYtxt";
+            this.CATEGORYtxt.PasswordChar = '\0';
+            this.CATEGORYtxt.PlaceholderText = "";
+            this.CATEGORYtxt.ReadOnly = true;
+            this.CATEGORYtxt.SelectedText = "";
+            this.CATEGORYtxt.Size = new System.Drawing.Size(161, 33);
+            this.CATEGORYtxt.TabIndex = 74;
+            this.CATEGORYtxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // advice1
+            // 
+            this.advice1.BorderRadius = 15;
+            this.advice1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.advice1.DefaultText = "";
+            this.advice1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.advice1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.advice1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.advice1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.advice1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.advice1.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.advice1.ForeColor = System.Drawing.Color.Black;
+            this.advice1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.advice1.Location = new System.Drawing.Point(243, 122);
+            this.advice1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.advice1.Name = "advice1";
+            this.advice1.PasswordChar = '\0';
+            this.advice1.PlaceholderText = "";
+            this.advice1.ReadOnly = true;
+            this.advice1.SelectedText = "";
+            this.advice1.Size = new System.Drawing.Size(498, 33);
+            this.advice1.TabIndex = 75;
+            // 
+            // advice2
+            // 
+            this.advice2.BorderRadius = 15;
+            this.advice2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.advice2.DefaultText = "";
+            this.advice2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.advice2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.advice2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.advice2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.advice2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.advice2.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.advice2.ForeColor = System.Drawing.Color.Black;
+            this.advice2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.advice2.Location = new System.Drawing.Point(243, 164);
+            this.advice2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.advice2.Name = "advice2";
+            this.advice2.PasswordChar = '\0';
+            this.advice2.PlaceholderText = "";
+            this.advice2.ReadOnly = true;
+            this.advice2.SelectedText = "";
+            this.advice2.Size = new System.Drawing.Size(498, 33);
+            this.advice2.TabIndex = 76;
+            // 
+            // advice3
+            // 
+            this.advice3.BorderRadius = 15;
+            this.advice3.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.advice3.DefaultText = "";
+            this.advice3.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.advice3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.advice3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.advice3.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.advice3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.advice3.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.advice3.ForeColor = System.Drawing.Color.Black;
+            this.advice3.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.advice3.Location = new System.Drawing.Point(243, 206);
+            this.advice3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.advice3.Name = "advice3";
+            this.advice3.PasswordChar = '\0';
+            this.advice3.PlaceholderText = "";
+            this.advice3.ReadOnly = true;
+            this.advice3.SelectedText = "";
+            this.advice3.Size = new System.Drawing.Size(498, 33);
+            this.advice3.TabIndex = 77;
+            // 
+            // advice4
+            // 
+            this.advice4.BorderRadius = 15;
+            this.advice4.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.advice4.DefaultText = "";
+            this.advice4.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.advice4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.advice4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.advice4.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.advice4.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.advice4.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.advice4.ForeColor = System.Drawing.Color.Black;
+            this.advice4.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.advice4.Location = new System.Drawing.Point(243, 248);
+            this.advice4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.advice4.Name = "advice4";
+            this.advice4.PasswordChar = '\0';
+            this.advice4.PlaceholderText = "";
+            this.advice4.ReadOnly = true;
+            this.advice4.SelectedText = "";
+            this.advice4.Size = new System.Drawing.Size(498, 33);
+            this.advice4.TabIndex = 78;
+            // 
+            // advice6
+            // 
+            this.advice6.BorderRadius = 15;
+            this.advice6.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.advice6.DefaultText = "";
+            this.advice6.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.advice6.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.advice6.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.advice6.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.advice6.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.advice6.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.advice6.ForeColor = System.Drawing.Color.Black;
+            this.advice6.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.advice6.Location = new System.Drawing.Point(243, 332);
+            this.advice6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.advice6.Name = "advice6";
+            this.advice6.PasswordChar = '\0';
+            this.advice6.PlaceholderText = "";
+            this.advice6.ReadOnly = true;
+            this.advice6.SelectedText = "";
+            this.advice6.Size = new System.Drawing.Size(498, 33);
+            this.advice6.TabIndex = 79;
+            // 
+            // advice5
+            // 
+            this.advice5.BorderRadius = 15;
+            this.advice5.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.advice5.DefaultText = "";
+            this.advice5.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.advice5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.advice5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.advice5.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.advice5.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.advice5.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.advice5.ForeColor = System.Drawing.Color.Black;
+            this.advice5.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.advice5.Location = new System.Drawing.Point(243, 290);
+            this.advice5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.advice5.Name = "advice5";
+            this.advice5.PasswordChar = '\0';
+            this.advice5.PlaceholderText = "";
+            this.advice5.ReadOnly = true;
+            this.advice5.SelectedText = "";
+            this.advice5.Size = new System.Drawing.Size(498, 33);
+            this.advice5.TabIndex = 80;
+            // 
             // Back
             // 
             this.Back.Image = global::HealthMate_UI.Properties.Resources.Back;
@@ -148,11 +407,6 @@
             this.Back.Size = new System.Drawing.Size(52, 22);
             this.Back.Text = "Back";
             this.Back.Click += new System.EventHandler(this.Back_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // newToolStripButton
             // 
@@ -190,11 +444,6 @@
             this.printToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.printToolStripButton.Text = "&Print";
             // 
-            // toolStripSeparator
-            // 
-            this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(6, 25);
-            // 
             // cutToolStripButton
             // 
             this.cutToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -222,11 +471,6 @@
             this.pasteToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.pasteToolStripButton.Text = "&Paste";
             // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
             // helpToolStripButton
             // 
             this.helpToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -236,112 +480,22 @@
             this.helpToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.helpToolStripButton.Text = "He&lp";
             // 
-            // Subtitle
-            // 
-            this.Subtitle.AutoSize = true;
-            this.Subtitle.Font = new System.Drawing.Font("El Messiri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Subtitle.Location = new System.Drawing.Point(324, 25);
-            this.Subtitle.Name = "Subtitle";
-            this.Subtitle.Size = new System.Drawing.Size(138, 37);
-            this.Subtitle.TabIndex = 60;
-            this.Subtitle.Text = "HealthMate";
-            // 
-            // advice1
-            // 
-            this.advice1.Location = new System.Drawing.Point(243, 122);
-            this.advice1.Name = "advice1";
-            this.advice1.ReadOnly = true;
-            this.advice1.Size = new System.Drawing.Size(498, 33);
-            this.advice1.TabIndex = 61;
-            // 
-            // advice2
-            // 
-            this.advice2.Location = new System.Drawing.Point(243, 164);
-            this.advice2.Name = "advice2";
-            this.advice2.ReadOnly = true;
-            this.advice2.Size = new System.Drawing.Size(498, 33);
-            this.advice2.TabIndex = 62;
-            // 
-            // advice3
-            // 
-            this.advice3.Location = new System.Drawing.Point(243, 206);
-            this.advice3.Name = "advice3";
-            this.advice3.ReadOnly = true;
-            this.advice3.Size = new System.Drawing.Size(498, 33);
-            this.advice3.TabIndex = 63;
-            // 
-            // advice4
-            // 
-            this.advice4.Location = new System.Drawing.Point(243, 248);
-            this.advice4.Name = "advice4";
-            this.advice4.ReadOnly = true;
-            this.advice4.Size = new System.Drawing.Size(498, 33);
-            this.advice4.TabIndex = 64;
-            // 
-            // advice5
-            // 
-            this.advice5.Location = new System.Drawing.Point(243, 290);
-            this.advice5.Name = "advice5";
-            this.advice5.ReadOnly = true;
-            this.advice5.Size = new System.Drawing.Size(498, 33);
-            this.advice5.TabIndex = 65;
-            // 
-            // advice6
-            // 
-            this.advice6.Location = new System.Drawing.Point(243, 332);
-            this.advice6.Name = "advice6";
-            this.advice6.ReadOnly = true;
-            this.advice6.Size = new System.Drawing.Size(498, 33);
-            this.advice6.TabIndex = 66;
-            // 
-            // BMItxt
-            // 
-            this.BMItxt.Location = new System.Drawing.Point(24, 107);
-            this.BMItxt.Name = "BMItxt";
-            this.BMItxt.ReadOnly = true;
-            this.BMItxt.Size = new System.Drawing.Size(161, 33);
-            this.BMItxt.TabIndex = 67;
-            // 
-            // CATEGORYtxt
-            // 
-            this.CATEGORYtxt.Location = new System.Drawing.Point(24, 176);
-            this.CATEGORYtxt.Name = "CATEGORYtxt";
-            this.CATEGORYtxt.ReadOnly = true;
-            this.CATEGORYtxt.Size = new System.Drawing.Size(161, 33);
-            this.CATEGORYtxt.TabIndex = 68;
-            // 
-            // CALORIEtxt
-            // 
-            this.CALORIEtxt.Location = new System.Drawing.Point(24, 245);
-            this.CALORIEtxt.Name = "CALORIEtxt";
-            this.CALORIEtxt.ReadOnly = true;
-            this.CALORIEtxt.Size = new System.Drawing.Size(161, 33);
-            this.CALORIEtxt.TabIndex = 69;
-            // 
-            // WEIGHTtxt
-            // 
-            this.WEIGHTtxt.Location = new System.Drawing.Point(24, 313);
-            this.WEIGHTtxt.Name = "WEIGHTtxt";
-            this.WEIGHTtxt.ReadOnly = true;
-            this.WEIGHTtxt.Size = new System.Drawing.Size(161, 33);
-            this.WEIGHTtxt.TabIndex = 70;
-            // 
             // HealthMonitor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(758, 390);
-            this.Controls.Add(this.WEIGHTtxt);
-            this.Controls.Add(this.CALORIEtxt);
-            this.Controls.Add(this.CATEGORYtxt);
-            this.Controls.Add(this.BMItxt);
-            this.Controls.Add(this.advice6);
             this.Controls.Add(this.advice5);
+            this.Controls.Add(this.advice6);
             this.Controls.Add(this.advice4);
             this.Controls.Add(this.advice3);
             this.Controls.Add(this.advice2);
             this.Controls.Add(this.advice1);
+            this.Controls.Add(this.CATEGORYtxt);
+            this.Controls.Add(this.CALORIEtxt);
+            this.Controls.Add(this.WEIGHTtxt);
+            this.Controls.Add(this.BMItxt);
             this.Controls.Add(this.Subtitle);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.line);
@@ -351,6 +505,7 @@
             this.Controls.Add(this.CategoryLabel);
             this.Controls.Add(this.BMILabel);
             this.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
@@ -388,15 +543,15 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton helpToolStripButton;
         private System.Windows.Forms.Label Subtitle;
-        private System.Windows.Forms.TextBox advice1;
-        private System.Windows.Forms.TextBox advice2;
-        private System.Windows.Forms.TextBox advice3;
-        private System.Windows.Forms.TextBox advice4;
-        private System.Windows.Forms.TextBox advice5;
-        private System.Windows.Forms.TextBox advice6;
-        private System.Windows.Forms.TextBox BMItxt;
-        private System.Windows.Forms.TextBox CATEGORYtxt;
-        private System.Windows.Forms.TextBox CALORIEtxt;
-        private System.Windows.Forms.TextBox WEIGHTtxt;
+        private Guna.UI2.WinForms.Guna2TextBox BMItxt;
+        private Guna.UI2.WinForms.Guna2TextBox WEIGHTtxt;
+        private Guna.UI2.WinForms.Guna2TextBox CALORIEtxt;
+        private Guna.UI2.WinForms.Guna2TextBox CATEGORYtxt;
+        private Guna.UI2.WinForms.Guna2TextBox advice1;
+        private Guna.UI2.WinForms.Guna2TextBox advice2;
+        private Guna.UI2.WinForms.Guna2TextBox advice3;
+        private Guna.UI2.WinForms.Guna2TextBox advice4;
+        private Guna.UI2.WinForms.Guna2TextBox advice6;
+        private Guna.UI2.WinForms.Guna2TextBox advice5;
     }
 }

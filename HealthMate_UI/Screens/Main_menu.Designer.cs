@@ -60,6 +60,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.Workout = new Guna.UI2.WinForms.Guna2Button();
+            this.TraineesTrack = new Guna.UI2.WinForms.Guna2Button();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox)).BeginInit();
             this.SuspendLayout();
@@ -75,7 +76,7 @@
             // line
             // 
             this.line.BackColor = System.Drawing.Color.Gray;
-            this.line.Location = new System.Drawing.Point(193, 138);
+            this.line.Location = new System.Drawing.Point(193, 132);
             this.line.Name = "line";
             this.line.Size = new System.Drawing.Size(10, 201);
             this.line.TabIndex = 51;
@@ -85,7 +86,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Gray;
-            this.button1.Location = new System.Drawing.Point(24, 233);
+            this.button1.Location = new System.Drawing.Point(24, 227);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(519, 10);
             this.button1.TabIndex = 52;
@@ -302,7 +303,7 @@
             this.AgeCalcBtn.FocusedColor = System.Drawing.Color.Transparent;
             this.AgeCalcBtn.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
             this.AgeCalcBtn.ForeColor = System.Drawing.Color.Black;
-            this.AgeCalcBtn.Location = new System.Drawing.Point(24, 134);
+            this.AgeCalcBtn.Location = new System.Drawing.Point(24, 128);
             this.AgeCalcBtn.Name = "AgeCalcBtn";
             this.AgeCalcBtn.Size = new System.Drawing.Size(151, 75);
             this.AgeCalcBtn.TabIndex = 61;
@@ -326,7 +327,7 @@
             this.CaloriesTrackerBtn.FocusedColor = System.Drawing.Color.Transparent;
             this.CaloriesTrackerBtn.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
             this.CaloriesTrackerBtn.ForeColor = System.Drawing.Color.Black;
-            this.CaloriesTrackerBtn.Location = new System.Drawing.Point(220, 134);
+            this.CaloriesTrackerBtn.Location = new System.Drawing.Point(220, 128);
             this.CaloriesTrackerBtn.Name = "CaloriesTrackerBtn";
             this.CaloriesTrackerBtn.Size = new System.Drawing.Size(151, 75);
             this.CaloriesTrackerBtn.TabIndex = 62;
@@ -350,7 +351,7 @@
             this.HealthMonitorBtn.FocusedColor = System.Drawing.Color.Transparent;
             this.HealthMonitorBtn.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
             this.HealthMonitorBtn.ForeColor = System.Drawing.Color.Black;
-            this.HealthMonitorBtn.Location = new System.Drawing.Point(24, 264);
+            this.HealthMonitorBtn.Location = new System.Drawing.Point(24, 258);
             this.HealthMonitorBtn.Name = "HealthMonitorBtn";
             this.HealthMonitorBtn.Size = new System.Drawing.Size(151, 75);
             this.HealthMonitorBtn.TabIndex = 63;
@@ -374,7 +375,7 @@
             this.UpdateInfoBtn.FocusedColor = System.Drawing.Color.Transparent;
             this.UpdateInfoBtn.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
             this.UpdateInfoBtn.ForeColor = System.Drawing.Color.Black;
-            this.UpdateInfoBtn.Location = new System.Drawing.Point(220, 264);
+            this.UpdateInfoBtn.Location = new System.Drawing.Point(220, 258);
             this.UpdateInfoBtn.Name = "UpdateInfoBtn";
             this.UpdateInfoBtn.Size = new System.Drawing.Size(151, 75);
             this.UpdateInfoBtn.TabIndex = 64;
@@ -384,7 +385,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Gray;
-            this.button2.Location = new System.Drawing.Point(388, 138);
+            this.button2.Location = new System.Drawing.Point(388, 132);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(10, 201);
             this.button2.TabIndex = 65;
@@ -408,7 +409,7 @@
             this.guna2Button1.FocusedColor = System.Drawing.Color.Transparent;
             this.guna2Button1.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
             this.guna2Button1.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button1.Location = new System.Drawing.Point(416, 264);
+            this.guna2Button1.Location = new System.Drawing.Point(416, 258);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(151, 75);
             this.guna2Button1.TabIndex = 67;
@@ -431,11 +432,32 @@
             this.Workout.FocusedColor = System.Drawing.Color.Transparent;
             this.Workout.Font = new System.Drawing.Font("El Messiri SemiBold", 12F, System.Drawing.FontStyle.Bold);
             this.Workout.ForeColor = System.Drawing.Color.Black;
-            this.Workout.Location = new System.Drawing.Point(416, 134);
+            this.Workout.Location = new System.Drawing.Point(416, 128);
             this.Workout.Name = "Workout";
             this.Workout.Size = new System.Drawing.Size(151, 75);
             this.Workout.TabIndex = 66;
             this.Workout.Text = "Workouts";
+            // 
+            // TraineesTrack
+            // 
+            this.TraineesTrack.Animated = true;
+            this.TraineesTrack.BackColor = System.Drawing.Color.Transparent;
+            this.TraineesTrack.BorderRadius = 15;
+            this.TraineesTrack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.TraineesTrack.CustomBorderColor = System.Drawing.Color.Transparent;
+            this.TraineesTrack.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.TraineesTrack.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.TraineesTrack.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.TraineesTrack.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.TraineesTrack.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(73)))), ((int)(((byte)(255)))));
+            this.TraineesTrack.FocusedColor = System.Drawing.Color.Transparent;
+            this.TraineesTrack.Font = new System.Drawing.Font("El Messiri SemiBold", 10F, System.Drawing.FontStyle.Bold);
+            this.TraineesTrack.ForeColor = System.Drawing.Color.White;
+            this.TraineesTrack.Location = new System.Drawing.Point(24, 347);
+            this.TraineesTrack.Name = "TraineesTrack";
+            this.TraineesTrack.Size = new System.Drawing.Size(179, 30);
+            this.TraineesTrack.TabIndex = 68;
+            this.TraineesTrack.Text = "Follow up with trainees";
             // 
             // Main_MenuEN
             // 
@@ -443,6 +465,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(595, 390);
+            this.Controls.Add(this.TraineesTrack);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.Workout);
             this.Controls.Add(this.button2);
@@ -505,5 +528,6 @@
         private System.Windows.Forms.Button button2;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Button Workout;
+        private Guna.UI2.WinForms.Guna2Button TraineesTrack;
     }
 }

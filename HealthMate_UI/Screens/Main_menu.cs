@@ -63,6 +63,15 @@ namespace HealthMate_UI
                 EnglishLanguage();
             }
 
+            if (CommonValues.CurrentUserInfo.IsCoach)
+            {
+                TraineesTrack.Visible = true;
+            }
+            else
+            {
+                TraineesTrack.Visible = false;
+            }
+
             DateTime lastLogin = CommonValues.CurrentUserInfo.LastLogin;
             DateTime today = DateTime.Today;
             TimeSpan difference = today - lastLogin;
@@ -82,7 +91,7 @@ namespace HealthMate_UI
             try
             {
                 databaseManager.OpenConnection();
-                string readQuery = "SELECT * FROM UserInfo WHERE UserName = @Username";
+                string readQuery = "SELECT LastLogin FROM UserInfo WHERE UserName = @Username";
                 using (SqlCommand command = new SqlCommand(readQuery, databaseManager.GetConnection()))
                 {
                     command.Parameters.AddWithValue("@Username", CommonValues.CurrentUserInfo.UserName);
@@ -370,6 +379,8 @@ namespace HealthMate_UI
             {
                 HappyBirthday.Text = $"يوم ميلاد سعيد🎂❤️";
             }
+            TraineesTrack.Text = "متابعة متدربيك";
+            TraineesTrack.Size = new Size(117, 30);
         }
 
         private void EnglishLanguage()
@@ -402,6 +413,8 @@ namespace HealthMate_UI
             {
                 HappyBirthday.Text = $"Happy Birthday🎂❤️";
             }
+            TraineesTrack.Text = "Follow up with trainees";
+            TraineesTrack.Size = new Size(179, 30);
         }
     }
 }

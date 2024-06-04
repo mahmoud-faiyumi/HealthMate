@@ -67,6 +67,7 @@ namespace HealthMate_UI.Screens
             {
                 Email.Text = "Enter Your Email";
                 SendResetEmailBtn.Text = "Send code via email";
+                NoInternet.Text = "No Internet Connection";
             }
             if (CommonValues.CurrentUserInfo.IsDark == true)
             {
@@ -79,7 +80,14 @@ namespace HealthMate_UI.Screens
 
             if (await IsEmailLocked(email))
             {
-                MessageBox.Show("لا يمكنك طلب رمز جديد حتى انتهاء مدة القفل.", "خطأ", MessageBoxButtons.OK);
+                if (arabic)
+                {
+                    MessageBox.Show("لا يمكنك طلب رمز جديد حتى انتهاء مدة القفل.", "خطأ", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    MessageBox.Show("You cannot request a new code until the lock period has expired.", "Error", MessageBoxButtons.OK);
+                }
                 SendResetEmailBtn.Enabled = false;
                 PINcode.Enabled = false;
             }
@@ -99,7 +107,14 @@ namespace HealthMate_UI.Screens
         {
             if (await IsEmailLocked(email))
             {
-                MessageBox.Show("لا يمكنك طلب رمز جديد حتى انتهاء مدة القفل.", "خطأ", MessageBoxButtons.OK);
+                if (arabic)
+                {
+                    MessageBox.Show("لا يمكنك طلب رمز جديد حتى انتهاء مدة القفل.", "خطأ", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    MessageBox.Show("You cannot request a new code until the lock period has expired.", "Error", MessageBoxButtons.OK);
+                }
                 return;
             }
 
@@ -122,16 +137,29 @@ namespace HealthMate_UI.Screens
                     string token = GenerateToken();
                     SaveTokenToDatabase(email, token);
                     await SendResetLink(email, token);
-                    MessageBox.Show("A password reset link has been sent to your email.", "Password Recovery", MessageBoxButtons.OK);
                 }
                 else
                 {
-                    MessageBox.Show("Email not found.", "Error", MessageBoxButtons.OK);
+                    if (arabic)
+                    {
+                        MessageBox.Show("الإيميل غير موجود.", "خطأ", MessageBoxButtons.OK);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Email not found.", "Error", MessageBoxButtons.OK);
+                    }
                 }
             }
             else
             {
-                MessageBox.Show("You can only request a code once every 10 minutes.", "Error", MessageBoxButtons.OK);
+                if (arabic)
+                {
+                    MessageBox.Show("يمكنك طلب رمز مرة واحدة كل 10 دقائق.", "خطأ", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    MessageBox.Show("You can only request a code once every 10 minutes.", "Error", MessageBoxButtons.OK);
+                }
             }
         }
 
@@ -282,77 +310,154 @@ namespace HealthMate_UI.Screens
 
             var bodyBuilder = new BodyBuilder
             {
-                TextBody = $"The validity of this code is 10 minutes\r\nYour code is: {token}\n\nIf you don't know about this message, you can ignore it.",
-                HtmlBody = $@"
-        <html>
-        <head>
-            <style>
-                body {{
-                    font-family: Arial, sans-serif;
-                    background-color: #f4f4f9;
-                    color: #333;
-                    padding: 20px;
-                }}
-                .container {{
-                    background-color: #ffffff;
-                    padding: 20px;
-                    border-radius: 8px;
-                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-                    max-width: 600px;
-                    margin: auto;
-                }}
-                .header {{
-                    text-align: center;
-                    margin-bottom: 20px;
-                }}
-                .header h1 {{
-                    margin: 0;
-                    font-size: 24px;
-                    color: rgb(51, 172, 98);
-                }}
-                .content {{
-                    font-size: 16px;
-                    line-height: 1.6;
-                }}
-                .code {{
-                    font-size: 24px;
-                    font-weight: bold;
-                    text-align: center;
-                    margin: 20px 0;
-                    padding: 10px;
-                    background-color: #f9f9f9;
-                    border: 1px solid #ddd;
-                    border-radius: 4px;
-                }}
-                .footer {{
-                    text-align: center;
-                    font-size: 12px;
-                    color: #888;
-                    margin-top: 20px;
-                }}
-                .img {{
-                    align-items: center;
-                }}
-            </style>
-        </head>
-        <body>
-            <div class='container'>
-                <div class='header'>
-                    <h1>Password Reset</h1>
-                </div>
-                <div class='content'>
-                    <p>The validity of this code is 10 minutes.</p>
-                    <div class='code'>{token}</div>
-                    <p>If you don't know about this message, you can ignore it.</p>
-                </div>
-                <div class='footer'>
-                    <img src='https://i.ibb.co/CVWrJNN/Untitled-1-01.png' width='80'></img>
-                    <p>&copy; 2024 Health Mate. All rights reserved.</p>
-                </div>
-            </div>
-        </body>
-        </html>"
+                TextBody = $"The validity of this code is 10 minutes\r\nYour code is: {token}\n\nIf you don't know about this message, you can ignore it."
             };
+
+            if (arabic)
+            {
+                bodyBuilder.HtmlBody = $@"
+    <html>
+    <head>
+        <style>
+            body {{
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f9;
+                color: #333;
+                padding: 20px;
+            }}
+            .container {{
+                background-color: #ffffff;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                max-width: 600px;
+                margin: auto;
+            }}
+            .header {{
+                text-align: center;
+                margin-bottom: 20px;
+            }}
+            .header h1 {{
+                margin: 0;
+                font-size: 24px;
+                color: rgb(51, 172, 98);
+            }}
+            .content {{
+                font-size: 16px;
+                line-height: 1.6;
+            }}
+            .code {{
+                font-size: 24px;
+                font-weight: bold;
+                text-align: center;
+                margin: 20px 0;
+                padding: 10px;
+                background-color: #f9f9f9;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+            }}
+            .footer {{
+                text-align: center;
+                font-size: 12px;
+                color: #888;
+                margin-top: 20px;
+            }}
+            .img {{
+                align-items: center;
+            }}
+        </style>
+    </head>
+    <body>
+        <div class='container'>
+            <div class='header'>
+                <h1>إعادة تعيين كلمة المرور</h1>
+            </div>
+            <div class='content'>
+                <p>صلاحية هذا الرمز تنتهي بعد 10 دقائق.</p>
+                <div class='code'>{token}</div>
+                <p>إذا لم تكن تعرف شيئًا عن هذه الرسالة، يمكنك تجاهلها.</p>
+            </div>
+            <div class='footer'>
+                <img src='https://i.ibb.co/CVWrJNN/Untitled-1-01.png' width='80'></img>
+                <p>&copy; 2024 Health Mate. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </body>
+    </html>";
+            }
+            else
+            {
+                bodyBuilder.HtmlBody = $@"
+    <html>
+    <head>
+        <style>
+            body {{
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f9;
+                color: #333;
+                padding: 20px;
+            }}
+            .container {{
+                background-color: #ffffff;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                max-width: 600px;
+                margin: auto;
+            }}
+            .header {{
+                text-align: center;
+                margin-bottom: 20px;
+            }}
+            .header h1 {{
+                margin: 0;
+                font-size: 24px;
+                color: rgb(51, 172, 98);
+            }}
+            .content {{
+                font-size: 16px;
+                line-height: 1.6;
+            }}
+            .code {{
+                font-size: 24px;
+                font-weight: bold;
+                text-align: center;
+                margin: 20px 0;
+                padding: 10px;
+                background-color: #f9f9f9;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+            }}
+            .footer {{
+                text-align: center;
+                font-size: 12px;
+                color: #888;
+                margin-top: 20px;
+            }}
+            .img {{
+                align-items: center;
+            }}
+        </style>
+    </head>
+    <body>
+        <div class='container'>
+            <div class='header'>
+                <h1>Password Reset</h1>
+            </div>
+            <div class='content'>
+                <p>The validity of this code is 10 minutes.</p>
+                <div class='code'>{token}</div>
+                <p>If you don't know about this message, you can ignore it.</p>
+            </div>
+            <div class='footer'>
+                <img src='https://i.ibb.co/CVWrJNN/Untitled-1-01.png' width='80'></img>
+                <p>&copy; 2024 Health Mate. All rights reserved.</p>
+            </div>
+        </div>
+    </body>
+    </html>";
+            }
+
 
             message.Body = bodyBuilder.ToMessageBody();
 
@@ -424,13 +529,27 @@ namespace HealthMate_UI.Screens
 
                     if (failedAttempts >= 3)
                     {
-                        // قفل طلب الرمز وإدخال PIN لمدة ساعة
+                        // Lock code request and PIN entry for an hour
                         await LockCodeRequestAndPINEntry(email);
-                        MessageBox.Show("رمز غير صالح. لا يمكنك طلب رمز جديد لمدة ساعة.", "خطأ", MessageBoxButtons.OK);
+                        if (arabic)
+                        {
+                            MessageBox.Show("رمز غير صالح. لا يمكنك طلب رمز جديد لمدة ساعة.", "خطأ", MessageBoxButtons.OK);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Invalid code. You cannot request a new code for 1 hour.", "Error", MessageBoxButtons.OK);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("رمز غير صالح. حاول مرة أخرى.", "خطأ", MessageBoxButtons.OK);
+                        if (arabic)
+                        {
+                            MessageBox.Show("رمز غير صالح. حاول مرة أخرى.", "خطأ", MessageBoxButtons.OK);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Invalid code. Please try again.", "Error", MessageBoxButtons.OK);
+                        }
                     }
                 }
             }
@@ -446,7 +565,6 @@ namespace HealthMate_UI.Screens
                 }
             }
         }
-
 
         private async Task LockCodeRequestAndPINEntry(string email)
         {

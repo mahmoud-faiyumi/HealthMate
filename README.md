@@ -1,23 +1,28 @@
 # HealthMate Program
 
-HealthMate is a C# console application that allows users to perform various health-related calculations and manage their user accounts. It provides features like age calculation, date difference calculation, and health calculations based on user input.
+HealthMate is a C# Windows Forms application designed to help users perform various health-related calculations and manage their user accounts securely. The application offers features like age calculation, calorie tracking, a couch and trainees system, workouts, multi-account support, password reset via email, and other health calculations based on user input. All user data is stored offline to ensure better security and privacy.
 
 ## Features
 
-- User Account Management: Users can create new accounts by providing their personal information such as name, email, birthdate, and more. Passwords are securely stored using encryption.
-- Login System: Existing users can log in to their accounts with a username and password. Passwords are decrypted and checked for authentication.
-- Health Calculations: The application provides various health-related calculations, including Body Mass Index (BMI) calculations, calorie needs estimation, and more.
-- Age Calculator: Users can calculate their age based on their birthdate and receive additional information, including total days, weeks, hours, minutes, and seconds lived.
-- Date Difference Calculator: Users can calculate the difference between two dates, including years, months, and days.
+- **User Account Management**: Create and manage user accounts with personal details like name, email, birthdate, etc. Passwords are securely encrypted.
+- **Login System**: Users can log in with their username and password. Passwords are decrypted for authentication.
+- **Health Calculations**: Includes calculations for Body Mass Index (BMI), calorie needs estimation, and more.
+- **Age Calculator**: Calculates age based on birthdate and provides detailed information on total days, weeks, hours, minutes, and seconds lived.
+- **Calorie Tracking**: Track daily calorie intake and expenditure.
+- **Couch and Trainees System**: Manage workout plans and track progress for both couch users and trainees.
+- **Workouts**: Offers various workout plans and tracking features.
+- **Multi-Account Support**: Allows multiple users to create and manage their accounts on the same device.
+- **Password Reset via Email**: Users can reset their passwords through email verification.
+- **Offline Data Storage**: Ensures that all user data is stored locally for enhanced security and privacy.
 
 ## Getting Started
 
-To run this console application, follow these steps:
+To run this Windows Forms application, follow these steps:
 
 1. Clone this repository to your local machine:
 
    ```shell
-   git clone https://github.com/mahmoud-faiyumi/Multi-Calculator.git
+   git clone https://github.com/mahmoud-faiyumi/HealthMate.git
    ```
 
 2. Navigate to the project directory:
@@ -32,13 +37,11 @@ To run this console application, follow these steps:
 
 ## Usage
 
-1. When you run the application, you'll be prompted to choose a language (Arabic or English).
+1. Upon running the application, you'll be prompted to log in or create a new account.
 
-2. Based on your language choice, you can log in to an existing account or create a new one.
+2. Follow the on-screen instructions to navigate through the features and perform health-related calculations.
 
-3. Once logged in, you can perform various health-related calculations and manage your profile.
-
-4. Follow the on-screen prompts and instructions to use the application effectively.
+3. Manage your profile, track workouts, and use various health tools as needed.
 
 ## Contributing
 

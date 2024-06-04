@@ -68,4 +68,4 @@ Contributions are welcome! If you'd like to contribute to this project, please f
 
 ## Contact
 
-If you have any questions or need assistance with this project, feel free to contact [mahmoudalfaiyumi@gmail.com](mailto:mahmoudalfaiyumi@gmail.com).
+If you have any questions or need assistance with this project, feel free to contact [health.mate.mail@gmail.com](mailto:health.mate.mail@gmail.com).

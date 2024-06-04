@@ -371,11 +371,11 @@
     <Compile Include="Screens\Calories_Tracker.Designer.cs">
       <DependentUpon>Calories_Tracker.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\ChangePassword.cs">
+    <Compile Include="Screens\ResetPassword.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Screens\ChangePassword.Designer.cs">
-      <DependentUpon>ChangePassword.cs</DependentUpon>
+    <Compile Include="Screens\ResetPassword.Designer.cs">
+      <DependentUpon>ResetPassword.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\DeleteAccount.cs">
       <SubType>Form</SubType>
@@ -498,6 +498,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\ForgetPassword.resx">
       <DependentUpon>ForgetPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\ResetPassword.resx">
+      <DependentUpon>ResetPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\UpdateInfo.resx">
       <DependentUpon>UpdateInfo.cs</DependentUpon>

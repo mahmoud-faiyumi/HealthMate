@@ -413,7 +413,7 @@ namespace HealthMate_UI.Screens
                     failedAttempts = 0;
 
                     // التنقل إلى نموذج تغيير كلمة المرور
-                    ChangePassword changePassword = new ChangePassword();
+                    ResetPassword changePassword = new ResetPassword(email);
                     changePassword.Show();
                     this.Hide();
                 }

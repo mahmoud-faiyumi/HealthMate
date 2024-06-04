@@ -1,23 +1,21 @@
 ﻿using HealthMate_UI.Constants;
 using HealthMate_UI.Screens;
-using ImageRetrievalApp;
 using System;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
-using static System.Windows.Forms.Design.AxImporter;
 
 namespace HealthMate_UI
 {
     public partial class Main_MenuEN : Form
     {
-        private DatabaseManager databaseManager;
+        private DatabaseManagerui databaseManager;
 
         public Main_MenuEN()
         {
             InitializeComponent();
             InitializeCircularPictureBox();
-            databaseManager = new DatabaseManager();
+            databaseManager = new DatabaseManagerui();
             line.Enabled = false;
             button1.Enabled = false;
         }
@@ -75,7 +73,7 @@ namespace HealthMate_UI
             DateTime lastLogin = CommonValues.CurrentUserInfo.LastLogin;
             DateTime today = DateTime.Today;
             TimeSpan difference = today - lastLogin;
-            int daysSinceLastLogin = difference.Days;
+            short daysSinceLastLogin = (short)difference.Days;
             if (daysSinceLastLogin >= 3)
             {
                 if (CommonValues.CurrentUserInfo.IsArabic)
@@ -113,6 +111,42 @@ namespace HealthMate_UI
             {
                 databaseManager.CloseConnection();
             }
+
+            try
+            {
+                using (DatabaseManageruc databaseManageruc = new DatabaseManageruc())
+                {
+                    databaseManageruc.OpenConnection();
+
+                    string readQuery = $"SELECT Date FROM [{CommonValues.CurrentUserInfo.UserName}] WHERE Date = @today";
+                    using (SqlCommand command = new SqlCommand(readQuery, databaseManageruc.GetConnection()))
+                    {
+                        command.Parameters.AddWithValue("@today", today);
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            // Check if the user has signed in today
+                            if (!reader.Read())
+                            {
+                                // Close the data reader before executing the INSERT command
+                                reader.Close();
+
+                                // Insert the sign-in date
+                                string insertQuery = $"INSERT INTO [{CommonValues.CurrentUserInfo.UserName}] (Date) VALUES (@Date)";
+                                using (SqlCommand insertCommand = new SqlCommand(insertQuery, databaseManageruc.GetConnection()))
+                                {
+                                    insertCommand.Parameters.AddWithValue("@Date", today);
+                                    insertCommand.ExecuteNonQuery();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK);
+            }
         }
 
         private void Main_menuEN_FormClosing(object sender, FormClosingEventArgs e)
@@ -143,15 +177,6 @@ namespace HealthMate_UI
 
         private void CaloriesTrackerBtn_Click(object sender, EventArgs e)
         {
-            if (CommonValues.CurrentUserInfo.IsArabic)
-            {
-                MessageBox.Show(".الميزة ما زالت تحت التطوير\nكن صبوراً", "رسالة", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign);
-            }
-            else
-            {
-                MessageBox.Show("The feature is still under development.\nPlease be patient.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-            }
-
             this.Hide();
             Calories_Tracker calories_Tracker = new Calories_Tracker();
             calories_Tracker.Show();
@@ -160,7 +185,6 @@ namespace HealthMate_UI
         private void Logout_Click(object sender, EventArgs e)
         {
             CommonValues.CurrentUserInfo = null;
-
             this.Hide();
             Login loginEN = new Login();
             loginEN.Show();
@@ -297,8 +321,10 @@ namespace HealthMate_UI
             HealthMonitorBtn.FillColor = Color.FromArgb(224, 224, 224);
             UpdateInfoBtn.ForeColor = Color.Black;
             UpdateInfoBtn.FillColor = Color.FromArgb(224, 224, 224);
-            Workout.ForeColor = Color.Black;
-            Workout.FillColor = Color.FromArgb(224, 224, 224);
+            WorkoutBtn.ForeColor = Color.Black;
+            WorkoutBtn.FillColor = Color.FromArgb(224, 224, 224);
+            FoodBtn.ForeColor = Color.Black;
+            FoodBtn.FillColor = Color.FromArgb(224, 224, 224);
             CaloriesTrackerBtn.ForeColor = Color.Black;
             CaloriesTrackerBtn.FillColor = Color.FromArgb(224, 224, 224);
             toolStrip1.ForeColor = Color.White;
@@ -311,7 +337,7 @@ namespace HealthMate_UI
             if (!CommonValues.CurrentUserInfo.IsArabic)
             {
                 SelectLanguage.Image = Properties.Resources.wEN;
-            }
+        }
             else
             {
                 SelectLanguage.Image = Properties.Resources.wAR;
@@ -329,8 +355,10 @@ namespace HealthMate_UI
             HealthMonitorBtn.FillColor = Color.White;
             UpdateInfoBtn.ForeColor = Color.Black;
             UpdateInfoBtn.FillColor = Color.White;
-            Workout.ForeColor = Color.Black;
-            Workout.FillColor = Color.White;
+            WorkoutBtn.ForeColor = Color.Black;
+            WorkoutBtn.FillColor = Color.White;
+            FoodBtn.ForeColor = Color.Black;
+            FoodBtn.FillColor = Color.White;
             CaloriesTrackerBtn.ForeColor = Color.Black;
             CaloriesTrackerBtn.FillColor = Color.White;
             toolStrip1.ForeColor = Color.White;
@@ -343,7 +371,7 @@ namespace HealthMate_UI
             if (!CommonValues.CurrentUserInfo.IsArabic)
             {
                 SelectLanguage.Image = Properties.Resources.EN;
-            }
+        }
             else
             {
                 SelectLanguage.Image = Properties.Resources.AR;
@@ -364,9 +392,11 @@ namespace HealthMate_UI
             darkThemeToolStripMenuItem.Text = "النمط الغامق";
             SelectLanguage.Text = "اللغة";
             Logout.Text = "تسجيل الخروج";
+            WorkoutBtn.Text = "التمارين";
+            FoodBtn.Text = "الغذاء والحمية";
             if (!CommonValues.CurrentUserInfo.IsDark)
             {
-                SelectLanguage.Image = Properties.Resources.AR;
+            SelectLanguage.Image = Properties.Resources.AR;
             }
             else
             {
@@ -395,12 +425,14 @@ namespace HealthMate_UI
             darkThemeToolStripMenuItem.Text = "Dark Theme";
             SelectLanguage.Text = "Language";
             Logout.Text = "Logout";
+            WorkoutBtn.Text = "Workout";
+            FoodBtn.Text = "Food and Diet";
             WelcomeMsg.Location = new Point(37, 45);
             HappyBirthday.Location = new Point(37, 76);
             circularPictureBox.Location = new Point(489, 29);
             if (!CommonValues.CurrentUserInfo.IsDark)
             {
-                SelectLanguage.Image = Properties.Resources.EN;
+            SelectLanguage.Image = Properties.Resources.EN;
             }
             else
             {

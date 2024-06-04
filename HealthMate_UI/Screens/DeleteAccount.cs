@@ -1,8 +1,8 @@
 ﻿using HealthMate_UI.Constants;
 using System;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 
 namespace HealthMate_UI.Screens
@@ -10,9 +10,6 @@ namespace HealthMate_UI.Screens
     public partial class DeleteAccount : Form
     {
         private bool passwordVisible = true;
-        private DatabaseManager databaseManager;
-
-
 
         public DeleteAccount()
         {
@@ -39,14 +36,7 @@ namespace HealthMate_UI.Screens
             }
             else
             {
-                if (CommonValues.CurrentUserInfo.IsArabic == true)
-                {
-                    ArabicLanguage();
-                }
-                else
-                {
-                    EnglishLanguage();
-                } 
+                EnglishLanguage();
             }
         }
 
@@ -102,7 +92,7 @@ namespace HealthMate_UI.Screens
             {
                 try
                 {
-                    using (DatabaseManager databaseManager = new DatabaseManager())
+                    using (DatabaseManagerui databaseManager = new DatabaseManagerui())
                     {
                         databaseManager.OpenConnection();
                         string insertQuery = "INSERT INTO BlackList (UserName) VALUES (@UserName)";

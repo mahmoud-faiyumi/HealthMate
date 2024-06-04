@@ -36,18 +36,8 @@
             this.PasswordMatchLabel = new System.Windows.Forms.Label();
             this.PasswordStrengthLabel = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.Back = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.printToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.cutToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.copyToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.pasteToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.ChangePPlabel = new System.Windows.Forms.Label();
             this.progressBar1 = new Guna.UI2.WinForms.Guna2CircleProgressBar();
@@ -58,13 +48,15 @@
             this.Password = new Guna.UI2.WinForms.Guna2TextBox();
             this.Weight = new Guna.UI2.WinForms.Guna2TextBox();
             this.CreateAccbtn = new Guna.UI2.WinForms.Guna2Button();
+            this.TrainerCheck = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.PINcode = new Guna.UI2.WinForms.Guna2TextBox();
             this.InchesToCm = new Guna.UI2.WinForms.Guna2Button();
             this.PasswordVisibilityRE = new Guna.UI2.WinForms.Guna2Button();
             this.PasswordVisibility = new Guna.UI2.WinForms.Guna2Button();
             this.KGToLB = new Guna.UI2.WinForms.Guna2Button();
             this.circularPictureBox = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.TrainerCheck = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.PINcode = new Guna.UI2.WinForms.Guna2TextBox();
+            this.Back = new System.Windows.Forms.ToolStripButton();
+            this.About = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.progressBar1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox)).BeginInit();
@@ -132,16 +124,8 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Back,
             this.toolStripSeparator3,
-            this.newToolStripButton,
-            this.openToolStripButton,
-            this.saveToolStripButton,
-            this.printToolStripButton,
             this.toolStripSeparator,
-            this.cutToolStripButton,
-            this.copyToolStripButton,
-            this.pasteToolStripButton,
-            this.toolStripSeparator1,
-            this.helpToolStripButton});
+            this.About});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0);
@@ -151,101 +135,15 @@
             this.toolStrip1.TabIndex = 59;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // Back
-            // 
-            this.Back.Image = global::HealthMate_UI.Properties.Resources.Back;
-            this.Back.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Back.Name = "Back";
-            this.Back.Size = new System.Drawing.Size(52, 22);
-            this.Back.Text = "Back";
-            this.Back.Click += new System.EventHandler(this.Back_Click);
-            // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
             // 
-            // newToolStripButton
-            // 
-            this.newToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.newToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("newToolStripButton.Image")));
-            this.newToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.newToolStripButton.Name = "newToolStripButton";
-            this.newToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.newToolStripButton.Text = "&New";
-            // 
-            // openToolStripButton
-            // 
-            this.openToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.openToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripButton.Image")));
-            this.openToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.openToolStripButton.Name = "openToolStripButton";
-            this.openToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.openToolStripButton.Text = "&Open";
-            // 
-            // saveToolStripButton
-            // 
-            this.saveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.saveToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripButton.Image")));
-            this.saveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.saveToolStripButton.Name = "saveToolStripButton";
-            this.saveToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.saveToolStripButton.Text = "&Save";
-            // 
-            // printToolStripButton
-            // 
-            this.printToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.printToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripButton.Image")));
-            this.printToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.printToolStripButton.Name = "printToolStripButton";
-            this.printToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.printToolStripButton.Text = "&Print";
-            // 
             // toolStripSeparator
             // 
             this.toolStripSeparator.Name = "toolStripSeparator";
             this.toolStripSeparator.Size = new System.Drawing.Size(6, 25);
-            // 
-            // cutToolStripButton
-            // 
-            this.cutToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.cutToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("cutToolStripButton.Image")));
-            this.cutToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.cutToolStripButton.Name = "cutToolStripButton";
-            this.cutToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.cutToolStripButton.Text = "C&ut";
-            // 
-            // copyToolStripButton
-            // 
-            this.copyToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.copyToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("copyToolStripButton.Image")));
-            this.copyToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.copyToolStripButton.Name = "copyToolStripButton";
-            this.copyToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.copyToolStripButton.Text = "&Copy";
-            // 
-            // pasteToolStripButton
-            // 
-            this.pasteToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.pasteToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("pasteToolStripButton.Image")));
-            this.pasteToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.pasteToolStripButton.Name = "pasteToolStripButton";
-            this.pasteToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.pasteToolStripButton.Text = "&Paste";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // helpToolStripButton
-            // 
-            this.helpToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.helpToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("helpToolStripButton.Image")));
-            this.helpToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.helpToolStripButton.Name = "helpToolStripButton";
-            this.helpToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.helpToolStripButton.Text = "He&lp";
             // 
             // openFileDialog
             // 
@@ -414,6 +312,53 @@
             this.CreateAccbtn.Text = "Create an account";
             this.CreateAccbtn.Click += new System.EventHandler(this.CreateAccbtn_Click);
             // 
+            // TrainerCheck
+            // 
+            this.TrainerCheck.Animated = true;
+            this.TrainerCheck.AutoSize = true;
+            this.TrainerCheck.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TrainerCheck.CheckedState.BorderRadius = 0;
+            this.TrainerCheck.CheckedState.BorderThickness = 0;
+            this.TrainerCheck.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TrainerCheck.Location = new System.Drawing.Point(229, 326);
+            this.TrainerCheck.Name = "TrainerCheck";
+            this.TrainerCheck.Size = new System.Drawing.Size(159, 29);
+            this.TrainerCheck.TabIndex = 89;
+            this.TrainerCheck.Tag = "";
+            this.TrainerCheck.Text = "Are you a trainer?";
+            this.TrainerCheck.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.TrainerCheck.UncheckedState.BorderRadius = 0;
+            this.TrainerCheck.UncheckedState.BorderThickness = 0;
+            this.TrainerCheck.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.TrainerCheck.CheckedChanged += new System.EventHandler(this.TrainerCheck_CheckedChanged);
+            // 
+            // PINcode
+            // 
+            this.PINcode.Animated = true;
+            this.PINcode.BorderRadius = 10;
+            this.PINcode.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.PINcode.DefaultText = "Enter PIN Code";
+            this.PINcode.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.PINcode.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.PINcode.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.PINcode.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.PINcode.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.PINcode.Font = new System.Drawing.Font("El Messiri SemiBold", 9F, System.Drawing.FontStyle.Bold);
+            this.PINcode.ForeColor = System.Drawing.Color.Black;
+            this.PINcode.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.PINcode.Location = new System.Drawing.Point(234, 356);
+            this.PINcode.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.PINcode.Name = "PINcode";
+            this.PINcode.PasswordChar = '\0';
+            this.PINcode.PlaceholderText = "";
+            this.PINcode.SelectedText = "";
+            this.PINcode.Size = new System.Drawing.Size(142, 25);
+            this.PINcode.TabIndex = 90;
+            this.PINcode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.PINcode.Enter += new System.EventHandler(this.PINcode_Enter);
+            this.PINcode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PINcode_KeyPress);
+            this.PINcode.Leave += new System.EventHandler(this.PINcode_Leave);
+            // 
             // InchesToCm
             // 
             this.InchesToCm.Animated = true;
@@ -515,52 +460,22 @@
             this.circularPictureBox.TabIndex = 78;
             this.circularPictureBox.TabStop = false;
             // 
-            // TrainerCheck
+            // Back
             // 
-            this.TrainerCheck.Animated = true;
-            this.TrainerCheck.AutoSize = true;
-            this.TrainerCheck.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TrainerCheck.CheckedState.BorderRadius = 0;
-            this.TrainerCheck.CheckedState.BorderThickness = 0;
-            this.TrainerCheck.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TrainerCheck.Location = new System.Drawing.Point(229, 326);
-            this.TrainerCheck.Name = "TrainerCheck";
-            this.TrainerCheck.Size = new System.Drawing.Size(159, 29);
-            this.TrainerCheck.TabIndex = 89;
-            this.TrainerCheck.Tag = "";
-            this.TrainerCheck.Text = "Are you a trainer?";
-            this.TrainerCheck.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.TrainerCheck.UncheckedState.BorderRadius = 0;
-            this.TrainerCheck.UncheckedState.BorderThickness = 0;
-            this.TrainerCheck.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.TrainerCheck.CheckedChanged += new System.EventHandler(this.TrainerCheck_CheckedChanged);
+            this.Back.Image = global::HealthMate_UI.Properties.Resources.Back;
+            this.Back.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Back.Name = "Back";
+            this.Back.Size = new System.Drawing.Size(52, 22);
+            this.Back.Text = "Back";
+            this.Back.Click += new System.EventHandler(this.Back_Click);
             // 
-            // PINcode
+            // About
             // 
-            this.PINcode.Animated = true;
-            this.PINcode.BorderRadius = 10;
-            this.PINcode.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.PINcode.DefaultText = "Enter PIN Code";
-            this.PINcode.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.PINcode.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.PINcode.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.PINcode.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.PINcode.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.PINcode.Font = new System.Drawing.Font("El Messiri SemiBold", 9F, System.Drawing.FontStyle.Bold);
-            this.PINcode.ForeColor = System.Drawing.Color.Black;
-            this.PINcode.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.PINcode.Location = new System.Drawing.Point(234, 356);
-            this.PINcode.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.PINcode.Name = "PINcode";
-            this.PINcode.PasswordChar = '\0';
-            this.PINcode.PlaceholderText = "";
-            this.PINcode.SelectedText = "";
-            this.PINcode.Size = new System.Drawing.Size(142, 25);
-            this.PINcode.TabIndex = 90;
-            this.PINcode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.PINcode.Click += new System.EventHandler(this.PINcode_Click);
-            this.PINcode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PINcode_KeyPress);
-            this.PINcode.Leave += new System.EventHandler(this.PINcode_Leave);
+            this.About.Image = global::HealthMate_UI.Properties.Resources.info;
+            this.About.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.About.Name = "About";
+            this.About.Size = new System.Drawing.Size(60, 22);
+            this.About.Text = "About";
             // 
             // CreateAc2
             // 
@@ -618,16 +533,7 @@
         private System.Windows.Forms.Label PasswordStrengthLabel;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton Back;
-        private System.Windows.Forms.ToolStripButton newToolStripButton;
-        private System.Windows.Forms.ToolStripButton openToolStripButton;
-        private System.Windows.Forms.ToolStripButton saveToolStripButton;
-        private System.Windows.Forms.ToolStripButton printToolStripButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
-        private System.Windows.Forms.ToolStripButton cutToolStripButton;
-        private System.Windows.Forms.ToolStripButton copyToolStripButton;
-        private System.Windows.Forms.ToolStripButton pasteToolStripButton;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton helpToolStripButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.Label ChangePPlabel;
@@ -646,5 +552,6 @@
         private Guna.UI2.WinForms.Guna2Button CreateAccbtn;
         private Guna.UI2.WinForms.Guna2CheckBox TrainerCheck;
         private Guna.UI2.WinForms.Guna2TextBox PINcode;
+        private System.Windows.Forms.ToolStripButton About;
     }
 }

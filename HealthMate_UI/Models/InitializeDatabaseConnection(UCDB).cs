@@ -4,13 +4,13 @@ using System.Windows.Forms;
 
 namespace HealthMate_UI
 {
-    public class DatabaseManager : IDisposable
+    public class DatabaseManageruc: IDisposable
     {
         private SqlConnection sqlConnection;
 
-        public DatabaseManager()
+        public DatabaseManageruc()
         {
-            string connectionString = @"Data Source=DESKTOP-QUB8L8T\SQLEXPRESS;Initial Catalog=UserInfoDB;Integrated Security=True";
+            string connectionString = @"Data Source=DESKTOP-QUB8L8T\SQLEXPRESS;Initial Catalog=UserCaloriesDB;Integrated Security=True";
             sqlConnection = new SqlConnection(connectionString);
         }
 

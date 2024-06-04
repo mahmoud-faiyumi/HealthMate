@@ -1,4 +1,5 @@
 ﻿using HealthMate_UI.Constants;
+using LiteDB;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Data.SqlClient;
@@ -25,7 +26,7 @@ namespace HealthMate_UI
         private DateTime birthdate;
         private string activityLevel;
 
-        private DatabaseManager databaseManager;
+        private DatabaseManagerui databaseManagerui;
 
         bool dark = CommonValues.CurrentUserInfo.IsDark;
         bool arabic = CommonValues.CurrentUserInfo.IsArabic;
@@ -45,14 +46,14 @@ namespace HealthMate_UI
             InitializeCircularPictureBox();
             progressBar1.Maximum = 11;
 
-            for (int i = 0; i < fieldEditedFlags.Length; i++)
+            for (byte i = 0; i < fieldEditedFlags.Length; i++)
             {
                 fieldEditedFlags[i] = false; // Initialize all flags to false
             }
 
             UpdateCreateAccbtnState();
 
-            databaseManager = new DatabaseManager();
+            databaseManagerui = new DatabaseManagerui();
 
             Password.PasswordChar = '*';
             RePassword.PasswordChar = '*';
@@ -221,12 +222,12 @@ namespace HealthMate_UI
             {
                 string fileName = Path.GetFileName(filePath);
                 byte[] fileData = null; // Initialize to null
-                databaseManager.OpenConnection();
+                databaseManagerui.OpenConnection();
 
                 // Insert user data into the database
-                string insertQuery = "INSERT INTO UserInfo (FName, LName, Email, UserName, Password, BirthDate, Gender, Height, Weight, Age, ActivityLevel, BMI, ProfilePicture, LastLogin, IsCoach) " +
-                                     "VALUES (@Fname, @Lname, @Email, @UserName, @Password, @BirthDate, @gender, @Height, @Weight, @Age, @activityLevel, @BMI, @ProfilePicture, @LastLogin, @IsCoach)";
-                using (SqlCommand insertCommand = new SqlCommand(insertQuery, databaseManager.GetConnection()))
+                string insertQuery = "INSERT INTO UserInfo (FName, LName, Email, UserName, Password, BirthDate, Gender, Height, Weight, ActivityLevel, BMI, ProfilePicture, LastLogin, IsCoach) " +
+                                     "VALUES (@Fname, @Lname, @Email, @UserName, @Password, @BirthDate, @gender, @Height, @Weight, @activityLevel, @BMI, @ProfilePicture, @LastLogin, @IsCoach)";
+                using (SqlCommand insertCommand = new SqlCommand(insertQuery, databaseManagerui.GetConnection()))
                 {
                     insertCommand.Parameters.AddWithValue("@Fname", fname);
                     insertCommand.Parameters.AddWithValue("@Lname", lname);
@@ -237,7 +238,6 @@ namespace HealthMate_UI
                     insertCommand.Parameters.AddWithValue("@gender", gender);
                     insertCommand.Parameters.AddWithValue("@Height", height);
                     insertCommand.Parameters.AddWithValue("@Weight", weight);
-                    insertCommand.Parameters.AddWithValue("@Age", Age);
                     insertCommand.Parameters.AddWithValue("@activityLevel", activityLevel);
                     insertCommand.Parameters.AddWithValue("@BMI", BMI);
 
@@ -289,7 +289,7 @@ namespace HealthMate_UI
 
 
                 string updateQuery = "UPDATE UserPreferences SET IsDark = @IsDark WHERE UserName_FK = @Username";
-                using (SqlCommand updateCommand = new SqlCommand(updateQuery, databaseManager.GetConnection()))
+                using (SqlCommand updateCommand = new SqlCommand(updateQuery, databaseManagerui.GetConnection()))
                 {
                     updateCommand.Parameters.AddWithValue("@IsDark", dark ? 1 : 0);
                     updateCommand.Parameters.AddWithValue("@Username", username);
@@ -298,7 +298,7 @@ namespace HealthMate_UI
                 }
 
                 string updateQuery1 = "UPDATE UserPreferences SET IsArabic = @IsArabic WHERE UserName_FK = @Username";
-                using (SqlCommand updateCommand = new SqlCommand(updateQuery1, databaseManager.GetConnection()))
+                using (SqlCommand updateCommand = new SqlCommand(updateQuery1, databaseManagerui.GetConnection()))
                 {
                     updateCommand.Parameters.AddWithValue("@IsArabic", arabic ? 1 : 0);
                     updateCommand.Parameters.AddWithValue("@Username", username);
@@ -312,7 +312,37 @@ namespace HealthMate_UI
             }
             finally
             {
-                databaseManager.CloseConnection();
+                databaseManagerui.CloseConnection();
+            }
+
+            try
+            {
+                // Create an instance of DatabaseManageruc
+                using (DatabaseManageruc databaseManager = new DatabaseManageruc())
+                {
+                    // Open the database connection
+                    databaseManager.OpenConnection();
+
+                    // SQL query to create the table
+                    string createTableQuery = $@"CREATE TABLE [{username}] (
+                   [Date] DATE NOT NULL,
+                   [BreakfastCal] FLOAT CONSTRAINT [DEFAULT_CaloriesHistory_BreakfastCal] DEFAULT 0 NOT NULL,
+                   [LunchCal] FLOAT CONSTRAINT [DEFAULT_CaloriesHistory_LunchCal] DEFAULT 0 NOT NULL,
+                   [DinnerCal] FLOAT CONSTRAINT [DEFAULT_CaloriesHistory_DinnerCal] DEFAULT 0 NOT NULL,
+                   [ExtraCal] FLOAT CONSTRAINT [DEFAULT_CaloriesHistory_ExtraCal] DEFAULT 0 NOT NULL,
+                   [TotalCal] AS (BreakfastCal + LunchCal + DinnerCal + ExtraCal))";
+
+                    // Create a SqlCommand object with the create table query and the SqlConnection object
+                    using (SqlCommand createCommand = new SqlCommand(createTableQuery, databaseManager.GetConnection()))
+                    {
+                        // Execute the create table query
+                        createCommand.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -367,7 +397,7 @@ namespace HealthMate_UI
 
             var result = Zxcvbn.Core.EvaluatePassword(password);
 
-            int strength = result.Score; // Zxcvbn's password strength score (0-4)
+            byte strength = (byte)result.Score; // Zxcvbn's password strength score (0-4)
 
             // Combine Zxcvbn's suggestions into a single string
             //string suggestions = string.Join(". ", result.Feedback.Suggestions);
@@ -708,7 +738,7 @@ namespace HealthMate_UI
             }
         }
 
-        private void PINcode_Click(object sender, EventArgs e)
+        private void PINcode_Enter(object sender, EventArgs e)
         {
             if (!(PINcode.Text.Length <= 6))
             {

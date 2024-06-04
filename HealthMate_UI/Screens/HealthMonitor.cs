@@ -23,28 +23,28 @@ namespace HealthMate_UI
             string activityLevel = CommonValues.CurrentUserInfo.ActivityLevel;
             double bmi = CommonValues.CurrentUserInfo.BMI;
 
-            double bmr = gender == "Male" ? 66 + (13.7 * weight) + (5 * height) - (6.8 * age) : 655 + (9.6 * weight) + (1.8 * height) - (4.7 * age);
-            double dailyCalorieNeeds = 0;
+            float bmr = (float)(gender == "Male" ? 66 + (13.7 * weight) + (5 * height) - (6.8 * age) : 655 + (9.6 * weight) + (1.8 * height) - (4.7 * age));
+            float dailyCalorieNeeds = 0;
             double idealWeight = gender == "Male" ? height - 105 : height - 110;
             if (activityLevel == "Lazy")
             {
-                dailyCalorieNeeds = bmr * 1.2;
+                dailyCalorieNeeds = bmr * 1.2f;
             }
             else if (activityLevel == "Lightly")
             {
-                dailyCalorieNeeds = bmr * 1.375;
+                dailyCalorieNeeds = bmr * 1.375f;
             }
             else if (activityLevel == "Medium")
             {
-                dailyCalorieNeeds = bmr * 1.55;
+                dailyCalorieNeeds = bmr * 1.55f;
             }
             else if (activityLevel == "Active")
             {
-                dailyCalorieNeeds = bmr * 1.725;
+                dailyCalorieNeeds = bmr * 1.725f;
             }
 
             // Calculate calorie needs before converting to int
-            int cal = Convert.ToInt32(dailyCalorieNeeds);
+            short cal = Convert.ToInt16(dailyCalorieNeeds);
 
             // Variables for labels and advice text
             string BMILabelText, CategoryLabelText, CalorieNeedsLabelText, IdealWeightLabelText, AdviceLabelText;

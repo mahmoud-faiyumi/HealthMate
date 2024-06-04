@@ -1,5 +1,6 @@
 ﻿using HealthMate_UI.Constants;
 using HealthMate_UI.Models;
+using HealthMate_UI.Screens;
 using ImageRetrievalApp;
 using System;
 using System.Data.SqlClient;
@@ -10,7 +11,7 @@ namespace HealthMate_UI
 {
     public partial class Login : Form
     {
-        private DatabaseManager databaseManager;
+        private DatabaseManagerui databaseManager;
         private bool passwordVisible = false;
 
         public Login()
@@ -18,7 +19,7 @@ namespace HealthMate_UI
             InitializeComponent();
             CommonValues.CurrentUserInfo = new UserInfo();
             Password.PasswordChar = '*';
-            databaseManager = new DatabaseManager();
+            databaseManager = new DatabaseManagerui();
 
             // Set the initial image
             PasswordVisibility.Image = Properties.Resources.hide_eye; // Use your initial image here
@@ -60,7 +61,7 @@ namespace HealthMate_UI
             {
                 databaseManager.CloseConnection();
             }
-            if(CommonValues.CurrentUserInfo.IsDark == true)
+            if (CommonValues.CurrentUserInfo.IsDark == true)
             {
                 ApplyDarkTheme();
             }
@@ -68,7 +69,7 @@ namespace HealthMate_UI
             {
                 ApplyLightTheme();
             }
-            if(CommonValues.CurrentUserInfo.IsArabic == true)
+            if (CommonValues.CurrentUserInfo.IsArabic == true)
             {
                 ArabicLanguage();
             }
@@ -89,7 +90,6 @@ namespace HealthMate_UI
                 string readQuery0 = "SELECT * FROM BlackList";
                 string readQuery = "SELECT * FROM UserInfo WHERE UserName = @Username";
                 string readQuery1 = "SELECT * FROM UserPreferences WHERE UserName_FK = @Username";
-                // Insert user data into the database
 
                 using (SqlCommand command1 = new SqlCommand(readQuery0, databaseManager.GetConnection()))
                 {
@@ -169,7 +169,7 @@ namespace HealthMate_UI
                             if (passwordText == decryptedPass)
                             {
                                 reader.Close();
-                               
+
                                 using (SqlCommand command1 = new SqlCommand(readQuery1, databaseManager.GetConnection()))
                                 {
                                     command1.Parameters.AddWithValue("@Username", usernameText);
@@ -455,6 +455,7 @@ namespace HealthMate_UI
             {
                 SelectLanguage.Image = Properties.Resources.wAR;
             }
+            ResetPassword.Text = "نسيت كلمة المرور؟";
         }
 
         private void EnglishLanguage()
@@ -486,6 +487,30 @@ namespace HealthMate_UI
             {
                 SelectLanguage.Image = Properties.Resources.wEN;
             }
+            ResetPassword.Text = "Forget Password?";
+        }
+
+        private void UsernameTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                LoginButton_Click(sender, e);
+            }
+        }
+
+        private void PasswordTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                LoginButton_Click(sender, e);
+            }
+        }
+
+        private void ResetPassword_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ForgetPassword forgetpassword = new ForgetPassword();
+            forgetpassword.Show();
         }
     }
 }

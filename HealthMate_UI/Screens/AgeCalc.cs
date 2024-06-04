@@ -122,12 +122,12 @@ namespace HealthMate_UI
             }
             DateTime now = DateTime.Now;
             TimeSpan ageTimeSpan = now - birthDate;
-            int years = (int)Math.Floor(ageTimeSpan.TotalDays / 365.242199);
-            int months = (int)Math.Floor((ageTimeSpan.TotalDays % 365.242199) / 30.4368499);
+            byte years = (byte)Math.Floor(ageTimeSpan.TotalDays / 365.242199);
+            short months = (short)Math.Floor((ageTimeSpan.TotalDays % 365.242199) / 30.4368499);
             int days = (int)Math.Floor(ageTimeSpan.TotalDays % 30.4368499);
 
-            int nextBirthdayMonths = (int)Math.Floor(((years + 1) * 365.24199 - ageTimeSpan.TotalDays) / 30.4368499);
-            int nextBirthdayDays = (int)Math.Ceiling(((years + 1) * 365.24199 - ageTimeSpan.TotalDays) % 30.4368499);
+            byte nextBirthdayMonths = (byte)Math.Floor(((years + 1) * 365.24199 - ageTimeSpan.TotalDays) / 30.4368499);
+            byte nextBirthdayDays = (byte)Math.Ceiling(((years + 1) * 365.24199 - ageTimeSpan.TotalDays) % 30.4368499);
 
             int totalDays = (int)ageTimeSpan.TotalDays;
             int totalHours = (int)ageTimeSpan.TotalHours;
@@ -195,12 +195,12 @@ namespace HealthMate_UI
             }
             DateTime now = DateTime.Now;
             TimeSpan ageTimeSpan = now - birthDate;
-            int years = (int)Math.Floor(ageTimeSpan.TotalDays / 365.242199);
-            int months = (int)Math.Floor((ageTimeSpan.TotalDays % 365.242199) / 30.4368499);
+            byte years = (byte)Math.Floor(ageTimeSpan.TotalDays / 365.242199);
+            short months = (short)Math.Floor((ageTimeSpan.TotalDays % 365.242199) / 30.4368499);
             int days = (int)Math.Floor(ageTimeSpan.TotalDays % 30.4368499);
 
-            int nextBirthdayMonths = (int)Math.Floor(((years + 1) * 365.24199 - ageTimeSpan.TotalDays) / 30.4368499);
-            int nextBirthdayDays = (int)Math.Ceiling(((years + 1) * 365.24199 - ageTimeSpan.TotalDays) % 30.4368499);
+            byte nextBirthdayMonths = (byte)Math.Floor(((years + 1) * 365.24199 - ageTimeSpan.TotalDays) / 30.4368499);
+            byte nextBirthdayDays = (byte)Math.Ceiling(((years + 1) * 365.24199 - ageTimeSpan.TotalDays) % 30.4368499);
 
             int totalDays = (int)ageTimeSpan.TotalDays;
             int totalHours = (int)ageTimeSpan.TotalHours;

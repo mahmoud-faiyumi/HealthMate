@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -39,9 +40,34 @@ namespace HealthMate_UI.Screens
             }
             else
             {
+                try
+                {
+                    using (DatabaseManageruc databaseManageruc = new DatabaseManageruc())
+                    {
+                        databaseManageruc.OpenConnection();
+                        string updateQuery = $"UPDATE [{CommonValues.CurrentUserInfo.UserName}] SET ExtraCal = @ExtraCal WHERE Date = @today";
+                        using (SqlCommand updateCommand = new SqlCommand(updateQuery, databaseManageruc.GetConnection()))
+                        {
+                            updateCommand.Parameters.AddWithValue("@ExtraCal", (double)extraMealCal);
+                            updateCommand.Parameters.AddWithValue("@today", DateTime.Today);
+                            updateCommand.ExecuteNonQuery();
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK);
+                }
                 this.Close();
                 MessageBox.Show(extraMealCal.ToString());
+            }
+        }
 
+        private void ExtraMealCal_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Enter_Click(sender, e);
             }
         }
     }

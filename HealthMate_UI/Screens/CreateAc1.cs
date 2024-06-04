@@ -3,7 +3,6 @@ using HealthMate_UI.Models;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
 
 namespace HealthMate_UI
 {
@@ -16,7 +15,7 @@ namespace HealthMate_UI
             InitializeComponent();
             progressBar1.Maximum = 11;
 
-            for (int i = 0; i < fieldEditedFlags.Length; i++)
+            for (byte i = 0; i < fieldEditedFlags.Length; i++)
             {
                 fieldEditedFlags[i] = false; // Initialize all flags to false
             }
@@ -229,7 +228,7 @@ namespace HealthMate_UI
             if (!CommonValues.CurrentUserInfo.IsArabic)
             {
                 SelectLanguage.Image = Properties.Resources.wEN;
-            }
+        }
             else
             {
                 SelectLanguage.Image = Properties.Resources.wAR;
@@ -266,7 +265,7 @@ namespace HealthMate_UI
             if (!CommonValues.CurrentUserInfo.IsArabic)
             {
                 SelectLanguage.Image = Properties.Resources.EN;
-            }
+        }
             else
             {
                 SelectLanguage.Image = Properties.Resources.AR;
@@ -303,7 +302,7 @@ namespace HealthMate_UI
             SelectLanguage.Text = "اللغة";
             if (!CommonValues.CurrentUserInfo.IsDark)
             {
-                SelectLanguage.Image = Properties.Resources.AR;
+            SelectLanguage.Image = Properties.Resources.AR;
             }
             else
             {
@@ -350,7 +349,7 @@ namespace HealthMate_UI
             SelectLanguage.Text = "Language";
             if (!CommonValues.CurrentUserInfo.IsDark)
             {
-                SelectLanguage.Image = Properties.Resources.EN;
+            SelectLanguage.Image = Properties.Resources.EN;
             }
             else
             {

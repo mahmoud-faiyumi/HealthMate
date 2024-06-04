@@ -1,6 +1,7 @@
 ﻿using HealthMate_UI.Constants;
 using System;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace HealthMate_UI.Screens
 {
@@ -32,8 +33,34 @@ namespace HealthMate_UI.Screens
             }
             else
             {
+                try
+                {
+                    using (DatabaseManageruc databaseManageruc = new DatabaseManageruc())
+                    {
+                        databaseManageruc.OpenConnection();
+                        string updateQuery = $"UPDATE [{CommonValues.CurrentUserInfo.UserName}] SET BreakfastCal = @BreakfastCal WHERE Date = @today";
+                        using (SqlCommand updateCommand = new SqlCommand(updateQuery, databaseManageruc.GetConnection()))
+                        {
+                            updateCommand.Parameters.AddWithValue("@BreakfastCal", (double)breakCal);
+                            updateCommand.Parameters.AddWithValue("@today", DateTime.Today);
+                            updateCommand.ExecuteNonQuery();
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK);
+                }
                 this.Close();
                 MessageBox.Show(breakCal.ToString());
+            }
+        }
+
+        private void BrkFstCal_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Enter_Click(sender, e);
             }
         }
     }

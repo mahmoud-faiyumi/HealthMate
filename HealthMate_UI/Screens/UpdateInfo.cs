@@ -17,7 +17,7 @@ namespace HealthMate_UI
         private bool passwordVisibleRE = false;
         private bool inches = true; // Initially set to inches
         private bool LB = true;  // Initially set to pounds
-        private DatabaseManager databaseManager;
+        private DatabaseManagerui databaseManager;
         string username = CommonValues.CurrentUserInfo.UserName;
 
         string filePath;
@@ -25,7 +25,7 @@ namespace HealthMate_UI
         {
             InitializeComponent();
             InitializeCircularPictureBox();
-            databaseManager = new DatabaseManager();
+            databaseManager = new DatabaseManagerui();
 
             Password.PasswordChar = '*';
             RePassword.PasswordChar = '*';
@@ -181,7 +181,7 @@ namespace HealthMate_UI
 
             var result = Zxcvbn.Core.EvaluatePassword(password);
 
-            int strength = result.Score; // Zxcvbn's password strength score (0-4)
+            byte strength = (byte)result.Score; // Zxcvbn's password strength score (0-4)
 
             // Combine Zxcvbn's suggestions into a single string
             string suggestions = string.Join(". ", result.Feedback.Suggestions);
@@ -323,13 +323,15 @@ namespace HealthMate_UI
 
         private void UpdateUser()
         {
+            string OldUser = CommonValues.CurrentUserInfo.UserName;
+            string NewUser = "";
             try
             {
                 databaseManager.OpenConnection();
                 string updateQuery = "UPDATE UserInfo SET ";
                 string comma = "";
                 // Initialize a counter for updated fields
-                int updatedFieldsCount = 0;
+                byte updatedFieldsCount = 0;
 
                 using (SqlCommand command1 = new SqlCommand("", databaseManager.GetConnection()))
                 {
@@ -355,6 +357,7 @@ namespace HealthMate_UI
                         command1.Parameters.AddWithValue("@NewValue3", Username.Text);
                         comma = ", ";
                         updatedFieldsCount++;
+                        NewUser = Username.Text;
                     }
 
                     if (!string.IsNullOrWhiteSpace(ActivityLevel.Text))
@@ -434,11 +437,17 @@ namespace HealthMate_UI
                 }
 
                 string readQuery = "SELECT * FROM UserInfo WHERE UserName = @Username";
-                // Insert user data into the database
 
                 using (SqlCommand command = new SqlCommand(readQuery, databaseManager.GetConnection()))
                 {
-                    command.Parameters.AddWithValue("@Username", CommonValues.CurrentUserInfo.UserName);
+                    if (NewUser == "")
+                    {
+                        command.Parameters.AddWithValue("@Username", CommonValues.CurrentUserInfo.UserName);
+                    }
+                    else
+                    {
+                        command.Parameters.AddWithValue("@Username", NewUser);
+                    }
 
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
@@ -446,7 +455,10 @@ namespace HealthMate_UI
                         {
                             CommonValues.CurrentUserInfo.FName = reader["FName"].ToString();
                             CommonValues.CurrentUserInfo.LName = reader["LName"].ToString();
-                            CommonValues.CurrentUserInfo.UserName = reader["UserName"].ToString();
+                            if (!(NewUser == ""))
+                            {
+                                CommonValues.CurrentUserInfo.UserName = reader["UserName"].ToString();
+                            }
                             CommonValues.CurrentUserInfo.BirthDate = (DateTime)reader["BirthDate"];
                             CommonValues.CurrentUserInfo.ActivityLevel = reader["ActivityLevel"].ToString();
                             CommonValues.CurrentUserInfo.Age = (int)reader["Age"];
@@ -492,6 +504,32 @@ namespace HealthMate_UI
             finally
             {
                 databaseManager.CloseConnection();
+            }
+            if (CommonValues.CurrentUserInfo.UserName != OldUser)
+            {
+                try
+                {
+                    using (DatabaseManageruc databaseManager = new DatabaseManageruc())
+                    {
+                        databaseManager.OpenConnection();
+
+                        // Username variable
+                        string oldTableName = OldUser;
+                        string newTableName = CommonValues.CurrentUserInfo.UserName;
+
+                        // SQL query to rename the table
+                        string renameTableQuery = $"EXEC sp_rename '{oldTableName}', '{newTableName}'";
+
+                        using (SqlCommand renameCommand = new SqlCommand(renameTableQuery, databaseManager.GetConnection()))
+                        {
+                            renameCommand.ExecuteNonQuery();
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 

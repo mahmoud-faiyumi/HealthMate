@@ -182,6 +182,13 @@ namespace HealthMate_UI
             calories_Tracker.Show();
         }
 
+        private void WorkoutBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Workout workout = new Workout();
+            workout.Show();
+        }
+
         private void Logout_Click(object sender, EventArgs e)
         {
             CommonValues.CurrentUserInfo = null;
@@ -337,7 +344,7 @@ namespace HealthMate_UI
             if (!CommonValues.CurrentUserInfo.IsArabic)
             {
                 SelectLanguage.Image = Properties.Resources.wEN;
-        }
+            }
             else
             {
                 SelectLanguage.Image = Properties.Resources.wAR;
@@ -371,7 +378,7 @@ namespace HealthMate_UI
             if (!CommonValues.CurrentUserInfo.IsArabic)
             {
                 SelectLanguage.Image = Properties.Resources.EN;
-        }
+            }
             else
             {
                 SelectLanguage.Image = Properties.Resources.AR;
@@ -396,7 +403,7 @@ namespace HealthMate_UI
             FoodBtn.Text = "الغذاء والحمية";
             if (!CommonValues.CurrentUserInfo.IsDark)
             {
-            SelectLanguage.Image = Properties.Resources.AR;
+                SelectLanguage.Image = Properties.Resources.AR;
             }
             else
             {
@@ -432,7 +439,7 @@ namespace HealthMate_UI
             circularPictureBox.Location = new Point(489, 29);
             if (!CommonValues.CurrentUserInfo.IsDark)
             {
-            SelectLanguage.Image = Properties.Resources.EN;
+                SelectLanguage.Image = Properties.Resources.EN;
             }
             else
             {

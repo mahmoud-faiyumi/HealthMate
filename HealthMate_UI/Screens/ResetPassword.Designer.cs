@@ -208,6 +208,7 @@
             this.Name = "ResetPassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HealthMate";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ResetPassword_FormClosing);
             this.Load += new System.EventHandler(this.ResetPassword_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

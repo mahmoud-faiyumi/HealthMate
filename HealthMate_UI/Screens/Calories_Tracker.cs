@@ -143,8 +143,6 @@ namespace HealthMate_UI.Screens
             });
         }
 
-
-
         private void EnglishLanguage()
         {
             Breakfast.Text = "+ Breakfast";

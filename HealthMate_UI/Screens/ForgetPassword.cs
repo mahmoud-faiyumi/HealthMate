@@ -324,6 +324,8 @@ namespace HealthMate_UI.Screens
                 background-color: #f4f4f9;
                 color: #333;
                 padding: 20px;
+                direction: rtl;
+                text-align: right;
             }}
             .container {{
                 background-color: #ffffff;
@@ -345,16 +347,25 @@ namespace HealthMate_UI.Screens
             .content {{
                 font-size: 16px;
                 line-height: 1.6;
+                text-align: center;
+            }}
+            .code-container {{
+                display: inline-block;
+                margin: 20px 0;
             }}
             .code {{
-                font-size: 24px;
+                display: inline-block;
+                font-size: 20px;
                 font-weight: bold;
                 text-align: center;
-                margin: 20px 0;
-                padding: 10px;
-                background-color: #f9f9f9;
-                border: 1px solid #ddd;
-                border-radius: 4px;
+                padding: 10px 20px;
+                background-color: #f9f9fb;
+                border: 1px solid #ccd0d5;
+                border-radius: 10px;
+                color: #2c3e50;
+                position: relative;
+                box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+                word-wrap: break-word;
             }}
             .footer {{
                 text-align: center;
@@ -374,8 +385,10 @@ namespace HealthMate_UI.Screens
             </div>
             <div class='content'>
                 <p>صلاحية هذا الرمز تنتهي بعد 10 دقائق.</p>
-                <div class='code'>{token}</div>
-                <p>إذا لم تكن تعرف شيئًا عن هذه الرسالة، يمكنك تجاهلها.</p>
+                <div class='code-container'>
+                    <div class='code' id='code'>{token}</div>
+                </div>
+                <p>إذا لم تقم بهذا الطلب، يرجى تجاهل هذه الرسالة.</p>
             </div>
             <div class='footer'>
                 <img src='https://i.ibb.co/CVWrJNN/Untitled-1-01.png' width='80'></img>
@@ -417,16 +430,25 @@ namespace HealthMate_UI.Screens
             .content {{
                 font-size: 16px;
                 line-height: 1.6;
+                text-align: center;
+            }}
+            .code-container {{
+                display: inline-block;
+                margin: 20px 0;
             }}
             .code {{
-                font-size: 24px;
+                display: inline-block;
+                font-size: 20px;
                 font-weight: bold;
                 text-align: center;
-                margin: 20px 0;
-                padding: 10px;
-                background-color: #f9f9f9;
-                border: 1px solid #ddd;
-                border-radius: 4px;
+                padding: 10px 20px;
+                background-color: #f9f9fb;
+                border: 1px solid #ccd0d5;
+                border-radius: 10px;
+                color: #2c3e50;
+                position: relative;
+                box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+                word-wrap: break-word;
             }}
             .footer {{
                 text-align: center;
@@ -446,8 +468,10 @@ namespace HealthMate_UI.Screens
             </div>
             <div class='content'>
                 <p>The validity of this code is 10 minutes.</p>
-                <div class='code'>{token}</div>
-                <p>If you don't know about this message, you can ignore it.</p>
+                <div class='code-container'>
+                    <div class='code' id='code'>{token}</div>
+                </div>
+                <p>If this request was not made by you, please disregard this message.</p>
             </div>
             <div class='footer'>
                 <img src='https://i.ibb.co/CVWrJNN/Untitled-1-01.png' width='80'></img>
@@ -457,7 +481,6 @@ namespace HealthMate_UI.Screens
     </body>
     </html>";
             }
-
 
             message.Body = bodyBuilder.ToMessageBody();
 

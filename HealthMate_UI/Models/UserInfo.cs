@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 
 namespace HealthMate_UI.Models
@@ -24,6 +25,17 @@ namespace HealthMate_UI.Models
         public bool IsCoach { get; set; }
         public int ID { get; set; }
         public int CoachID { get; set; }
-
+    }
+    public class Exercise
+    {
+        public int Id { get; set; }
+        public string ExName { get; set; }
+        public List<string> MuscleGroups { get; set; }
+        public string GifResourceName { get; set; }
+        public string YouTubeLink { get; set; }
+        public int Duration { get; set; }
+        public string DescriptionEn { get; set; }
+        public string DescriptionAr { get; set; }
+        public float MetValue { get; set; }
     }
 }

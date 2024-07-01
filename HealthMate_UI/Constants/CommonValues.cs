@@ -4,5 +4,6 @@ namespace HealthMate_UI.Constants
     public static class CommonValues
     {
         public static UserInfo CurrentUserInfo;
+        public static Exercise Exercises;
     }
 }

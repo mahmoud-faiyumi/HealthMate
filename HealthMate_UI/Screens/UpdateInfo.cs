@@ -637,6 +637,8 @@ namespace HealthMate_UI
             Password.Clear();
             RePassword.Clear();
             filePath = "";
+            PasswordMatchLabel.Text = "";
+            PasswordStrengthLabel.Text = "";
         }
 
         private void Back_Click(object sender, EventArgs e)

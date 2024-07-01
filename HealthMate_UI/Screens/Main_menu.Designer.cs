@@ -245,6 +245,7 @@
             this.WorkoutBtn.Size = new System.Drawing.Size(151, 75);
             this.WorkoutBtn.TabIndex = 66;
             this.WorkoutBtn.Text = "Workouts";
+            this.WorkoutBtn.Click += new System.EventHandler(this.WorkoutBtn_Click);
             // 
             // TraineesTrack
             // 
@@ -332,13 +333,13 @@
             // arabicToolStripMenuItem
             // 
             this.arabicToolStripMenuItem.Name = "arabicToolStripMenuItem";
-            this.arabicToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.arabicToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.arabicToolStripMenuItem.Text = "العربية";
             // 
             // englishToolStripMenuItem
             // 
             this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
-            this.englishToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.englishToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.englishToolStripMenuItem.Text = "English";
             // 
             // toolStripSeparator

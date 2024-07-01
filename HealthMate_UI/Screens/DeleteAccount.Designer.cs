@@ -52,8 +52,8 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(460, 52);
             this.label2.TabIndex = 1;
-            this.label2.Text = "If something bothers you, please contact us and provide us with feedback at mahmo" +
-    "udalfaiyumi@gmail.com\r\n";
+            this.label2.Text = "If something bothers you, please contact us and provide us with feedback at healt" +
+    "h.mate.feadback@gmail.com\r\n";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3

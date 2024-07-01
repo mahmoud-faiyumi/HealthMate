@@ -359,6 +359,11 @@ namespace HealthMate_UI.Screens
             RePassLabel.Text = "Re-Enter Password:";
             UpdateUsrInfo.Text = "Update Password";
         }
+
+        private void ResetPassword_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
 

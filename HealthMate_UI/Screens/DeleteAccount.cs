@@ -71,7 +71,7 @@ namespace HealthMate_UI.Screens
         private void EnglishLanguage()
         {
             label1.Text = "We are sad to see you here😔";
-            label2.Text = "something bothers you, please contact us and provide us with feedback at mahmoudalfaiyumi@gmail.com";
+            label2.Text = "something bothers you, please contact us and provide us with feedback at health.mate.feadback@gmail.com";
             label3.Text = "If you still want to delete your account\r\nEnter your password";
             Deletebtn.Text = "Delete";
         }
@@ -79,7 +79,7 @@ namespace HealthMate_UI.Screens
         private void ArabicLanguage()
         {
             label1.Text = "😔نحن حزينون لرؤيتك هنا";
-            label2.Text = "إذا كان هناك شيء يزعجك، يرجى الاتصال بنا وتزويدنا بالتعليقات  mahmoudalfaiyumi@gmail.com على";
+            label2.Text = "إذا كان هناك شيء يزعجك، يرجى الاتصال بنا وتزويدنا بالتعليقات  health.mate.feadback@gmail.com على";
             label3.Text = "إذا كنت لا تزال ترغب في حذف حسابك\r\nادخل كلمة المرور";
             Deletebtn.Text = "حذف";
         }

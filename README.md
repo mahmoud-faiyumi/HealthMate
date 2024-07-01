@@ -1,4 +1,4 @@
-# HealthMate Program
+# HealthMate Application
 
 HealthMate is a C# Windows Forms application designed to help users perform various health-related calculations and manage their user accounts securely. The application offers features like age calculation, calorie tracking, a couch and trainees system, workouts, multi-account support, password reset via email, and other health calculations based on user input. All user data is stored offline to ensure better security and privacy.
 

@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>HealthMate</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <TargetFramework>net8.0-windows10.0.22621.0</TargetFramework>
+    <ApplicationIcon>app logo.ico</ApplicationIcon>
+    <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="app logo.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="linq2db.SQLite" Version="5.4.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.7" />
+    <PackageReference Include="Stub.System.Data.SQLite.Core.NetStandard" Version="1.0.118" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
+    <PackageReference Include="System.Data.SQLite.Core" Version="1.0.118" />
+  </ItemGroup>
+
+</Project>

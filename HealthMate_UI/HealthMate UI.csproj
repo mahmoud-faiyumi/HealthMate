@@ -1,0 +1,705 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\CefSharp.Common.126.2.70\build\CefSharp.Common.props" Condition="Exists('..\packages\CefSharp.Common.126.2.70\build\CefSharp.Common.props')" />
+  <Import Project="..\packages\chromiumembeddedframework.runtime.win-x86.126.2.7\build\chromiumembeddedframework.runtime.win-x86.props" Condition="Exists('..\packages\chromiumembeddedframework.runtime.win-x86.126.2.7\build\chromiumembeddedframework.runtime.win-x86.props')" />
+  <Import Project="..\packages\chromiumembeddedframework.runtime.win-x64.126.2.7\build\chromiumembeddedframework.runtime.win-x64.props" Condition="Exists('..\packages\chromiumembeddedframework.runtime.win-x64.126.2.7\build\chromiumembeddedframework.runtime.win-x64.props')" />
+  <PropertyGroup>
+    <SSDTUnitTestPath Condition="'$(SSDTUnitTestPath)' == ''">$(VsInstallRoot)\Common7\IDE\Extensions\Microsoft\SQLDB</SSDTUnitTestPath>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SSDTPath Condition="'$(SSDTPath)' == ''">$(VsInstallRoot)\Common7\IDE\Extensions\Microsoft\SQLDB\DAC</SSDTPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>D9D90ABA089A699D7AD0025A1E34E9151EB51545</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>HealthMate UI_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B0C7D1C3-6F08-4DB5-A301-05A39F29E070}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>HealthMate_UI</RootNamespace>
+    <AssemblyName>HealthMate UI</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>new logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="AdvancedStringBuilder, Version=0.1.1.0, Culture=neutral, PublicKeyToken=e818a2fc08933ddb, processorArchitecture=MSIL">
+      <HintPath>..\packages\AdvancedStringBuilder.0.1.1\lib\net45\AdvancedStringBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="Azure.Core, Version=1.40.0.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL">
+      <HintPath>..\packages\Azure.Core.1.40.0\lib\net472\Azure.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Azure.Identity, Version=1.12.0.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL">
+      <HintPath>..\packages\Azure.Identity.1.12.0\lib\netstandard2.0\Azure.Identity.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.4.0\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="CefSharp, Version=126.2.70.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
+      <HintPath>..\packages\CefSharp.Common.126.2.70\lib\net462\CefSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="CefSharp.Core, Version=126.2.70.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
+      <HintPath>..\packages\CefSharp.Common.126.2.70\lib\net462\CefSharp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="ClearScript.Core, Version=7.4.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ClearScript.Core.7.4.5\lib\net471\ClearScript.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="ClearScript.V8, Version=7.4.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ClearScript.V8.7.4.5\lib\net471\ClearScript.V8.dll</HintPath>
+    </Reference>
+    <Reference Include="ClearScript.V8.ICUData, Version=7.4.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ClearScript.V8.ICUData.7.4.5\lib\netstandard1.0\ClearScript.V8.ICUData.dll</HintPath>
+    </Reference>
+    <Reference Include="DynamicData, Version=8.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DynamicData.8.4.1\lib\net462\DynamicData.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.Charts.WinForms, Version=1.0.9.0, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.Charts.WinForms.1.0.9\lib\net48\Guna.Charts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.6\lib\net48\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="JavaScriptEngineSwitcher.Core, Version=3.24.1.0, Culture=neutral, PublicKeyToken=c608b2a8cc9e4472, processorArchitecture=MSIL">
+      <HintPath>..\packages\JavaScriptEngineSwitcher.Core.3.24.1\lib\net45\JavaScriptEngineSwitcher.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="JavaScriptEngineSwitcher.V8, Version=3.24.2.0, Culture=neutral, PublicKeyToken=c608b2a8cc9e4472, processorArchitecture=MSIL">
+      <HintPath>..\packages\JavaScriptEngineSwitcher.V8.3.24.2\lib\net471\JavaScriptEngineSwitcher.V8.dll</HintPath>
+    </Reference>
+    <Reference Include="LiteDB, Version=5.0.21.0, Culture=neutral, PublicKeyToken=4ee40123013c9f27, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiteDB.5.0.21\lib\net45\LiteDB.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.WinForms, Version=0.9.7.1, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.WinForms.0.9.7.1\lib\net45\LiveCharts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="MailKit, Version=4.7.0.0, Culture=neutral, PublicKeyToken=4e064fe7c44a8f1b, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailKit.4.7.0\lib\net48\MailKit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Identity.Client, Version=4.61.3.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Identity.Client.4.61.3\lib\net462\Microsoft.Identity.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Identity.Client.Extensions.Msal, Version=4.61.3.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Identity.Client.Extensions.Msal.4.61.3\lib\netstandard2.0\Microsoft.Identity.Client.Extensions.Msal.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Abstractions, Version=7.6.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Abstractions.7.6.3\lib\net472\Microsoft.IdentityModel.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=7.6.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.JsonWebTokens.7.6.3\lib\net472\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=7.6.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.7.6.3\lib\net472\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocols, Version=7.6.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Protocols.7.6.3\lib\net472\Microsoft.IdentityModel.Protocols.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect, Version=7.6.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Protocols.OpenIdConnect.7.6.3\lib\net472\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=7.6.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.7.6.3\lib\net472\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MSTest.TestFramework.3.4.3\lib\net462\Microsoft.VisualStudio.TestPlatform.TestFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MSTest.TestFramework.3.4.3\lib\net462\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="MimeKit, Version=4.7.0.0, Culture=neutral, PublicKeyToken=bede1c8a46c66814, processorArchitecture=MSIL">
+      <HintPath>..\packages\MimeKit.4.7.1\lib\net48\MimeKit.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="ReactiveUI, Version=20.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ReactiveUI.20.1.1\lib\net472\ReactiveUI.dll</HintPath>
+    </Reference>
+    <Reference Include="ReactiveUI.Winforms, Version=20.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ReactiveUI.WinForms.20.1.1\lib\net472\ReactiveUI.Winforms.dll</HintPath>
+    </Reference>
+    <Reference Include="SendGrid, Version=9.29.3.0, Culture=neutral, PublicKeyToken=4f047e93159395ca, processorArchitecture=MSIL">
+      <HintPath>..\packages\SendGrid.9.29.3\lib\net452\SendGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="Splat, Version=15.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Splat.15.1.1\lib\netstandard2.0\Splat.dll</HintPath>
+    </Reference>
+    <Reference Include="StarkbankEcdsa, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b2e6337a5d77bfbc, processorArchitecture=MSIL">
+      <HintPath>..\packages\starkbank-ecdsa.1.3.3\lib\net452\StarkbankEcdsa.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ClientModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ClientModel.1.0.0\lib\netstandard2.0\System.ClientModel.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.8.0.0\lib\net462\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Data.SqlClient, Version=4.6.1.6, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SqlClient.4.8.6\lib\net461\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=8.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.8.0.1\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Formats.Asn1, Version=8.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Formats.Asn1.8.0.1\lib\net462\System.Formats.Asn1.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=7.6.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.7.6.3\lib\net472\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.AccessControl, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.AccessControl.5.0.0\lib\net461\System.IO.FileSystem.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory.Data, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.Data.8.0.0\lib\net462\System.Memory.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive, Version=6.0.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reactive.6.0.1\lib\net472\System.Reactive.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.1\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Extensions, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.Extensions.4.3.1\lib\net462\System.Runtime.Extensions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.AccessControl, Version=6.0.0.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.6.0.1\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.1\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.ProtectedData, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.ProtectedData.8.0.0\lib\net462\System.Security.Cryptography.ProtectedData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.2\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Permissions.8.0.0\lib\net462\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Text.Encodings.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.8.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=8.0.0.4, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.8.0.4\lib\net462\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="zxcvbn-core, Version=7.0.0.0, Culture=neutral, PublicKeyToken=4380a7e1f5e959be, processorArchitecture=MSIL">
+      <HintPath>..\packages\zxcvbn-core.7.0.92\lib\net451\zxcvbn-core.dll</HintPath>
+    </Reference>
+    <Reference Include="zxcvbn.net, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\zxcvbn.net.0.0.16\lib\net45\zxcvbn.net.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Constants\Enums.cs" />
+    <Compile Include="Models\FoodLoader.cs" />
+    <Compile Include="Models\ImageRetrievalApp.cs" />
+    <Compile Include="Models\InitializeDatabaseConnection%28FoDB%29.cs" />
+    <Compile Include="Models\InitializeDatabaseConnection%28UCDB%29.cs" />
+    <Compile Include="Models\InitializeDatabaseConnection%28WODB%29.cs" />
+    <Compile Include="Models\Translator.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\AddAllergy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\AddAllergy.Designer.cs">
+      <DependentUpon>AddAllergy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\AddPreference.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\AddPreference.Designer.cs">
+      <DependentUpon>AddPreference.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\AgeCalc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\AgeCalc.Designer.cs">
+      <DependentUpon>AgeCalc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ArabicDayTranslations.cs" />
+    <Compile Include="Constants\CommonValues.cs" />
+    <Compile Include="Screens\Breakfast.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Breakfast.Designer.cs">
+      <DependentUpon>Breakfast.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Calories_Tracker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Calories_Tracker.Designer.cs">
+      <DependentUpon>Calories_Tracker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\DietPlaner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\DietPlaner.Designer.cs">
+      <DependentUpon>DietPlaner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\FollowUpTrainees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\FollowUpTrainees.Designer.cs">
+      <DependentUpon>FollowUpTrainees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\ResetPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\ResetPassword.Designer.cs">
+      <DependentUpon>ResetPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\DeleteAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\DeleteAccount.Designer.cs">
+      <DependentUpon>DeleteAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Dinner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Dinner.Designer.cs">
+      <DependentUpon>Dinner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\ExtreMeal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\ExtreMeal.Designer.cs">
+      <DependentUpon>ExtreMeal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\HealthMonitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\HealthMonitor.Designer.cs">
+      <DependentUpon>HealthMonitor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HeightConverter.cs" />
+    <Compile Include="Models\EncryptionService.cs" />
+    <Compile Include="Models\InitializeDatabaseConnection%28UIDB%29.cs" />
+    <Compile Include="Screens\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\CreateAc1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\CreateAc1.Designer.cs">
+      <DependentUpon>CreateAc1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\CreateAc2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\CreateAc2.Designer.cs">
+      <DependentUpon>CreateAc2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Lunch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Lunch.Designer.cs">
+      <DependentUpon>Lunch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Main_menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Main_menu.Designer.cs">
+      <DependentUpon>Main_menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserInfo.cs" />
+    <Compile Include="Models\WelcomeDependTimeEN.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Screens\ForgetPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\ForgetPassword.Designer.cs">
+      <DependentUpon>ForgetPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\UpdateInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\UpdateInfo.Designer.cs">
+      <DependentUpon>UpdateInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Workout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Workout.Designer.cs">
+      <DependentUpon>Workout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlDatabaseSetup.cs" />
+    <Compile Include="Models\WeightConverter.cs" />
+    <Compile Include="Models\WelcomeDependTimeAR.cs" />
+    <Compile Include="UserInfoDBDataSet.Designer.cs" />
+    <EmbeddedResource Include="Screens\AddAllergy.resx">
+      <DependentUpon>AddAllergy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\AddPreference.resx">
+      <DependentUpon>AddPreference.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\AgeCalc.resx">
+      <DependentUpon>AgeCalc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Breakfast.resx">
+      <DependentUpon>Breakfast.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Calories_Tracker.resx">
+      <DependentUpon>Calories_Tracker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\DeleteAccount.resx">
+      <DependentUpon>DeleteAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\DietPlaner.resx">
+      <DependentUpon>DietPlaner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Dinner.resx">
+      <DependentUpon>Dinner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\ExtreMeal.resx">
+      <DependentUpon>ExtreMeal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\FollowUpTrainees.resx">
+      <DependentUpon>FollowUpTrainees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\HealthMonitor.resx">
+      <DependentUpon>HealthMonitor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\CreateAc1.resx">
+      <DependentUpon>CreateAc1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\CreateAc2.resx">
+      <DependentUpon>CreateAc2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Lunch.resx">
+      <DependentUpon>Lunch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Main_menu.resx">
+      <DependentUpon>Main_menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\ForgetPassword.resx">
+      <DependentUpon>ForgetPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\ResetPassword.resx">
+      <DependentUpon>ResetPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\UpdateInfo.resx">
+      <DependentUpon>UpdateInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Workout.resx">
+      <DependentUpon>Workout.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="HealthMate UI_TemporaryKey.pfx" />
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Database1.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Database1_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>Database1.mdf</DependentUpon>
+    </Content>
+    <Content Include="new logo.ico" />
+    <Content Include="Resources\app logo.ico" />
+    <None Include="Resources\hide eye.png" />
+    <None Include="Resources\show eye.png" />
+    <None Include="Resources\CM-01.png" />
+    <None Include="Resources\inches-01.png" />
+    <None Include="Resources\KG-01.png" />
+    <None Include="Resources\LB-01.png" />
+    <None Include="Resources\Back.png" />
+    <None Include="Resources\WBack.png" />
+    <None Include="Resources\WLogout.png" />
+    <None Include="Resources\Logout.png" />
+    <None Include="Resources\AR.png" />
+    <None Include="Resources\EN.png" />
+    <None Include="Resources\wAR.png" />
+    <None Include="Resources\wEN.png" />
+    <None Include="Resources\femalePP.png" />
+    <None Include="Resources\malePP.png" />
+    <None Include="Resources\breakfast.png" />
+    <None Include="Resources\dinner1.png" />
+    <None Include="Resources\extra meal.png" />
+    <None Include="Resources\lunch.png" />
+    <None Include="Resources\delete-user_9502048.png" />
+    <None Include="Resources\Light.png" />
+    <None Include="Resources\Dark.png" />
+    <None Include="Resources\info.png" />
+    <None Include="Resources\settings.png" />
+    <None Include="Resources\arm_circles.gif" />
+    <None Include="Resources\arm_crosses.gif" />
+    <None Include="Resources\bicycle_crunches.gif" />
+    <None Include="Resources\bird_dogs.gif" />
+    <None Include="Resources\butt_kicks.gif" />
+    <None Include="Resources\crunches.gif" />
+    <None Include="Resources\flutter_kicks.gif" />
+    <None Include="Resources\glute_kickbacks.gif" />
+    <None Include="Resources\high_knees.gif" />
+    <None Include="Resources\hip_bridges.gif" />
+    <None Include="Resources\inchworms.gif" />
+    <None Include="Resources\pushup.gif" />
+    <None Include="Resources\jumping_jacks.gif" />
+    <None Include="Resources\lateral_leg_raises.gif" />
+    <None Include="Resources\leg_raises.gif" />
+    <None Include="Resources\leg_swings.gif" />
+    <None Include="Resources\lying_leg_curls.gif" />
+    <None Include="Resources\plank_shoulder_taps.gif" />
+    <None Include="Resources\prone_t.gif" />
+    <None Include="Resources\reverse_crunches.gif" />
+    <None Include="Resources\seated_russian_twists.gif" />
+    <None Include="Resources\side_leg_raises.gif" />
+    <None Include="Resources\bodyweight_tricep_extensions.gif" />
+    <None Include="Resources\calf_raises.gif" />
+    <None Include="Resources\squats.gif" />
+    <None Include="Resources\standing_oblique_crunches.gif" />
+    <None Include="Resources\star_jumps.gif" />
+    <None Include="Resources\standing_y_raise.gif" />
+    <None Include="Resources\superman.gif" />
+    <None Include="Resources\tricep_dips.gif" />
+    <None Include="Resources\wall_pushups.gif" />
+    <None Include="Resources\wall_sit.jpg" />
+    <None Include="Resources\next.png" />
+    <None Include="Resources\pause.png" />
+    <None Include="Resources\play.png" />
+    <None Include="Resources\Resume.png" />
+    <None Include="Resources\skip.png" />
+    <None Include="Resources\youtube.png" />
+    <Content Include="Scripts\zxcvbn-async.js" />
+    <Content Include="Scripts\zxcvbn.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup Condition="$(VisualStudioVersion) == '17.0'">
+    <Reference Include="Microsoft.Data.Tools.Schema.Sql, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>$(SSDTPath)\Microsoft.Data.Tools.Schema.Sql.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.Tools.Schema.Sql.UnitTesting, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>$(SSDTUnitTestPath)\Microsoft.Data.Tools.Schema.Sql.UnitTesting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.Tools.Schema.Sql.UnitTestingAdapter, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>$(SSDTUnitTestPath)\Microsoft.Data.Tools.Schema.Sql.UnitTestingAdapter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <SsdtUnitTestVersion>3.1</SsdtUnitTestVersion>
+  </PropertyGroup>
+  <Import Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.Sql.UnitTesting.targets" Condition="$(VisualStudioVersion) != '15.0' And '$(SQLDBExtensionsRefPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.Sql.UnitTesting.targets" Condition="$(VisualStudioVersion) != '15.0' And '$(SQLDBExtensionsRefPath)' == ''" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\chromiumembeddedframework.runtime.win-x64.126.2.7\build\chromiumembeddedframework.runtime.win-x64.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\chromiumembeddedframework.runtime.win-x64.126.2.7\build\chromiumembeddedframework.runtime.win-x64.props'))" />
+    <Error Condition="!Exists('..\packages\chromiumembeddedframework.runtime.win-x86.126.2.7\build\chromiumembeddedframework.runtime.win-x86.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\chromiumembeddedframework.runtime.win-x86.126.2.7\build\chromiumembeddedframework.runtime.win-x86.props'))" />
+    <Error Condition="!Exists('..\packages\CefSharp.Common.126.2.70\build\CefSharp.Common.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Common.126.2.70\build\CefSharp.Common.props'))" />
+    <Error Condition="!Exists('..\packages\CefSharp.Common.126.2.70\build\CefSharp.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Common.126.2.70\build\CefSharp.Common.targets'))" />
+  </Target>
+  <Import Project="..\packages\CefSharp.Common.126.2.70\build\CefSharp.Common.targets" Condition="Exists('..\packages\CefSharp.Common.126.2.70\build\CefSharp.Common.targets')" />
+</Project>
